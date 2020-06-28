@@ -1,0 +1,80 @@
+.focus {
+    display: flex;
+
+    position: fixed;
+    top: 5rem;
+    left: 5rem;
+    width: 90vw;
+    height: 85vh;
+    background-color: $color-white;
+    padding: 3rem;
+    border: 5px solid $color-black;
+    z-index: 50;
+
+    &__close {
+        position: absolute;
+        top: .5rem;
+        right: .5rem;
+        cursor: pointer;
+        z-index: 20;
+
+        &-icon {
+            width: 2.5rem;
+            height: 2.5rem;
+        } 
+    }
+
+    &__img-wrapper {
+        position: relative;
+        width: 80%;
+        height: 100%;
+
+        &::after {
+            display: block;
+            content: '';
+            /* 16:9 aspect ratio */
+            padding-bottom: 56.25%;
+        }
+    }
+
+    &__img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        //object-fit: cover;
+    }
+
+    &__piece-info {
+        display: flex;
+        flex-direction: column;
+
+        position: relative;
+        width: 20%;
+        height: 100%;
+        background-color: $color-black;
+        font-family: $font-headings;
+        color: $color-white;
+        padding: 1rem;
+    }
+
+    &__title {
+        font-size: 3rem;
+        padding-bottom: 3rem;
+    }
+
+    &__description {
+        font-family: $font-primary;
+        font-size: 2rem;
+        padding-bottom: 3rem;
+    }
+
+    &__logo {
+        position: absolute;
+        bottom: 1rem;
+        right: 1rem;
+
+        text-transform: uppercase;
+    }
+}

@@ -1,5 +1,16 @@
-@import "base";
-@import "typography";
+@import "./abstracts/variables";
+@import "./abstracts/mixins";
+@import "./abstracts/functions";
 
-@import "header";
-@import "footer";
+@import "./base/animations";
+@import "./base/base";
+@import "./base/typography";
+
+@import "./layout/header";
+@import "./layout/focus"; 
+@import "./layout/footer";
+@import "./layout/navigation-menu"; 
+@import "./layout/spotlight";
+@import "./layout/gallery";
+@import "./layout/sketchbook";
+@import "./layout/social"; 

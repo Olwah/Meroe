@@ -1,3 +1,41 @@
 .header {
+    grid-row: 1 / 1;
+    grid-column: col-start 1 / full-end;
 
+    display: grid;
+    grid-template-columns: repeat(8, [header-col-start] 1fr [header-col-end]);
+
+    overflow: hidden;
+
+    &__title {
+        position: absolute;
+        top: 1.2rem;
+        left: 1.5rem;
+        z-index: 15;
+        transition: all .2s ease-out;
+        //writing-mode: vertical-lr;
+        //text-orientation: upright;
+
+        &.active {
+            transform: translateX(13rem);
+        }
+    }
+
+    &__content {
+        grid-column: header-col-start 1 / -1;
+
+        background: url(/img/Frontpage7_BW.jpg) no-repeat center;
+        background-size: cover;
+        //filter: grayscale(100%);
+        //opacity: .3;
+
+        animation-name: header-animate;
+        animation-duration: 100s;
+        animation-iteration-count: infinite;
+    }
+}
+
+#menu-open {
+    color: $color-white;
+    cursor: pointer;
 }

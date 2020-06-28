@@ -14,3 +14,18 @@ html {
 body {
     font-family: $font-primary;
 }
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    display: grid;
+    grid-template-rows: 90vh repeat(3, min-content);
+    grid-template-columns: [full-start] minmax(8rem, 1fr) [center-start] repeat(9, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(7rem, 1fr) [full-end];
+
+    &.focus-active {
+        opacity: .2;
+    }
+}

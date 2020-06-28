@@ -1,15 +1,10 @@
-.heading-1 {
+.heading {
 
-}
-
-.heading-2 {
-
-}
-
-.heading-3 {
-
-}
-
-.heading-4 {
-
+    &-1 {
+        font-family: $font-headings;
+        font-size: 4.5rem;
+        color: black;
+        letter-spacing: 2rem;
+        text-transform: uppercase;
+    }
 }

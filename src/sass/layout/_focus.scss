@@ -9,7 +9,13 @@
     background-color: $color-white;
     padding: 3rem;
     border: 5px solid $color-black;
+    transform: scale(0);
     z-index: 50;
+
+    &.appear {
+        transform: scale(1);
+        transition: all 1500ms;
+    }
 
     &__close {
         position: absolute;

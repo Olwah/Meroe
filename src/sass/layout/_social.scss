@@ -22,6 +22,10 @@
             width: 3rem;
         }
 
+        &:hover {
+            background-color: $color-grey-light-1;
+        }
+
         &:hover img {
             transform: translate(-.5px, -1px);
         }

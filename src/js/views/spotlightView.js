@@ -1,23 +1,59 @@
 import { elements, elementStrings } from './base';
+import { spotlightItems } from '../models/Spotlight';
+
+export const renderSpotlightItems = (item) => {
+    // Use 'keys' function to calculate length of an object
+    const spotlightItemsLength = Object.keys(spotlightItems);
+    for (let i = 0; i <= spotlightItemsLength.length - 1; i++) {
+        createSpotlightHTML(item[i].id, item[i].img, item[i].title, item[i].description);
+    }
+};
+
+const createSpotlightHTML = (id, img, title, description) => {
+    const markup = `
+    <div class="spotlight__piece" id="spotlight-${id}">
+        <img src="${img}" class="spotlight__img" alt="${title}">
+        <div class="spotlight__piece-info">
+            <h2 class="spotlight__title heading-2">${title}</h2>
+            <p class="spotlight__description">${description}</p>
+            <svg class="spotlight__zoom">
+                <use xlink:href="img/sprite.svg#icon-plus"></use>
+            </svg>
+        </div>
+    </div>
+    `;
+    elements.spotlightPieces.insertAdjacentHTML('beforeend', markup);
+};
 
 export const openFocus = (e) => {
     if (e.target.matches(`.${elementStrings.spotlightZoom}, .${elementStrings.spotlightZoom} *`)) {
+        
         // Get clicked item's img source and convert to relative path
         const imgSrcArr = e.target.closest(`.${elementStrings.spotlightPiece}`).firstElementChild.src.split('/');
         const imgSrcRelative = `/img/${imgSrcArr[imgSrcArr.length - 1]}`;
         
         // Get clicked item's information
-        const pieceTitle = e.target.parentElement.firstElementChild.textContent;
-        const pieceDesc = e.target.parentElement.firstElementChild.nextElementSibling.textContent;
+        const pieceTitle = e.target.closest('svg').parentElement.firstElementChild.textContent;
+        const pieceDesc = e.target.closest('svg').parentElement.firstElementChild.nextElementSibling.textContent;
 
         // Create HTML and insert into the DOM
         createFocusHTML(imgSrcRelative, pieceTitle, pieceDesc);
 
+        // Add second class to 'focus' element to enable transition
+        const focus = document.getElementById('focus');
+        const container = document.getElementById('container');
+        requestAnimationFrame(() => {
+            focus.classList.add('appear');
+            container.classList.add('focus-active');
+        });
+
+        /*
         // Add style to 'container' to blur background
         const container = document.getElementById('container');
         container.classList.add('focus-active');
+        */
 
-        // Add event listener to close the focus
+        // Add event listener to be able to close 'focus'
         const focusClose = document.getElementById('focus-close');
         focusClose.addEventListener('click', closeFocus);
     }

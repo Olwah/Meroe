@@ -30,7 +30,7 @@ export const openFocus = (e) => {
         
         // Get clicked item's img source and convert to relative path
         const imgSrcArr = e.target.closest(`.${elementStrings.spotlightPiece}`).firstElementChild.src.split('/');
-        const imgSrcRelative = `/img/${imgSrcArr[imgSrcArr.length - 1]}`;
+        const imgSrcRelative = `img/${imgSrcArr[imgSrcArr.length - 1]}`;
         
         // Get clicked item's information
         const pieceTitle = e.target.closest('svg').parentElement.firstElementChild.textContent;
@@ -75,7 +75,7 @@ const createFocusHTML = (img, title, desc) => {
     const markup = `
     <div class="focus" id="focus">
         <div class="focus__close">
-            <img src="/img/close.png" class="focus__close-icon" id="focus-close" alt="Close">
+            <img src="img/close.png" class="focus__close-icon" id="focus-close" alt="Close">
         </div>
         <div class="focus__img-wrapper">
             <img src="${img}" class="focus__img" alt="${title}">

@@ -1,0 +1,70 @@
+.update {
+
+    &__container {
+        background-color: $color-black;
+        color: $color-white;
+    }
+
+    &__title {
+        color: $color-white;
+        padding: 1.5rem;
+    }
+
+    &__form {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        padding: 2rem;
+
+        & label,
+        & select,
+        & input {
+            display: block;
+            margin-bottom: 2rem;
+        }
+
+        & label {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: .5rem;
+        }
+
+        & select {
+            width: 17rem;
+        }
+    }
+
+    &__heading {
+        font-size: 2rem;
+        padding-bottom: 1.5rem;
+    }
+
+    &__edit-slide {
+        display: none;
+
+        &.active {
+            display: block;
+        }
+    }
+
+    &__slideshow-info {
+        display: none;
+
+        &.active {
+            display: block;
+        }
+    }
+
+    &__btn {
+        padding: .5rem;
+    }
+}
+
+#update__edit-btn,
+#update__new-btn {
+    display: none;
+
+    &.active {
+        display: block;
+    }
+}

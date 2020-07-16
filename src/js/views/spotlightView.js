@@ -47,12 +47,6 @@ export const openFocus = (e) => {
             container.classList.add('focus-active');
         });
 
-        /*
-        // Add style to 'container' to blur background
-        const container = document.getElementById('container');
-        container.classList.add('focus-active');
-        */
-
         // Add event listener to be able to close 'focus'
         const focusClose = document.getElementById('focus-close');
         focusClose.addEventListener('click', closeFocus);

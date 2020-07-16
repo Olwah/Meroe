@@ -3,22 +3,30 @@ import { slideshowItems } from '../models/Slideshow';
 
 /**** NAVIGATION MENU ****/
 export const openNav = () => {
+    if (elements.navMenuOpenArrow.classList.contains('animate-nav-arrow')) {
+        elements.navMenuOpenArrow.classList.remove('animate-nav-arrow');
+        elements.navMenuOpenArrow.classList.add('animate-nav-arrow-reverse');
+    } else {
+        elements.navMenuOpenArrow.classList.remove('animate-nav-arrow-reverse');
+        elements.navMenuOpenArrow.classList.add('animate-nav-arrow');
+    }
+
     elements.navMenu.classList.toggle('active');
     elements.navContent.classList.toggle('active');
     elements.headerTitle.classList.toggle('active');
-    elements.navMenuOpenArrow.classList.toggle('active');
-    //elements.navMenuArrowList.classList.toggle('active');
+
     setTimeout(animateNavList, 100);
 };
 
 export const closeNav = () => {
     animateNavList();
     setTimeout( () => {
-        elements.navMenuOpenArrow.classList.remove('active');
+        //elements.navMenuOpenArrow.classList.remove('active');
+        elements.navMenuOpenArrow.classList.remove('animate-nav-arrow');
+        elements.navMenuOpenArrow.classList.add('animate-nav-arrow-reverse');
         elements.navMenu.classList.remove('active');
         elements.navContent.classList.remove('active');
         elements.headerTitle.classList.remove('active');
-        //elements.navMenuArrowList.classList.remove('active');
     }, 300);
 };
 
@@ -30,7 +38,7 @@ const animateNavList = () => {
 };
 
 /**** SLIDESHOW ****/
-
+/*
 let slideIndex = 0;
 
 export function showSlides() {
@@ -103,3 +111,4 @@ const createDotHTML = () => {
     const markup = `<span class="header__slideshow-dot" id="dot-${dotLength + 1}"></span>`;
     elements.headerSlideshowDots.insertAdjacentHTML('beforeend', markup);
 };
+*/

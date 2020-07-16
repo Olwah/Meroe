@@ -6,8 +6,8 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
         <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Archivo:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="/css/style.css">
-        <link rel="shortcut icon" type="image/png" href="/img/favicon.png">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="shortcut icon" type="image/png" href="img/favicon.png">
         
         <title>Meroë</title>
     </head>
@@ -18,20 +18,11 @@
             <nav class="nav-menu">
                 <div class="nav-menu__initial">
                     <div class="nav-menu__open-arrow">></div>
-                <!--
-                    <ul class="nav-menu__arrow-list">
-                        <li class="nav-menu__arrow nav-menu__arrow--1">&#8594;</li>
-                        <li class="nav-menu__arrow nav-menu__arrow--2">&#8594;</li>
-                        <li class="nav-menu__arrow nav-menu__arrow--3">&#8594;</li>
-                        <li class="nav-menu__arrow nav-menu__arrow--4">&#8594;</li>
-                    </ul>
-                -->
                 </div>
-                <div class="nav-menu__content">
-                    <div class="nav-menu__close"><span id="menu-close">&#8592;</span></div>
+                <div class="nav-menu__content">  
                     <ul class="nav-menu__list">
                         <li class="nav-menu__list-item"><a href="#spotlight">Latest</a></li>
-                        <li class="nav-menu__list-item"><a href="#">Portfolio</a></li>
+                        <li class="nav-menu__list-item"><a href="#portfolio">Portfolio</a></li>
                         <li class="nav-menu__list-item"><a href="#gallery">Charity</a></li>
                         <li class="nav-menu__list-item"><a href="#sketchbook">Sketchbook</a></li>
                         <li class="nav-menu__list-item"><a href="#information">More Info</a></li>
@@ -40,142 +31,30 @@
             </nav>
 
             <header class="header">
-                <div class="header__title">
-                    <h1 class="heading-1"><span id="menu-open">M</span><a href="#">eroë</a></h1>
+                <div class="header__wrapper">
+                    <div class="header__title">
+                        <div class="nav-menu__close nav-menu__translate"><span class="nav-menu__scale" id="menu-close">&#8592;</span></div>
+                        <h1 class="heading-1"><span id="menu-open">M</span><a href="#">eroë</a></h1>
+                    </div>
+                    <div class="social">
+                        <div class="social__item">
+                            <a href="https://www.instagram.com/meroedraws/" target="_blank"><img src="img/instagram.png" alt="Instagram"></a>
+                        </div>
+                        <div class="social__item">
+                            <a href="https://www.facebook.com/meroedraws" target="_blank"><img src="img/facebook.png" alt="Facebook"></a>
+                        </div>
+                        <div class="social__item">
+                            <a href="https://twitter.com/meroedraws/" target="_blank"><img class="social__item--twitter" src="img/twitter.png" alt="Twitter"></a>
+                        </div>
+                    </div>
                 </div>
-                <!--
-                <div class="header__content"></div>
-                -->
-                <div class="header__slideshow-container">
-                    <!--
-                    <div class="header__slideshow-slides header__slideshow-fade" id="slide-1">
-                        <img class="header__slideshow-img" src="/img/Frontpage2.jpg">
-                        
-                    </div>
-                    <div class="header__slideshow-slides header__slideshow-fade" id="slide-2">
-                        <img class="header__slideshow-img" src="/img/Frontpage3.jpg">
-                        
-                    </div>
-                    <div class="header__slideshow-slides header__slideshow-fade" id="slide-3">
-                        <img class="header__slideshow-img" src="/img/Frontpage4.jpg">
-                        
-                    </div>
-                    -->
-                </div>
-                <div class="header__slideshow-dots">
-                    <!--
-                        <span class="header__slideshow-dot" id="dot-1"></span>
-                        <span class="header__slideshow-dot" id="dot-2"></span>
-                        <span class="header__slideshow-dot" id="dot-3"></span>
-                    -->
-                    </div>
             </header>
-
-            <aside class="social">
-                <div class="social__item">
-                    <a href="https://www.instagram.com/meroedraws/" target="_blank"><img src="/img/instagram.png" alt="Instagram"></a>
-                </div>
-                <div class="social__item">
-                    <a href="https://www.facebook.com/meroedraws" target="_blank"><img src="/img/facebook.png" alt="Facebook"></a>
-                </div>
-                <div class="social__item">
-                    <a href="https://twitter.com/meroedraws/" target="_blank"><img class="social__item--twitter" src="/img/twitter.png" alt="Twitter"></a>
-                </div>
-            </aside>
 
             <main class="spotlight" id="spotlight">
                 <div class="spotlight__pieces">
                 <!--    
                     <div class="spotlight__piece" id="spotlight-1">
                         <img src="/img/Frontpage1.jpg" class="spotlight__img" alt="Spolight Piece 1">
-                        <div class="spotlight__piece-info">
-                            <h2 class="spotlight__title heading-2">Insert Title</h2>
-                            <p class="spotlight__description">Insert Description</p>
-                            <svg class="spotlight__zoom">
-                                <use xlink:href="img/sprite.svg#icon-plus"></use>
-                            </svg>
-                        </div>
-                    </div>
-
-                    <div class="spotlight__piece" id="spotlight-2">
-                        <img src="/img/Frontpage2.jpg" class="spotlight__img" alt="Spolight Piece 2">
-                        <div class="spotlight__piece-info">
-                            <h2 class="spotlight__title heading-2">Insert Title</h2>
-                            <p class="spotlight__description">Insert Description</p>
-                            <svg class="spotlight__zoom">
-                                <use xlink:href="img/sprite.svg#icon-plus"></use>
-                            </svg>
-                        </div>
-                    </div>
-
-                    <div class="spotlight__piece" id="spotlight-3">
-                        <img src="/img/Frontpage3.jpg" class="spotlight__img" alt="Spolight Piece 3">
-                        <div class="spotlight__piece-info">
-                            <h2 class="spotlight__title heading-2">Insert Title</h2>
-                            <p class="spotlight__description">Insert Description</p>
-                            <svg class="spotlight__zoom">
-                                <use xlink:href="img/sprite.svg#icon-plus"></use>
-                            </svg>
-                        </div>
-                    </div>
-
-                    <div class="spotlight__piece" id="spotlight-4">
-                        <img src="/img/Frontpage4.jpg" class="spotlight__img" alt="Spolight Piece 4">
-                        <div class="spotlight__piece-info">
-                            <h2 class="spotlight__title heading-2">Insert Title</h2>
-                            <p class="spotlight__description">Insert Description</p>
-                            <svg class="spotlight__zoom">
-                                <use xlink:href="img/sprite.svg#icon-plus"></use>
-                            </svg>
-                        </div>
-                    </div>
-
-                    <div class="spotlight__piece" id="spotlight-5">
-                        <img src="/img/Frontpage5.jpg" class="spotlight__img" alt="Spolight Piece 5">
-                        <div class="spotlight__piece-info">
-                            <h2 class="spotlight__title heading-2">Insert Title</h2>
-                            <p class="spotlight__description">Insert Description</p>
-                            <svg class="spotlight__zoom">
-                                <use xlink:href="img/sprite.svg#icon-plus"></use>
-                            </svg>
-                        </div>
-                    </div>
-
-                    <div class="spotlight__piece" id="spotlight-6">
-                        <img src="/img/Frontpage6.jpg" class="spotlight__img" alt="Spolight Piece 6">
-                        <div class="spotlight__piece-info">
-                            <h2 class="spotlight__title heading-2">Insert Title</h2>
-                            <p class="spotlight__description">Insert Description</p>
-                            <svg class="spotlight__zoom">
-                                <use xlink:href="img/sprite.svg#icon-plus"></use>
-                            </svg>
-                        </div>
-                    </div>
-
-                    <div class="spotlight__piece" id="spotlight-7">
-                        <img src="/img/Frontpage1.jpg" class="spotlight__img" alt="Spolight Piece 7">
-                        <div class="spotlight__piece-info">
-                            <h2 class="spotlight__title heading-2">Insert Title</h2>
-                            <p class="spotlight__description">Insert Description</p>
-                            <svg class="spotlight__zoom">
-                                <use xlink:href="img/sprite.svg#icon-plus"></use>
-                            </svg>
-                        </div>
-                    </div>
-
-                    <div class="spotlight__piece" id="spotlight-8">
-                        <img src="/img/Frontpage1.jpg" class="spotlight__img" alt="Spolight Piece 8">
-                        <div class="spotlight__piece-info">
-                            <h2 class="spotlight__title heading-2">Insert Title</h2>
-                            <p class="spotlight__description">Insert Description</p>
-                            <svg class="spotlight__zoom">
-                                <use xlink:href="img/sprite.svg#icon-plus"></use>
-                            </svg>
-                        </div>
-                    </div>
-
-                    <div class="spotlight__piece" id="spotlight-9">
-                        <img src="/img/Frontpage1.jpg" class="spotlight__img" alt="Spolight Piece 9">
                         <div class="spotlight__piece-info">
                             <h2 class="spotlight__title heading-2">Insert Title</h2>
                             <p class="spotlight__description">Insert Description</p>
@@ -213,6 +92,7 @@
              -->
 
             <footer class="footer">
+            <!--
                 <div class="update__container">
                     <div class="update__title heading-1">Meroë Update</div>
                     <div class="update__form" id="slideshow-form">
@@ -236,17 +116,18 @@
                             <input type="text" id="imgSrc" name="imgSrc">
                             <label for="imgTitle">Title</label>
                             <input type="text" id="imgTitle" name="imgTitle">
-                            <!--
+                            
                             <label for="imgFile">Upload image file:</label>
                             <input type="file" id="imgFile" name="imgFile">
-                            -->
+                            
                             <button class="update__btn active" id="update__edit-btn">Update</button>
                             <button class="update__btn" id="update__new-btn">Add New Slide</button>
                         </div>   
                     </div>
                 </div>
+            -->
             </footer>
         </div>
     </body>
-    <script src="/js/bundle.js"></script>
+    <script src="js/index.js"></script>
 </html>

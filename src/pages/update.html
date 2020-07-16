@@ -14,22 +14,35 @@
     <body>
         <div class="update__container">
             <div class="update__title heading-1">Meroë Update</div>
-            <form class="update__form">
-                <h2 class="heading-2">Update Slideshow Images</h2>
-                <select name="slideshow-img" id="slideshow-img">
-                    <option value="1">Slide 1</option>
-                    <option value="2">Slide 2</option>
-                    <option value="3">Slide 3</option>
+            <div class="update__form" id="slideshow-form">
+                <h2 class="update__heading heading-2">Update Slideshow Images</h2>
+                <label for="whatTask">What do you want to do?</label>
+                <select name="whatTask" id="whatTask">
+                    <option value="0">Change an existing slide</option>
+                    <option value="1">Create a new slide</option>
                 </select>
+                <div class="update__edit-slide active">
+                    <label for="slideshow-img">Select slide to be updated</label>
+                    <select name="slideshow-img" id="slideshow-img">
+                        <option value="0">Choose a slide</option>
+                        <option value="1">Slide 1</option>
+                        <option value="2">Slide 2</option>
+                        <option value="3">Slide 3</option>
+                    </select>
+                </div>
                 <div class="update__slideshow-info">
                     <label for="imgSrc">Image Source</label>
                     <input type="text" id="imgSrc" name="imgSrc">
                     <label for="imgTitle">Title</label>
                     <input type="text" id="imgTitle" name="imgTitle">
+                    <!--
                     <label for="imgFile">Upload image file:</label>
                     <input type="file" id="imgFile" name="imgFile">
-                </div>
-            </form>
-        </div>  
+                    -->
+                    <button class="update__btn active" id="update__edit-btn">Update</button>
+                    <button class="update__btn" id="update__new-btn">Add New Slide</button>
+                </div>   
+            </div>
+        </div>
     </body>
 </html>

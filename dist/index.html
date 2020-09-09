@@ -1,31 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-        <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Archivo:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="/css/style.css">
-        <link rel="shortcut icon" type="image/png" href="/img/favicon.png">
-        
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Archivo:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@2.4.14/dist/css/splide.min.css">
+        <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
         <title>Meroë</title>
     </head>
     <body>
-
         <div class="container" id="container">
-
             <nav class="nav-menu">
                 <div class="nav-menu__initial">
                     <div class="nav-menu__open-arrow">></div>
                 </div>
-                <div class="nav-menu__content">  
+                <div class="nav-menu__content">
                     <ul class="nav-menu__list">
-                        <li class="nav-menu__list-item"><a href="#spotlight">Latest</a></li>
-                        <li class="nav-menu__list-item"><a href="#">Portfolio</a></li>
+                        <li class="nav-menu__list-item"><a href="#spotlight">Portfolio</a></li>
+                        <li class="nav-menu__list-item"><a href="#print">Print</a></li>
                         <li class="nav-menu__list-item"><a href="#gallery">Charity</a></li>
                         <li class="nav-menu__list-item"><a href="#sketchbook">Sketchbook</a></li>
-                        <li class="nav-menu__list-item"><a href="#information">More Info</a></li>
+                        <li class="nav-menu__list-item"><a href="#about">About</a></li>
                     </ul>
                 </div>
             </nav>
@@ -33,65 +35,176 @@
             <header class="header">
                 <div class="header__wrapper">
                     <div class="header__title">
-                        <div class="nav-menu__close nav-menu__translate"><span class="nav-menu__scale" id="menu-close">&#8592;</span></div>
+                        <div class="nav-menu__close nav-menu__translate">
+                            <span class="nav-menu__scale" id="menu-close">&#8592;</span>
+                        </div>
+                        <div class="header__logo">
+                            <img src="img/logo.jpg" alt="Meroë Logo" />
+                        </div>
                         <h1 class="heading-1"><span id="menu-open">M</span><a href="#">eroë</a></h1>
                     </div>
                     <div class="social">
                         <div class="social__item">
-                            <a href="https://www.instagram.com/meroedraws/" target="_blank"><img src="/img/instagram.png" alt="Instagram"></a>
+                            <a href="https://www.instagram.com/meroedraws/" target="_blank"
+                                ><img src="img/instagram.png" alt="Instagram"
+                            /></a>
                         </div>
                         <div class="social__item">
-                            <a href="https://www.facebook.com/meroedraws" target="_blank"><img src="/img/facebook.png" alt="Facebook"></a>
+                            <a href="https://www.facebook.com/meroedraws" target="_blank"
+                                ><img src="img/facebook.png" alt="Facebook"
+                            /></a>
                         </div>
                         <div class="social__item">
-                            <a href="https://twitter.com/meroedraws/" target="_blank"><img class="social__item--twitter" src="/img/twitter.png" alt="Twitter"></a>
+                            <a href="https://twitter.com/meroedraws/" target="_blank"
+                                ><img class="social__item--twitter" src="img/twitter.png" alt="Twitter"
+                            /></a>
                         </div>
                     </div>
                 </div>
             </header>
 
             <main class="spotlight" id="spotlight">
+                <div class="spotlight__sidebar">
+                    <div class="spotlight__sticky sticky heading-2">Portfolio</div>
+                    <div class="fade-out"></div>
+                </div>
                 <div class="spotlight__pieces">
-                <!--    
-                    <div class="spotlight__piece" id="spotlight-1">
-                        <img src="/img/Frontpage1.jpg" class="spotlight__img" alt="Spolight Piece 1">
-                        <div class="spotlight__piece-info">
-                            <h2 class="spotlight__title heading-2">Insert Title</h2>
-                            <p class="spotlight__description">Insert Description</p>
-                            <svg class="spotlight__zoom">
-                                <use xlink:href="img/sprite.svg#icon-plus"></use>
-                            </svg>
-                        </div>
-                    </div>
-                -->
+                    <!-- DYNAMICALLY CREATED -->
                 </div>
             </main>
 
-            <section class="gallery">
-                Charity
+            <section class="print" id="print">
+                <div class="print__sidebar">
+                    <div class="print__sticky sticky heading-2">Print</div>
+                    <div class="fade-out"></div>
+                </div>
+                <div class="print__info">
+                    <!--<h2 class="print__title heading-2">Print</h2>-->
+                    <p class="print__description">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi itaque voluptatem quasi
+                        totam iure! Ab consequatur nam, reprehenderit dolorum nesciunt, unde perspiciatis provident
+                        doloribus nobis ipsam sapiente laborum assumenda modi!
+                    </p>
+                </div>
+                <div class="print__items splide">
+                    <div class="splide__track">
+                        <div class="splide__list">
+                            <!-- DYNAMICALLY CREATED -->
+                            <!--<li class="splide__slide">Slide 01</li>-->
+                        </div>
+                    </div>
+                </div>
+                <!--
+                <div class="print__buttons">
+                    <button class="print__button print__button--left" data-prev="-1">&lt;</button>
+                    <button class="print__button print__button--right" data-next="1">&gt;</button>
+                </div>
+                -->
             </section>
 
-            <section class="sketchbook">
-                Sketchbook
+            <section class="gallery" id="gallery">
+                <div class="gallery__sidebar">
+                    <div class="gallery__sticky sticky heading-2">Charity</div>
+                    <div class="fade-out"></div>
+                </div>
+                <div class="gallery__info">
+                    <!--<h2 class="gallery__title heading-2">Charity</h2>-->
+                    <p class="gallery__description">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi itaque voluptatem quasi
+                        totam iure! Ab consequatur nam, reprehenderit dolorum nesciunt, unde perspiciatis provident
+                        doloribus nobis ipsam sapiente laborum assumenda modi!
+                    </p>
+                </div>
+                <div class="gallery__items">
+                    <!-- DYNAMICALLY CREATED -->
+                </div>
             </section>
 
-            <!--
-            <div class="focus" id="focus">
-                <div class="focus__close">
-                    <img src="/img/close.png" class="focus__close-icon" id="focus-close" alt="Close">
+            <section class="sketchbook" id="sketchbook">
+                <div class="sketchbook__sidebar">
+                    <div class="sketchbook__sticky sticky heading-2">Sketchbook</div>
+                    <div class="fade-out"></div>
                 </div>
-                <div class="focus__img-wrapper">
-                    <img src="/img/Frontpage1.jpg" class="focus__img" alt="Focus Piece">
+                <div class="sketchbook__info">
+                    <!--<h3 class="sketchbook__title heading-2">Sketchbook</h3>-->
+                    <p class="sketchbook__description">
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum quas aperiam, perspiciatis
+                        itaque corrupti voluptates quibusdam, et, eos repellendus quisquam facere? Saepe, pariatur nulla
+                        perferendis odit quas non quo nostrum.
+                    </p>
                 </div>
-                <div class="focus__piece-info">
-                    <h2 class="focus__title heading-2">Insert Title</h2>
-                    <p class="focus__description">Insert Description</p>
-                    <h3 class="focus__logo">Meroë</h3>
+                <div class="sketchbook__book" id="sketchbook__book">
+                    <div class="carousel">
+                        <div class="carousel__control"></div>
+                        <div class="carousel__stage">   
+                            <div class="spinner spinner--left">
+                                <!-- DYNAMICALLY CREATED -->
+                            <!--
+                                <div class="spinner__face js-active">
+                                    <div class="content" data-type="sketch-1">
+                                        <div class="content__left">
+                                            <img src="img/Frontpage1.jpg" alt="Sketchbook Image 1" />
+                                        </div>
+                                        <div class="content__right">
+                                            <img src="img/Frontpage2.jpg" alt="Sketchbook Image 2" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>-->
+                        </div>
+                    </div>
                 </div>
-            </div>
-             -->
+            </section>
+
+            <section class="about" id="about">
+                <div class="about__sidebar">
+                    <div class="about__sticky sticky heading-2">About</div>
+                    <div class="fade-out"></div>
+                </div>
+                <div class="about__info">
+                    <div class="about__title heading-5">Meroë is a London based illustrator and designer.</div>
+                    <div class="about__contact">
+                        Please get in touch to discuss commissions or collaborations:
+                        <a href="mailto:contact@meroedraws.com">contact@meroedraws.com</a>
+                    </div>
+
+                    <div class="about__clients">
+                        <div class="about__heading">Clients:</div>
+                        <ul class="about__client-list">
+                            <li class="about__client-item">Kanpai Saké Brewery</li>
+                            <li class="about__client-item">Maison Des Langues</li>
+                            <li class="about__client-item">Citigroup</li>
+                            <li class="about__client-item">University of the Arts London</li>
+                            <li class="about__client-item">Battersea Arts Centre</li>
+                            <li class="about__client-item">Moment Watches</li>
+                            <li class="about__client-item">Crypton Future Media</li>
+                        </ul>
+                    </div>
+                    <div class="about__awards">
+                        <div class="about__heading">Awards:</div>
+                        <ul class="about__award-list">
+                            <li class="about__award-item">Brill Award - Kingston University (2009)</li>
+                            <li class="about__award-item">Showcase 100 - Hire An Illustrator (2015)</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
 
             <footer class="footer">
+                <div class="footer__title">
+                    <div class="footer__home heading-3"><a href="#">Meroë</a></div>
+                    <div class="footer__img">
+                        <img src="img/favicon.png" alt="Meroë" />
+                    </div>
+                </div>
+                <ul class="footer__links">
+                    <li class="footer__link-item heading-5"><a href="#spotlight">Portfolio</a></li>
+                    <li class="footer__link-item heading-5"><a href="#print">Print</a></li>
+                    <li class="footer__link-item heading-5"><a href="#charity">Charity</a></li>
+                    <li class="footer__link-item heading-5"><a href="#sketchbook">Sketchbook</a></li>
+                    <li class="footer__link-item heading-5"><a href="#about">About</a></li>
+                </ul>
+            </footer>
             <!--
                 <div class="update__container">
                     <div class="update__title heading-1">Meroë Update</div>
@@ -126,8 +239,8 @@
                     </div>
                 </div>
             -->
-            </footer>
         </div>
     </body>
-    <script src="/js/index.js"></script>
+    <!--<script src="js/index.js"></script>-->
+    <script src="js/index.js"></script>
 </html>

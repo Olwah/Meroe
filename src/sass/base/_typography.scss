@@ -1,10 +1,45 @@
+p {
+    font-size: 1.5rem;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 .heading {
+    &-1,
+    &-2,
+    &-3,
+    &-4,
+    &-5 {
+        font-family: $font-headings;
+        color: black;
+        text-transform: uppercase;
+    }
 
     &-1 {
-        font-family: $font-headings;
         font-size: 4.5rem;
-        color: black;
         letter-spacing: 2rem;
-        text-transform: uppercase;
+    }
+
+    &-2 {
+        font-size: 3.5rem;
+        letter-spacing: 1.5rem;
+    }
+
+    &-3 {
+        font-size: 2rem;
+        letter-spacing: 0.3rem;
+    }
+
+    &-4 {
+        font-size: 1.7rem;
+        letter-spacing: 0.2rem;
+    }
+
+    &-5 {
+        font-size: 1.5rem;
+        letter-spacing: 0.1rem;
     }
 }

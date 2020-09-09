@@ -1,55 +1,67 @@
 .focus {
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
     position: fixed;
-    top: 5rem;
-    left: 5rem;
-    width: 90vw;
-    height: 85vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    //width: 90vw;
+    height: 90vh;
     background-color: $color-white;
-    padding: 3rem;
-    border: 5px solid $color-black;
-    transform: scale(0);
+    padding: 1rem;
+    border: 2px solid $color-black;
+    box-shadow: 7px 9px 20px $color-grey-dark-1;
+    opacity: 0;
+    transition: opacity 1s;
     z-index: 50;
 
+    &--portrait {
+        justify-content: flex-start;
+        flex-direction: row;
+        width: 65vw;
+    }
+
     &.appear {
-        transform: scale(1);
-        transition: all 1500ms;
+        opacity: 1;
+        transition: opacity 1.5s;
     }
 
     &__close {
+        display: flex;
         position: absolute;
-        top: .5rem;
-        right: .5rem;
+        top: -2rem;
+        right: -2rem;
+        background-color: $color-white;
+        padding: 0.5rem;
+        border-radius: 50%;
         cursor: pointer;
         z-index: 20;
 
         &-icon {
             width: 2.5rem;
             height: 2.5rem;
-        } 
+        }
     }
 
     &__img-wrapper {
         position: relative;
-        width: 80%;
-        height: 100%;
+        width: 100%;
+        height: 75%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
 
-        &::after {
-            display: block;
-            content: '';
-            /* 16:9 aspect ratio */
-            padding-bottom: 56.25%;
+        &--portrait {
+            width: max-content;
+            height: 100%;
         }
     }
 
     &__img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        //object-fit: cover;
+        max-width: 100%;
+        max-height: 100%;
     }
 
     &__piece-info {
@@ -57,30 +69,38 @@
         flex-direction: column;
 
         position: relative;
-        width: 20%;
         height: 100%;
         background-color: $color-white;
-        font-family: $font-headings;
         color: $color-black;
         padding: 1rem;
+
+        &--portrait {
+            flex-basis: 40rem;
+            flex-grow: 2;
+            padding: 0 3rem 1rem 3rem;
+        }
     }
 
     &__title {
-        font-size: 3rem;
-        padding-bottom: 3rem;
+        font-family: $font-headings;
+        font-size: 2rem;
+        padding-bottom: 1rem;
     }
 
-    &__description {
-        font-family: $font-primary;
-        font-size: 2rem;
-        padding-bottom: 3rem;
+    &__client {
+        font-style: italic;
+        padding-bottom: 1.5rem;
     }
 
     &__logo {
         position: absolute;
-        bottom: 1rem;
-        right: 1rem;
-
+        bottom: 0;
+        right: 0;
+        font-family: $font-headings;
         text-transform: uppercase;
+    }
+
+    &__hide {
+        display: none;
     }
 }

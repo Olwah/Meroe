@@ -1,38 +1,41 @@
 {
-  "name": "meroe",
-  "version": "1.0.0",
-  "description": "Meroe Illustration Webpage",
-  "main": "index.js",
-  "scripts": {
-    "watch:sass": "node-sass src/sass/main.scss dist/css/style.css -w",
-    "devserver": "live-server",
-    "start-css": "npm-run-all --parallel devserver watch:sass",
-    "dev": "webpack --mode development",
-    "build": "webpack --mode production",
-    "start-js": "webpack-dev-server --mode development --open",
-    "compile:sass": "node-sass src/sass/main.scss dist/css/style.comp.css",
-    "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' dist/css/style.comp.css -o dist/css/style.prefix.css",
-    "compress:css": "node-sass dist/css/style.prefix.css dist/css/style.css --output-style compressed",
-    "build:css": "npm-run-all compile:sass prefix:css compress:css"
-  },
-  "author": "Oliver Stuart",
-  "license": "ISC",
-  "devDependencies": {
-    "autoprefixer": "^7.1.4",
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.4",
-    "babel-preset-env": "^1.6.1",
-    "concat": "^1.0.3",
-    "html-webpack-plugin": "^3.0.7",
-    "node-sass": "^4.5.3",
-    "npm-run-all": "^4.1.1",
-    "postcss-cli": "^4.1.1",
-    "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "^3.1.1"
-  },
-  "dependencies": {
-    "babel-polyfill": "^6.26.0",
-    "uniqid": "^4.1.1",
-    "webpack": "^4.43.0"
-  }
+    "name": "meroe",
+    "version": "1.0.0",
+    "description": "Meroe Illustration Webpage",
+    "main": "index.js",
+    "scripts": {
+        "debug": "ndb",
+        "watch:sass": "node-sass src/sass/main.scss dist/css/style.css -w",
+        "devserver": "live-server",
+        "start-css": "npm-run-all --parallel devserver watch:sass",
+        "dev": "webpack --mode development",
+        "build": "webpack --mode production",
+        "start-js": "webpack-dev-server --mode development --open",
+        "compile:sass": "node-sass src/sass/main.scss dist/css/style.comp.css",
+        "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' dist/css/style.comp.css -o dist/css/style.prefix.css",
+        "compress:css": "node-sass dist/css/style.prefix.css dist/css/style.css --output-style compressed",
+        "build:css": "npm-run-all compile:sass prefix:css compress:css"
+    },
+    "author": "Oliver Stuart",
+    "license": "ISC",
+    "devDependencies": {
+        "autoprefixer": "^7.1.4",
+        "babel-core": "^6.26.0",
+        "babel-loader": "^7.1.4",
+        "babel-preset-env": "^1.6.1",
+        "concat": "^1.0.3",
+        "html-webpack-plugin": "^3.0.7",
+        "node-sass": "^4.5.3",
+        "npm-run-all": "^4.1.1",
+        "postcss-cli": "^4.1.1",
+        "webpack-cli": "^3.3.12",
+        "webpack-dev-server": "^3.1.1"
+    },
+    "dependencies": {
+        "@splidejs/splide": "^2.4.14",
+        "babel-polyfill": "^6.26.0",
+        "page-flip": "^1.1.0",
+        "uniqid": "^4.1.1",
+        "webpack": "^4.43.0"
+    }
 }

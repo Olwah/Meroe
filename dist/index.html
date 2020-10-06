@@ -86,37 +86,51 @@
                         doloribus nobis ipsam sapiente laborum assumenda modi!
                     </p>
                 </div>
-                <div class="print__items splide">
+                <div id="print-splide" class="print__items splide">
                     <div class="splide__track">
-                        <div class="splide__list">
+                        <div class="splide__list print__list">
                             <!-- DYNAMICALLY CREATED -->
-                            <!--<li class="splide__slide">Slide 01</li>-->
                         </div>
                     </div>
                 </div>
-                <!--
-                <div class="print__buttons">
-                    <button class="print__button print__button--left" data-prev="-1">&lt;</button>
-                    <button class="print__button print__button--right" data-next="1">&gt;</button>
-                </div>
-                -->
             </section>
-
+            <!--
             <section class="gallery" id="gallery">
                 <div class="gallery__sidebar">
                     <div class="gallery__sticky sticky heading-2">Charity</div>
                     <div class="fade-out"></div>
                 </div>
                 <div class="gallery__info">
-                    <!--<h2 class="gallery__title heading-2">Charity</h2>-->
-                    <p class="gallery__description">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi itaque voluptatem quasi
-                        totam iure! Ab consequatur nam, reprehenderit dolorum nesciunt, unde perspiciatis provident
-                        doloribus nobis ipsam sapiente laborum assumenda modi!
+                   <p class="gallery__description">
+                        Like a lot of people I've taken up Dry January and have been doing it every year since 2018. Rather than just committing to not drinking alcohol I added a twist and decided to do personalised postcards, accepting small donations for each. I created a 'tiered system' for either a postcard or a portrait and it's been a success so far. I have raised around £1200 for cancer research in the years since I started and continue to keep doing it at the start of each year.
+                        <br><br>
+                        Here you'll find a range of what I believe to be my best or most interesting images from across the years so far. 
                     </p>
                 </div>
                 <div class="gallery__items">
-                    <!-- DYNAMICALLY CREATED -->
+           
+                </div>
+            </section>
+            -->
+            <section class="charity" id="charity">
+                <div class="charity__sidebar">
+                    <div class="charity__sticky sticky heading-2">Charity</div>
+                    <div class="fade-out"></div>
+                </div>
+                <div class="charity__info">
+                    <!--<h2 class="charity__title heading-2">Charity</h2>-->
+                    <p class="charity__description">
+                        Like a lot of people I've taken up Dry January and have been doing it every year since 2018. Rather than just committing to not drinking alcohol I added a twist and decided to do personalised postcards, accepting small donations for each. I created a 'tiered system' for either a postcard or a portrait and it's been a success so far. I have raised around £1200 for cancer research in the years since I started and continue to keep doing it at the start of each year.
+                        <br><br>
+                        Here you'll find a range of what I believe to be my best or most interesting images from across the years so far. 
+                    </p>
+                </div>
+                <div id="charity-splide" class="carousel__items splide">
+                    <div class="splide__track">
+                        <div class="splide__list charity__list">
+                            <!-- DYNAMICALLY CREATED -->
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -167,7 +181,6 @@
                         Please get in touch to discuss commissions or collaborations:
                         <a href="mailto:contact@meroedraws.com">contact@meroedraws.com</a>
                     </div>
-
                     <div class="about__clients">
                         <div class="about__heading">Clients:</div>
                         <ul class="about__client-list">
@@ -194,7 +207,7 @@
                 <div class="footer__title">
                     <div class="footer__home heading-3"><a href="#">Meroë</a></div>
                     <div class="footer__img">
-                        <img src="img/favicon.png" alt="Meroë" />
+                        <img src="img/logo.jpg" alt="Meroë" />
                     </div>
                 </div>
                 <ul class="footer__links">
@@ -205,42 +218,7 @@
                     <li class="footer__link-item heading-5"><a href="#about">About</a></li>
                 </ul>
             </footer>
-            <!--
-                <div class="update__container">
-                    <div class="update__title heading-1">Meroë Update</div>
-                    <div class="update__form" id="slideshow-form">
-                        <h2 class="update__heading heading-2">Update Slideshow Images</h2>
-                        <label for="whatTask">What do you want to do?</label>
-                        <select name="whatTask" id="whatTask">
-                            <option value="0">Change an existing slide</option>
-                            <option value="1">Create a new slide</option>
-                        </select>
-                        <div class="update__edit-slide active">
-                            <label for="slideshow-img">Select slide to be updated</label>
-                            <select name="slideshow-img" id="slideshow-img">
-                                <option value="0">Choose a slide</option>
-                                <option value="1">Slide 1</option>
-                                <option value="2">Slide 2</option>
-                                <option value="3">Slide 3</option>
-                            </select>
-                        </div>
-                        <div class="update__slideshow-info">
-                            <label for="imgSrc">Image Source</label>
-                            <input type="text" id="imgSrc" name="imgSrc">
-                            <label for="imgTitle">Title</label>
-                            <input type="text" id="imgTitle" name="imgTitle">
-                            
-                            <label for="imgFile">Upload image file:</label>
-                            <input type="file" id="imgFile" name="imgFile">
-                            
-                            <button class="update__btn active" id="update__edit-btn">Update</button>
-                            <button class="update__btn" id="update__new-btn">Add New Slide</button>
-                        </div>   
-                    </div>
-                </div>
-            -->
         </div>
     </body>
-    <!--<script src="js/index.js"></script>-->
     <script src="js/index.js"></script>
 </html>

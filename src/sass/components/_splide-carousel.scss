@@ -1,34 +1,4 @@
-.print {
-    grid-column: full-start / full-end;
-
-    display: grid;
-    grid-template-rows: min-content max-content;
-    grid-template-columns: [full-start] 8rem [center-start] 1fr [full-end];
-
-    margin-bottom: 30rem;
-
-    &__sidebar {
-        grid-row: 1 / -1;
-        grid-column: full-start / center-start;
-
-        position: relative;
-    }
-
-    &__sticky {
-        letter-spacing: 0.5rem;
-        padding-top: 1.5rem;
-    }
-
-    &__info {
-        grid-row: 1 / 2;
-        grid-column: center-start / full-end;
-        padding: 1.5rem;
-    }
-
-    &__description {
-    }
-
-    /*
+.carousel {
     &__items {
         display: flex;
         position: relative;
@@ -41,8 +11,8 @@
         position: relative;
         text-align: center;
 
-        &:hover .print__zoom,
-        &:hover .print__item-info {
+        &:hover .carousel__zoom,
+        &:hover .carousel__item-info {
             visibility: visible;
             animation: diffuse-info 0.8s linear 1;
         }
@@ -75,10 +45,6 @@
         z-index: 5;
     }
 
-    &__item-title {
-
-    }
-
     &__zoom {
         visibility: hidden;
         background-color: $color-white;
@@ -106,5 +72,4 @@
             background: $color-black !important;
         }
     }
-    */
 }

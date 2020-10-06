@@ -1,4 +1,4 @@
-.gallery {
+.charity {
     grid-column: full-start / full-end;
 
     display: grid;
@@ -43,7 +43,7 @@
     &__item {
         position: relative;
 
-        &:hover .gallery__zoom {
+        &:hover .charity__zoom {
             visibility: visible;
             animation: diffuse-info 0.8s linear 1;
         }

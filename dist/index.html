@@ -6,6 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+        <script src="./js/turn.min.js"></script>
         <link
             href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Archivo:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap"
             rel="stylesheet"
@@ -25,7 +26,7 @@
                     <ul class="nav-menu__list">
                         <li class="nav-menu__list-item"><a href="#spotlight">Portfolio</a></li>
                         <li class="nav-menu__list-item"><a href="#print">Print</a></li>
-                        <li class="nav-menu__list-item"><a href="#gallery">Charity</a></li>
+                        <li class="nav-menu__list-item"><a href="#charity">Charity</a></li>
                         <li class="nav-menu__list-item"><a href="#sketchbook">Sketchbook</a></li>
                         <li class="nav-menu__list-item"><a href="#about">About</a></li>
                     </ul>
@@ -79,14 +80,13 @@
                     <div class="fade-out"></div>
                 </div>
                 <div class="print__info">
-                    <!--<h2 class="print__title heading-2">Print</h2>-->
                     <p class="print__description">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi itaque voluptatem quasi
                         totam iure! Ab consequatur nam, reprehenderit dolorum nesciunt, unde perspiciatis provident
                         doloribus nobis ipsam sapiente laborum assumenda modi!
                     </p>
                 </div>
-                <div id="print-splide" class="print__items splide">
+                <div id="print-splide" class="splide-carousel__items splide">
                     <div class="splide__track">
                         <div class="splide__list print__list">
                             <!-- DYNAMICALLY CREATED -->
@@ -108,24 +108,23 @@
                     </p>
                 </div>
                 <div class="gallery__items">
-           
-                </div>
+                    <!-- DYNAMICALLY CREATED -->
+<!--                </div>
             </section>
-            -->
+-->
             <section class="charity" id="charity">
                 <div class="charity__sidebar">
                     <div class="charity__sticky sticky heading-2">Charity</div>
                     <div class="fade-out"></div>
                 </div>
                 <div class="charity__info">
-                    <!--<h2 class="charity__title heading-2">Charity</h2>-->
                     <p class="charity__description">
                         Like a lot of people I've taken up Dry January and have been doing it every year since 2018. Rather than just committing to not drinking alcohol I added a twist and decided to do personalised postcards, accepting small donations for each. I created a 'tiered system' for either a postcard or a portrait and it's been a success so far. I have raised around £1200 for cancer research in the years since I started and continue to keep doing it at the start of each year.
                         <br><br>
                         Here you'll find a range of what I believe to be my best or most interesting images from across the years so far. 
                     </p>
                 </div>
-                <div id="charity-splide" class="carousel__items splide">
+                <div id="charity-splide" class="splide-carousel__items splide">
                     <div class="splide__track">
                         <div class="splide__list charity__list">
                             <!-- DYNAMICALLY CREATED -->
@@ -140,7 +139,6 @@
                     <div class="fade-out"></div>
                 </div>
                 <div class="sketchbook__info">
-                    <!--<h3 class="sketchbook__title heading-2">Sketchbook</h3>-->
                     <p class="sketchbook__description">
                         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum quas aperiam, perspiciatis
                         itaque corrupti voluptates quibusdam, et, eos repellendus quisquam facere? Saepe, pariatur nulla
@@ -148,24 +146,18 @@
                     </p>
                 </div>
                 <div class="sketchbook__book" id="sketchbook__book">
-                    <div class="carousel">
-                        <div class="carousel__control"></div>
-                        <div class="carousel__stage">   
-                            <div class="spinner spinner--left">
-                                <!-- DYNAMICALLY CREATED -->
-                            <!--
-                                <div class="spinner__face js-active">
-                                    <div class="content" data-type="sketch-1">
-                                        <div class="content__left">
-                                            <img src="img/Frontpage1.jpg" alt="Sketchbook Image 1" />
-                                        </div>
-                                        <div class="content__right">
-                                            <img src="img/Frontpage2.jpg" alt="Sketchbook Image 2" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>-->
-                        </div>
+                    <div class="splide__arrow splide-carousel__slide-arrow sketchbook__btn sketchbook__btn--left">
+                        <svg>
+                            <use xlink:href="img/sprite.svg#icon-arrow-right"></use>
+                        </svg>
+                    </div>
+                    <div class="splide__arrow splide-carousel__slide-arrow sketchbook__btn sketchbook__btn--right">
+                        <svg>
+                            <use xlink:href="img/sprite.svg#icon-arrow-right"></use>
+                        </svg>
+                    </div>
+                    <div id="sketchbook__magazine">
+                        <!--DYNAMICALLY CREATED-->
                     </div>
                 </div>
             </section>

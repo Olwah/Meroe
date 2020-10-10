@@ -1,4 +1,4 @@
-.carousel {
+.splide-carousel {
     &__items {
         display: flex;
         position: relative;
@@ -11,8 +11,8 @@
         position: relative;
         text-align: center;
 
-        &:hover .carousel__zoom,
-        &:hover .carousel__item-info {
+        &:hover .splide-carousel__zoom,
+        &:hover .splide-carousel__item-info {
             visibility: visible;
             animation: diffuse-info 0.8s linear 1;
         }

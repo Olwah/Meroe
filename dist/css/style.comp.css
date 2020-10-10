@@ -685,7 +685,86 @@ a {
   display: grid;
   grid-template-rows: min-content max-content;
   grid-template-columns: [full-start] 8rem [center-start] 1fr [full-end];
-  margin-bottom: 30rem; }
+  margin-bottom: 30rem;
+  /*
+    &__items {
+        display: flex;
+        position: relative;
+        width: 100%;
+        padding: 2rem 7rem 5rem 7rem;
+        overflow: hidden;
+    }
+
+    &__item {
+        position: relative;
+        text-align: center;
+
+        &:hover .print__zoom,
+        &:hover .print__item-info {
+            visibility: visible;
+            animation: diffuse-info 0.8s linear 1;
+        }
+
+        & img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        &-info {
+            position: absolute;
+            bottom: 1rem;
+            left: 1rem;
+        }
+    }
+
+    &__item-info {
+        visibility: hidden;
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        left: 50%;
+        bottom: -2rem;
+        padding: 0.5rem 1rem;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        overflow: hidden;
+        background-color: $color-white;
+        opacity: 0.9;
+        z-index: 5;
+    }
+
+    &__item-title {
+
+    }
+
+    &__zoom {
+        visibility: hidden;
+        background-color: $color-white;
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 50%;
+        z-index: 10;
+        cursor: pointer;
+    }
+
+    &__slide-arrow {
+        background: $color-black !important;
+        width: 3rem !important;
+        height: 3rem !important;
+
+        & svg {
+            width: 2rem !important;
+            height: 2rem !important;
+            fill: $color-white !important;
+        }
+    }
+
+    &__slide-pages {
+        &.is-active {
+            background: $color-black !important;
+        }
+    }
+    */ }
   .print__sidebar {
     grid-row: 1 / -1;
     grid-column: full-start / center-start;
@@ -697,58 +776,6 @@ a {
     grid-row: 1 / 2;
     grid-column: center-start / full-end;
     padding: 1.5rem; }
-  .print__items {
-    display: flex;
-    position: relative;
-    width: 100%;
-    padding: 2rem 7rem 5rem 7rem;
-    overflow: hidden; }
-  .print__item {
-    position: relative;
-    text-align: center; }
-    .print__item:hover .print__zoom,
-    .print__item:hover .print__item-info {
-      visibility: visible;
-      animation: diffuse-info 0.8s linear 1; }
-    .print__item img {
-      max-width: 100%;
-      max-height: 100%; }
-    .print__item-info {
-      position: absolute;
-      bottom: 1rem;
-      left: 1rem; }
-  .print__item-info {
-    visibility: hidden;
-    display: flex;
-    justify-content: space-between;
-    position: absolute;
-    left: 50%;
-    bottom: -2rem;
-    padding: 0.5rem 1rem;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    overflow: hidden;
-    background-color: #fff;
-    opacity: 0.9;
-    z-index: 5; }
-  .print__zoom {
-    visibility: hidden;
-    background-color: #fff;
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 50%;
-    z-index: 10;
-    cursor: pointer; }
-  .print__slide-arrow {
-    background: #000 !important;
-    width: 3rem !important;
-    height: 3rem !important; }
-    .print__slide-arrow svg {
-      width: 2rem !important;
-      height: 2rem !important;
-      fill: #fff !important; }
-  .print__slide-pages.is-active {
-    background: #000 !important; }
 
 .sketchbook {
   grid-column: full-start / full-end;

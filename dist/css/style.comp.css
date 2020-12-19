@@ -254,7 +254,6 @@ a {
   align-items: center;
   background-color: #fff;
   box-shadow: 3px 3px 4px #fff;
-  opacity: 0.8;
   z-index: 20;
   transition: transform 0.8s, opacity 1s; }
   .header.scroll-down {
@@ -370,7 +369,7 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-image: linear-gradient(to bottom, #fff 0%, #000 15%);
+  background-color: #000;
   color: #fff;
   padding: 4rem 2rem 2.5rem 8rem; }
   .footer__title {
@@ -384,8 +383,7 @@ a {
   .footer__img {
     max-width: 5rem;
     max-height: 5rem;
-    margin-left: 2rem;
-    background-color: #fff; }
+    margin-left: 2rem; }
     .footer__img::before {
       content: '';
       display: block;
@@ -681,10 +679,20 @@ a {
     z-index: 10; }
 
 .print {
+  /*
+    grid-column: full-start / full-end;
+
+    display: grid;
+    grid-template-rows: min-content max-content;
+    grid-template-columns: [full-start] 8rem [center-start] 1fr [full-end];
+
+    margin-bottom: 30rem;
+    */
   grid-column: full-start / full-end;
   display: grid;
-  grid-template-rows: min-content max-content;
+  grid-template-rows: max-content;
   grid-template-columns: [full-start] 8rem [center-start] 1fr [full-end];
+  background-color: #fff;
   margin-bottom: 30rem;
   /*
     &__items {
@@ -776,6 +784,22 @@ a {
     grid-row: 1 / 2;
     grid-column: center-start / full-end;
     padding: 1.5rem; }
+  .print__pieces {
+    grid-row: 1 / -1;
+    grid-column: center-start / full-end;
+    display: grid;
+    grid-template-rows: repeat(auto-fit, minmax(34rem, 1fr));
+    grid-auto-rows: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(34.5rem, 1fr));
+    grid-gap: 5.5rem;
+    padding: 10rem 2rem 0 2rem;
+    margin: 0 auto; }
+  .print__piece {
+    display: grid;
+    grid-template-rows: 80% 20%; }
+  .print__piece:hover .spotlight__piece-info {
+    visibility: visible;
+    animation: diffuse-info 0.8s linear 1; }
 
 .sketchbook {
   grid-column: full-start / full-end;

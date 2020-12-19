@@ -15,6 +15,8 @@ const elements = {
     headerSlideshowDots: document.querySelector('.header__slideshow-dots'),
     spotlightPieces: document.querySelector('.spotlight__pieces'),
     spotlightPiece: document.querySelector('.spotlight__piece'),
+    printPieces: document.querySelector('.print__pieces'),
+    printPiece: document.querySelector('.print__piece'),
     carouselItems: document.querySelectorAll('.splide-carousel__items'),
     carouselZooms: document.querySelectorAll('.splide-carousel__zoom')
 };
@@ -233,7 +235,7 @@ var charityItems = {
 
 const sketchbookItems = {
     0: {
-        img: 'img/SketchbookFront.jpg',
+        img: 'img/sketchbook_front.jpg',
         title: 'Sketchbook Front Page'
     },
     1: {
@@ -293,7 +295,7 @@ const sketchbookItems = {
         title: 'Sketchbook Page 14'
     },
     15: {
-        img: 'img/SketchbookBack.jpg',
+        img: 'img/sketchbook_back.jpg',
         title: 'Sketchbook Back Page'
     }
 };
@@ -402,17 +404,17 @@ window.addEventListener('scroll', () => {
 });
 
 /**** SPOTLIGHT ****/
-const renderSpotlightItems = (item) => {
+const renderSpotlightItems = (section, item) => {
     // Use 'keys' function to calculate length of an object
     const spotlightItemsLength = Object.keys(spotlightItems).length;
     for (let i = 0; i < spotlightItemsLength; i++) {
-        createSpotlightHtml(item[i].id, item[i].img, item[i].title, item[i].client);
+        createSpotlightHtml(section, item[i].id, item[i].img, item[i].title, item[i].client);
     }
 };
 
-const createSpotlightHtml = (id, img, title, client) => {
+const createSpotlightHtml = (section, id, img, title, client) => {
     const markup = `
-        <div class="spotlight__piece" id="${id}">
+        <div class="${section}__piece" id="${id}">
             <img src="${img}" class="spotlight__img" alt="${title}">
             <div class="spotlight__piece-info">
                 <h2 class="spotlight__title heading-4">${maxStrLength(title)}</h2>
@@ -423,7 +425,8 @@ const createSpotlightHtml = (id, img, title, client) => {
             </div>
         </div>
         `;
-    elements.spotlightPieces.insertAdjacentHTML('beforeend', markup);
+    if (section === 'spotlight') elements.spotlightPieces.insertAdjacentHTML('beforeend', markup);
+    if (section === 'print') elements.printPieces.insertAdjacentHTML('beforeend', markup);  
 };
 
 const maxStrLength = (title, limit = 19) => {
@@ -448,7 +451,9 @@ const openFocus = (e) => {
         const pieceID = e.target.closest('div').parentElement.id.split('-')[1];
 
         // Access the relevant information in the spotlightItems object
-        const { portrait, img, title, client, description } = spotlightItems[pieceID - 1];
+        const nearestSection = e.target.closest('div').parentElement.className.split('__')[0];
+        const section = nearestSection === 'spotlight' ? spotlightItems : printItems;
+        const { portrait, img, title, client, description } = section[pieceID - 1];
 
         // Create HTML and insert into the DOM
         createFocusHtml('show-client', img, title, client, description, portrait);
@@ -546,11 +551,29 @@ const createFocusHtml = (section, img, title, client, desc, portrait) => {
 };
 
 // Create Spotlight items on load
-renderSpotlightItems(spotlightItems);
+renderSpotlightItems('spotlight', spotlightItems);
+
+/**** PRINT SECTION ****/
+const renderPrintItems = (section, item) => {
+    // Use 'keys' function to calculate length of an object
+    const printItemsLength = Object.keys(printItems).length;
+    for (let i = 0; i < printItemsLength; i++) {
+        createSpotlightHtml(section, item[i].id, item[i].img, item[i].title, item[i].client);
+    }
+};
+
+// Create Print items on load
+renderPrintItems('print', printItems);
 
 // Assign event listeners to all spotlight elements
 const spotlightElements = document.querySelectorAll(`.${elementStrings.spotlightPiece}`);
+const printElements = document.querySelectorAll('.print__piece');
+
 spotlightElements.forEach((el) => {
+    el.addEventListener('click', openFocus);
+});
+
+printElements.forEach((el) => {
     el.addEventListener('click', openFocus);
 });
 
@@ -676,7 +699,7 @@ const createCarouselHtml = (section, id, img, title) => {
         `;
     document.querySelector(`.${section}__list`).insertAdjacentHTML('beforeend', markup);
 };
-renderCarouselItems('print', printItems);
+//renderCarouselItems('print', printItems);
 renderCarouselItems('charity', charityItems);
 
 const carouselElements = document.querySelectorAll(`.${elementStrings.carouselItem}`);
@@ -701,9 +724,11 @@ const splideOptions = {
 };
 
 // Splide carousel initiation
+/*
 document.addEventListener('DOMContentLoaded', function () {
     new Splide('#print-splide', splideOptions).mount();
 });
+*/
 
 document.addEventListener('DOMContentLoaded', function () {
     new Splide('#charity-splide', splideOptions).mount();

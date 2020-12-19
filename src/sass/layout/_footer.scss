@@ -5,8 +5,7 @@
     justify-content: space-between;
     align-items: center;
 
-    background-image: linear-gradient(to bottom, $color-white 0%, $color-black 15%);
-    //background-color: $color-black;
+    background-color: $color-black;
     color: $color-white;
     padding: 4rem 2rem 2.5rem 8rem;
 
@@ -27,7 +26,6 @@
         max-width: 5rem;
         max-height: 5rem;
         margin-left: 2rem;
-        background-color: $color-white;
 
         &::before {
             content: '';

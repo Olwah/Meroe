@@ -434,7 +434,7 @@ const createSpotlightHtml = (section, id, img, title, client) => {
         </div>
         `;
     if (section === 'spotlight') elements.spotlightPieces.insertAdjacentHTML('beforeend', markup);
-    if (section === 'print') elements.printPieces.insertAdjacentHTML('beforeend', markup);  
+    if (section === 'print') elements.printPieces.insertAdjacentHTML('beforeend', markup);
 };
 
 const maxStrLength = (title, limit = 19) => {
@@ -767,10 +767,10 @@ $(window).ready(function () {
 const renderSketchbookItems = () => {
     const sketchbookItemsLength = Object.keys(sketchbookItems).length;
     for (let i = 0; i < sketchbookItemsLength; i++) {
-        const { img, title} = sketchbookItems[i];
+        const { img, title } = sketchbookItems[i];
         createSketchbookHtml(img, title);
     }
-}
+};
 
 const createSketchbookHtml = (img, title) => {
     const markup = `

@@ -61,7 +61,7 @@ const spotlightItems = {
     2: {
         id: 'spotlight-3',
         portrait: false,
-        img: 'img/Frontpage3.jpg',
+        img: 'img/Miru.jpg',
         title: '‘Miru’ bottle label',
         client: 'Client - Kanpai Saké Brewery',
         description:
@@ -178,6 +178,14 @@ var printItems = {
         title: '‘Nalow’',
         client: 'Bar Fujita, Sapporo',
         description: 'Super Soft Lino'
+    },
+    5: {
+        id: 'print-6',
+        portrait: true,
+        img: 'img/Print6.jpg',
+        title: '‘Print6’',
+        client: 'Client here',
+        description: 'Description here'
     }
 };
 
@@ -688,7 +696,7 @@ const renderCarouselItems = (section, obj) => {
 const createCarouselHtml = (section, id, img, title) => {
     const markup = `
         <div class="splide__slide splide-carousel__item ${section}__item">
-            <img src="${img}" alt="${title}">
+            <img class="splide-carousel__img" src="${img}" alt="${title}">
             <div class="splide-carousel__item-info" id="${id}">
                 <h3 class="splide-carousel__item-title heading-3">${title}</h3>
                 <svg class="splide-carousel__zoom">
@@ -710,13 +718,16 @@ carouselElements.forEach((el) => {
 // Splide carousel options object
 const splideOptions = {
     type: 'loop',
-    speed: 3000,
+    speed: 1500,
     rewindSpeed: 1000,
-    heightRatio: 0.5,
-    autoWidth: true,
+    //heightRatio: 0.5,
+    //autoWidth: true,
+    fixedWidth: 'fit-content',
+    fixedHeight: '35rem',
     focus: 'center',
     perPage: 2,
-    gap: '15rem',
+    //gap: '15rem',
+    gap: '5rem',
     classes: {
         arrow: 'splide__arrow splide-carousel__slide-arrow',
         page: 'splide__pagination__page splide-carousel__slide-pages'

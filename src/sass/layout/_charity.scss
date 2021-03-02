@@ -25,6 +25,12 @@
         padding: 1.5rem;
     }
 
+    /*
+    &__splide-container {
+        max-height: 50rem;
+    }
+    */
+
     &__items {
         grid-row: 2 / -1;
         grid-column: center-start / full-end;

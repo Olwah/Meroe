@@ -54,7 +54,7 @@
     &__zoom {
         grid-row: 1 / -1;
         grid-column: 2 / -1;
-        justify-self: end;
+        justify-self: center;
         visibility: hidden;
         background-color: $color-white;
         width: 2.5rem;

@@ -22,6 +22,7 @@ body {
     grid-template-columns:
         [full-start] minmax(8rem, 1fr) [center-start] repeat(9, [col-start] minmax(min-content, 14rem) [col-end])
         [center-end] minmax(7rem, 1fr) [full-end];
+    position: relative;
     transition: opacity 0s;
 
     &.focus-active {

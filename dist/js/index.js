@@ -183,9 +183,9 @@ var printItems = {
         id: 'print-6',
         portrait: true,
         img: 'img/Print6.jpg',
-        title: '‘Print6’',
-        client: 'Client here',
-        description: 'Description here'
+        title: 'Full Moon in SE8',
+        client: '',
+        description: 'Prints made to be given out for donators to my Blood Cancer UK 2021 Dry January Fundraiser'
     }
 };
 
@@ -540,7 +540,10 @@ const closeFocus = () => {
 const createFocusHtml = (section, img, title, client, desc, portrait) => {
     if (desc === undefined) desc = client;
     const markup = `
-        <div class="focus ${portrait === true ? 'focus--portrait' : ''}" id="focus">
+        <div class="focus ${portrait === true ? 'focus--portrait' : ''} ${section === 'show-client' ? '' : 'focus__charity'}" id="focus">
+            <div class="focus__hint">
+                <p>Hover for details</p>
+            </div>
             <div class="focus__close">
                 <img src="img/close.png" class="focus__close-icon" id="focus-close" alt="Close">
             </div>
@@ -551,7 +554,9 @@ const createFocusHtml = (section, img, title, client, desc, portrait) => {
                 <h2 class="focus__title heading-3">${title}</h2>
                 <p class="focus__client ${section === 'show-client' ? '' : 'focus__hide'}">${client}</p>
                 <p class="focus__description">${desc}</p>
-                <h3 class="focus__logo">Meroë</h3>
+            </div>
+            <div class="focus__logo">
+                <h3>Meroë</h3>
             </div>
         </div>
         `;

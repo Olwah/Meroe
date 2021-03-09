@@ -68,6 +68,7 @@ body {
 .container {
   display: grid;
   grid-template-columns: [full-start] minmax(8rem, 1fr) [center-start] repeat(9, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(7rem, 1fr) [full-end];
+  position: relative;
   transition: opacity 0s; }
   .container.focus-active {
     opacity: 0.2;
@@ -294,14 +295,15 @@ a {
   cursor: pointer; }
 
 .focus {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  display: grid;
+  grid-template-rows: 75% 25%;
+  grid-template-columns: 10% 80% 10%;
   position: fixed;
-  top: 50%;
+  top: 2rem;
   left: 50%;
-  transform: translate(-50%, -50%);
-  height: 90vh;
+  transform: translateX(-50%);
+  height: 94vh;
+  width: 75%;
   background-color: #fff;
   padding: 1rem;
   border: 2px solid #000;
@@ -310,9 +312,9 @@ a {
   transition: opacity 1s;
   z-index: 50; }
   .focus--portrait {
-    justify-content: flex-start;
-    flex-direction: row;
-    width: 65vw; }
+    width: 50vw; }
+  .focus__charity {
+    grid-template-rows: 85% 15%; }
   .focus.appear {
     opacity: 1;
     transition: opacity 1.5s; }
@@ -330,9 +332,11 @@ a {
       width: 2.5rem;
       height: 2.5rem; }
   .focus__img-wrapper {
+    grid-row: 1 / -1;
+    grid-column: 2 / 3;
     position: relative;
     width: 100%;
-    height: 75%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: flex-start; }
@@ -343,17 +347,25 @@ a {
     max-width: 100%;
     max-height: 100%; }
   .focus__piece-info {
+    grid-row: 2 / -1;
+    grid-column: 2 / 3;
     display: flex;
     flex-direction: column;
     position: relative;
     height: 100%;
     background-color: #fff;
     color: #000;
-    padding: 1rem; }
+    padding: 1rem;
+    visibility: hidden;
+    margin: 0 -.1rem;
+    z-index: 10; }
     .focus__piece-info--portrait {
       flex-basis: 40rem;
       flex-grow: 2;
-      padding: 0 3rem 1rem 3rem; }
+      padding: 1rem .5rem; }
+  .focus:hover .focus__piece-info {
+    visibility: visible;
+    animation: diffuse-info 0.5s linear 1; }
   .focus__title {
     font-family: "Alfa Slab One", cursive;
     font-size: 2rem;
@@ -363,10 +375,15 @@ a {
     padding-bottom: 1.5rem; }
   .focus__logo {
     position: absolute;
-    bottom: 0;
-    right: 0;
+    bottom: .5rem;
+    right: .5rem;
     font-family: "Alfa Slab One", cursive;
     text-transform: uppercase; }
+  .focus__hint {
+    position: absolute;
+    right: -4.5rem;
+    bottom: 50%;
+    transform: rotate(270deg); }
   .focus__hide {
     display: none; }
 
@@ -531,14 +548,14 @@ a {
     grid-row: 1 / -1;
     grid-column: center-start / full-end;
     display: grid;
-    grid-auto-rows: 34rem;
+    grid-auto-rows: 24rem;
     grid-template-columns: repeat(auto-fit, minmax(34.5rem, 1fr));
     grid-gap: 5.5rem;
     padding: 10rem 2rem 0 2rem;
     margin: 0 auto; }
   .spotlight__piece {
     display: grid;
-    grid-template-rows: 80% 20%; }
+    grid-template-rows: 75% 25%; }
   .spotlight__img {
     width: 100%;
     height: 100%;
@@ -798,14 +815,14 @@ a {
     grid-row: 1 / -1;
     grid-column: center-start / full-end;
     display: grid;
-    grid-auto-rows: 34rem;
+    grid-auto-rows: 24rem;
     grid-template-columns: repeat(auto-fit, minmax(34.5rem, 1fr));
     grid-gap: 5.5rem;
     padding: 10rem 2rem 0 2rem;
     margin: 0 auto; }
   .print__piece {
     display: grid;
-    grid-template-rows: 80% 20%; }
+    grid-template-rows: 75% 25%; }
   .print__piece:hover .spotlight__piece-info {
     visibility: visible;
     animation: diffuse-info 0.8s linear 1; }

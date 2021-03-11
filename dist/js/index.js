@@ -44,6 +44,7 @@ const spotlightItems = {
         id: 'spotlight-1',
         portrait: false,
         img: 'img/Love_Walk_Cafe.jpg',
+        vAlign: false,
         title: 'Love Walk Cafe',
         client: 'Client - Camberwell Arts Group',
         description:
@@ -53,6 +54,7 @@ const spotlightItems = {
         id: 'spotlight-2',
         portrait: false,
         img: 'img/Kiku.jpg',
+        vAlign: true,
         title: '‘Kiku’ bottle label',
         client: 'Client - Kanpai Saké Brewery',
         description:
@@ -62,6 +64,7 @@ const spotlightItems = {
         id: 'spotlight-3',
         portrait: false,
         img: 'img/Miru.jpg',
+        vAlign: true,
         title: '‘Miru’ bottle label',
         client: 'Client - Kanpai Saké Brewery',
         description:
@@ -71,6 +74,7 @@ const spotlightItems = {
         id: 'spotlight-4',
         portrait: false,
         img: 'img/Nomu.jpg',
+        vAlign: true,
         title: '‘Nomu’ bottle label',
         client: 'Client - Kanpai Saké Brewery',
         description:
@@ -80,6 +84,7 @@ const spotlightItems = {
         id: 'spotlight-5',
         portrait: true,
         img: 'img/Brixton.jpg',
+        vAlign: false,
         title: 'Brixton',
         client: 'Client - Maison Des Languages',
         description:
@@ -89,6 +94,7 @@ const spotlightItems = {
         id: 'spotlight-6',
         portrait: true,
         img: 'img/Frontpage6.jpg',
+        vAlign: false,
         title: 'Tombstone Transaction - Republic of Cyprus',
         client: 'Client - Citi',
         description:
@@ -98,6 +104,7 @@ const spotlightItems = {
         id: 'spotlight-7',
         portrait: true,
         img: 'img/Citi_Telefonica.jpg',
+        vAlign: false,
         title: 'Tombstone Transaction - Telefonica',
         client: 'Client - Citi',
         description:
@@ -107,6 +114,7 @@ const spotlightItems = {
         id: 'spotlight-8',
         portrait: false,
         img: 'img/Gospel_Green.jpg',
+        vAlign: false,
         title: 'Bottle Label Design',
         client: 'Unused',
         description: 'Unused concept for Gospel Green Cider.'
@@ -115,6 +123,7 @@ const spotlightItems = {
         id: 'spotlight-9',
         portrait: false,
         img: 'img/Yubari.jpg',
+        vAlign: false,
         title: 'Yubari',
         client: 'Self Initiated',
         description:
@@ -124,6 +133,7 @@ const spotlightItems = {
         id: 'spotlight-10',
         portrait: true,
         img: 'img/WillGraham.jpg',
+        vAlign: false,
         title: 'Will Graham',
         client: 'Self Initiated - Fan Art',
         description: 'Born from a love of the Hannibal drama.'
@@ -132,6 +142,7 @@ const spotlightItems = {
         id: 'spotlight-11',
         portrait: false,
         img: 'img/Lumley_Castle.jpg',
+        vAlign: false,
         title: 'Lumley Castle',
         client: 'Private Commission',
         description: 'Commissioned for an 80th birthday gift.'
@@ -416,14 +427,14 @@ const renderSpotlightItems = (section, item) => {
     // Use 'keys' function to calculate length of an object
     const spotlightItemsLength = Object.keys(spotlightItems).length;
     for (let i = 0; i < spotlightItemsLength; i++) {
-        createSpotlightHtml(section, item[i].id, item[i].img, item[i].title, item[i].client);
+        createSpotlightHtml(section, item[i].id, item[i].img, item[i].vAlign, item[i].title, item[i].client);
     }
 };
 
-const createSpotlightHtml = (section, id, img, title, client) => {
+const createSpotlightHtml = (section, id, img, vAlign, title, client) => {
     const markup = `
         <div class="${section}__piece" id="${id}">
-            <img src="${img}" class="spotlight__img" alt="${title}">
+            <img src="${img}" class="spotlight__img ${vAlign === true ? 'spotlight__img--top' : ''}" alt="${title}">
             <div class="spotlight__piece-info">
                 <h2 class="spotlight__title heading-4">${maxStrLength(title)}</h2>
                 <p class="spotlight__client">${client}</p>

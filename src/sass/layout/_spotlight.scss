@@ -44,6 +44,10 @@
         object-fit: cover;
         grid-row: 1 / 2;
         z-index: 1;
+
+        &--top {
+            object-position: top;
+        }
     }
 
     &__piece-info {

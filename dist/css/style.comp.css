@@ -562,6 +562,8 @@ a {
     object-fit: cover;
     grid-row: 1 / 2;
     z-index: 1; }
+    .spotlight__img--top {
+      object-position: top; }
   .spotlight__piece-info {
     grid-row: 2 / -1;
     display: grid;

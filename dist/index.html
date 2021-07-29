@@ -60,24 +60,45 @@
                                 ><img class="social__item--twitter" src="img/twitter.png" alt="Twitter"
                             /></a>
                         </div>
+                        <div class="nav-menu__mobile">
+                            <div class="nav-menu__mobile-container">
+                                <span class="nav-menu__open-arrow--mobile">&nbsp;</span>
+                                <div class="nav-menu__content--mobile">
+                                    <ul class="nav-menu__list">
+                                        <li class="nav-menu__list-item nav-menu__list-item--mobile"><a href="#spotlight">Portfolio</a></li>
+                                        <li class="nav-menu__list-item nav-menu__list-item--mobile"><a href="#print">Print</a></li>
+                                        <li class="nav-menu__list-item nav-menu__list-item--mobile"><a href="#charity">Charity</a></li>
+                                        <li class="nav-menu__list-item nav-menu__list-item--mobile"><a href="#sketchbook">Sketchbook</a></li>
+                                        <li class="nav-menu__list-item nav-menu__list-item--mobile"><a href="#about">About</a></li>
+                                    </ul>
+                                </div>   
+                            </div>
+                        </div>
                     </div>
                 </div>
             </header>
 
-            <main class="spotlight" id="spotlight">
-                <div class="spotlight__sidebar">
+            <main class="spotlight section-grid" id="spotlight">
+                <div class="sidebar">
                     <div class="spotlight__sticky sticky heading-2">Portfolio</div>
                     <div class="fade-out"></div>
+                </div>
+                <div class="sidebar-mobile">
+                    <div class="sidebar-mobile__title sidebar-mobile__title--spotlight heading-2">Portfolio</div>
                 </div>
                 <div class="spotlight__pieces">
                     <!-- DYNAMICALLY CREATED -->
                 </div>
+                <div class="show-all show-all--spotlight">Show all</div>
             </main>
 
-            <section class="print" id="print">
-                <div class="print__sidebar">
+            <section class="print section-grid" id="print">
+                <div class="sidebar">
                     <div class="print__sticky sticky heading-2">Print</div>
                     <div class="fade-out"></div>
+                </div>
+                <div class="sidebar-mobile">
+                    <div class="sidebar-mobile__title heading-2">Print</div>
                 </div>
                 <div class="print__info">
                     <p class="print__description">
@@ -87,38 +108,16 @@
                 <div class="print__pieces">
                     <!-- DYNAMICALLY CREATED -->
                 </div>
-                <!--
-                <div id="print-splide" class="splide-carousel__items splide">
-                    <div class="splide__track">
-                        <div class="splide__list print__list">
-                            DYNAMICALLY CREATED
-                        </div>
-                    </div>
-                </div>
-                -->
+                <div class="show-all show-all--print">Show all</div>
             </section>
-            <!--
-            <section class="gallery" id="gallery">
-                <div class="gallery__sidebar">
-                    <div class="gallery__sticky sticky heading-2">Charity</div>
-                    <div class="fade-out"></div>
-                </div>
-                <div class="gallery__info">
-                   <p class="gallery__description">
-                        Like a lot of people I've taken up Dry January and have been doing it every year since 2018. Rather than just committing to not drinking alcohol I added a twist and decided to do personalised postcards, accepting small donations for each. I created a 'tiered system' for either a postcard or a portrait and it's been a success so far. I have raised around £1200 for cancer research in the years since I started and continue to keep doing it at the start of each year.
-                        <br><br>
-                        Here you'll find a range of what I believe to be my best or most interesting images from across the years so far. 
-                    </p>
-                </div>
-                <div class="gallery__items">
-                    <!-- DYNAMICALLY CREATED -->
-<!--                </div>
-            </section>
--->
-            <section class="charity" id="charity">
-                <div class="charity__sidebar">
+
+            <section class="charity section-grid" id="charity">
+                <div class="sidebar">
                     <div class="charity__sticky sticky heading-2">Charity</div>
                     <div class="fade-out"></div>
+                </div>
+                <div class="sidebar-mobile">
+                    <div class="sidebar-mobile__title heading-2">Charity</div>
                 </div>
                 <div class="charity__info">
                     <p class="charity__description">
@@ -136,10 +135,13 @@
                 </div>
             </section>
 
-            <section class="sketchbook" id="sketchbook">
-                <div class="sketchbook__sidebar">
+            <section class="sketchbook section-grid" id="sketchbook">
+                <div class="sidebar">
                     <div class="sketchbook__sticky sticky heading-2">Sketchbook</div>
                     <div class="fade-out"></div>
+                </div>
+                <div class="sidebar-mobile">
+                    <div class="sidebar-mobile__title heading-2">Sketchbook</div>
                 </div>
                 <div class="sketchbook__info">
                     <p class="sketchbook__description">
@@ -163,10 +165,13 @@
                 </div>
             </section>
 
-            <section class="about" id="about">
-                <div class="about__sidebar">
+            <section class="about section-grid margin-bottom-small" id="about">
+                <div class="sidebar">
                     <div class="about__sticky sticky heading-2">About</div>
                     <div class="fade-out"></div>
+                </div>
+                <div class="sidebar-mobile">
+                    <div class="sidebar-mobile__title heading-2">About</div>
                 </div>
                 <div class="about__info">
                     <div class="about__title heading-5">Meroë is a London based illustrator and designer.</div>

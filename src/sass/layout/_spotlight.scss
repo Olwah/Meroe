@@ -1,19 +1,4 @@
 .spotlight {
-    grid-column: full-start / full-end;
-
-    display: grid;
-    grid-template-rows: max-content;
-    grid-template-columns: [full-start] 8rem [center-start] 1fr [full-end];
-
-    background-color: $color-white;
-    margin-bottom: 30rem;
-
-    &__sidebar {
-        grid-row: 1 / -1;
-        grid-column: full-start / center-start;
-
-        position: relative;
-    }
 
     &__sticky {
         top: 20rem;
@@ -26,16 +11,35 @@
 
         display: grid;
         grid-auto-rows: 24rem;
-        grid-template-columns: repeat(auto-fit, minmax(34.5rem, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
         grid-gap: 5.5rem;
 
         padding: 10rem 2rem 0 2rem;
         margin: 0 auto;
+
+        @include respond(phone-land) {
+            grid-auto-rows: 30rem;
+            grid-gap: 1.5rem;
+            gap: 1.5rem;
+            padding: 0 1rem 0 1rem;
+        }
     }
 
     &__piece {
         display: grid;
         grid-template-rows: 75% 25%;
+
+        &:nth-child(n+5) {
+            @include respond(phone-port) {
+                display: none;
+            }
+
+            &.active {
+                @include respond(phone-port) {
+                    display: grid;
+                }
+            }
+        }
     }
 
     &__img {
@@ -64,6 +68,10 @@
         padding: 1rem 0.5rem;
         opacity: 0.9;
         z-index: 10;
+
+        @include respond(tab-land) {
+            visibility: visible;
+        }
     }
 
     &__piece:hover .spotlight__piece-info {
@@ -83,7 +91,22 @@
     &__client {
         grid-row: 2 / 2;
 
-        font-size: 1.5rem;
+        font-size: 1.3rem;
+
+        @include respond(phone-port) {
+            font-size: 1.3rem;
+        }
+    }
+
+    &__title,
+    &__client {
+        @include respond(phone-land) {
+            padding-left: .5rem;
+        }
+
+        @include respond(phone-port) {
+            padding-left: 1rem;
+        }
     }
 
     &__description {

@@ -41,6 +41,18 @@
         &.active {
             transform: translateX(13rem);
         }
+
+        @include respond(tab-port) {
+            transform: translateX(-4rem);
+        }
+
+        @include respond(phone-land) {
+            transform: translateX(-3rem);
+        }
+
+        @include respond(phone-port) {
+            transform: translateX(-4rem);
+        }
     }
 
     &__logo {
@@ -48,6 +60,17 @@
         height: 5rem;
         margin: 0.5rem 2rem 0.5rem 0;
         cursor: pointer;
+
+        @include respond(phone-land) {
+            width: 4rem;
+            height: 4rem;
+        }
+
+        @include respond(phone-port) {
+            width: 3.5rem;
+            height: 3.5rem;
+            margin-right: 1rem;
+        }
 
         & img {
             max-width: 100%;

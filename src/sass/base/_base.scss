@@ -29,6 +29,68 @@ body {
         opacity: 0.2;
         transition: opacity 1500ms;
     }
+
+    /*
+    ADDED TO TEST IF THE CONTAINER GRID STRUCTURE WAS CAUSING THE PAGE TO STRETCH
+    @include respond(phone-land) {
+        grid-template-columns:
+        [full-start] minmax(4rem, 1fr) [center-start] repeat(9, [col-start] minmax(min-content, 10rem) [col-end])
+        [center-end] minmax(7rem, 1fr) [full-end];
+    }
+    */
+}
+
+.section-grid {
+    grid-column: full-start / full-end;
+
+    display: grid;
+    grid-template-rows: min-content max-content;
+    grid-template-columns: [full-start] 8rem [center-start] 1fr [full-end];
+
+    background-color: $color-white;
+    margin-bottom: 30rem;
+
+    @include respond(tab-port) {
+        grid-template-columns: [full-start] 6rem [center-start] 1fr [full-end];
+    }
+
+    @include respond(phone-land) {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 5rem;
+    }
+}
+
+.sidebar {
+    grid-row: 1 / -1;
+    grid-column: full-start / center-start;
+
+    position: relative;
+
+    @include respond(phone-land) {
+        display: none;
+    }
+}
+
+.sidebar-mobile {
+    display: none;
+    grid-row: 1 / -1;
+    grid-column: full-start / full-end;
+
+    &__title {
+        padding: 1rem;
+        margin: 1rem;
+        background-color: black;
+        color: white !important;
+
+        &--spotlight {
+            margin-top: 7.5rem;
+        }
+    }
+
+    @include respond(phone-land) {
+        display: block;
+    }
 }
 
 .sticky {
@@ -39,6 +101,27 @@ body {
     letter-spacing: 0.5rem;
     transform: rotate(180deg);
     opacity: 0.7;
+
+    @include respond(tab-port) {
+        left: 1rem;
+    }
+}
+
+.show-all {
+    display: none;
+    width: 20rem;
+    background-color: $color-black;
+    color: $color-white;
+    font-family: $font-headings;
+    text-transform: uppercase;
+    padding: 1rem;
+    font-size: 1.3rem;
+    text-align: center;
+    margin: 1rem auto;
+
+    @include respond(tab-port) {
+        display: block;
+    }
 }
 
 /*

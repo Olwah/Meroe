@@ -16,6 +16,14 @@
     width: 19%;
     box-shadow: 4px 4px 3px $color-white;
     padding: 1.5rem;
+
+    @include respond(tab-land) {
+      width: 28%;
+    }
+
+    @include respond(tab-port) {
+      width: 30%;
+    }
   }
 
   &__translate {
@@ -30,16 +38,6 @@
       transform: scale(1.2);
     }
   }
-
-  /*
-    &__initial {
-        position: relative;
-        
-        &.active {
-            margin-top: 10rem;
-        }
-    }
-    */
 
   &__open-arrow {
     display: flex;
@@ -72,6 +70,59 @@
     &.animate-nav-arrow-reverse {
       animation: nav-arrow-reverse 1.5s ease-out 1 running forwards;
     }
+
+    &--mobile {
+      display: block;
+      border: none;
+      border-radius: 0;
+
+      background-color: #000;
+      height: 2px;
+      width: 2.5rem;
+
+      &,
+      &::before,
+      &::after {
+        background-color: #000;
+        height: 2px;
+        width: 2.5rem;
+        content: "";
+        display: block;
+        transition: all .2s;
+
+        @include respond(phone-port) {
+          width: 2rem;
+        }
+      }
+      
+      &::before { transform: translateY(-.5rem); }
+      &::after { transform: translateY(-.8rem); }
+
+      &.active {
+        background-color: transparent;
+      }
+
+      &.active::before {
+        transform: rotate(134deg);
+      }
+
+      &.active::after {
+        transform: rotate(-133deg) translate(9px, 9px);
+        margin-top: -.8px;
+      }
+
+      @include respond(phone-port) {
+        width: 2rem;
+    }
+    }
+
+    @include respond(tab-port) {
+      left: 1rem;
+    }
+
+    @include respond(phone-land) {
+      display: none;
+    }
   }
 
   &__initial.active {
@@ -85,6 +136,26 @@
 
     &.active {
       display: block;
+    }
+
+    &--mobile {
+      position: absolute;
+      top: -2rem;
+      right: -1rem;
+      width: 40vw;
+      background-color: $color-white;
+      margin-top: 0;
+      padding: 1rem;
+      transform: translate(25rem, -20rem);
+      transition: transform .2s;
+
+      &.active {
+        transform: translate(1rem, 6rem);
+      }
+
+      @include respond(phone-port) {
+        width: 42vw;
+    }
     }
   }
 
@@ -118,6 +189,11 @@
       transform: translateX(0rem);
     }
 
+    &--mobile {
+      transform: none;
+      padding-bottom: 1.5rem;
+    }
+
     & > a {
       color: $color-white;
       background-color: $color-black;
@@ -130,6 +206,31 @@
         font-weight: bold;
       }
     }
+
+    @include respond(phone-land) {
+      font-size: 1.8rem;
+    }
+
+    @include respond(phone-port) {
+      font-size: 1.3rem;
+    }
+  }
+
+  &__mobile {
+    display: none;
+    position: relative;
+    width: 2.5rem;
+    height: 2.5rem;
+
+    @include respond(phone-land) {
+      display: flex;
+      align-items: center;
+    }
+
+    @include respond(phone-port) {
+      width: 2rem;
+      height: 2rem;
+  }
   }
 }
 

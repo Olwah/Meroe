@@ -7,6 +7,10 @@ const elements = {
     navMenuArrowList: document.querySelector('.nav-menu__arrow-list'),
     navClose: document.querySelector('.nav-menu__close'),
     navContent: document.querySelector('.nav-menu__content'),
+    navMenuMobile: document.querySelector('.nav-menu__mobile'),
+    navMenuCheckbox: document.querySelector('.nav-menu__checkbox'),
+    navMenuOpenArrowMobile: document.querySelector('.nav-menu__open-arrow--mobile'),
+    navMenuContentMobile: document.querySelector('.nav-menu__content--mobile'),
     header: document.querySelector('.header'),
     headerWrapper: document.querySelector('.header__wrapper'),
     headerTitle: document.querySelector('.header__title'),
@@ -30,6 +34,9 @@ const elementStrings = {
     spotlightImg: 'spotlight__img',
     spotlightTitle: 'spotlight__title',
     spotlightDesc: 'spotlight__description',
+    showAll: 'show-all',
+    showAllSpotlight: 'show-all--spotlight',
+    showAllPrint: 'show-all--print',
     printItem: 'print__item',
     printZoom: 'print__zoom',
     galleryItem: 'gallery__item',
@@ -43,6 +50,44 @@ const spotlightItems = {
     0: {
         id: 'spotlight-1',
         portrait: false,
+        img: 'img/LIWUMI_MockUp_Box.jpg',
+        vAlign: false,
+        title: 'Life is What U Make It',
+        client: 'Client - Battersea Arts Centre',
+        description:
+            'Throughout the first half of 2021 I art directed and produced illustrations for the board game "Life Is What U Make It" along with designer Messy Pandas who worked on the branding, colour schemes and layout. The board game will be trialled in schools across London to educate children on the dangers of joining gangs and the potential long term impact.',
+        imgLibrary: {
+            0: {
+                img: 'img/LIWUMI_Rule_Book_Cover.jpg',
+                desc: 'Manual/rule book cover for the "Life Is What U Make It" board game.'
+            },
+            1: {
+                img: 'img/LIWUMI_StickerSheet1.jpg',
+                desc: 'Used to decorate the packaging and images also appear across the game.'
+            },
+            2: {
+                img: 'img/LIWUMI_StickerSheet2.jpg',
+                desc: 'Used to decorate the packaging and images also appear across the game.'
+            },
+            3: {
+                img: 'img/LIWUMI_Banner.jpg',
+                desc: 'Promotional Image for the "Life Is What U Make It" board game used across digital media.'
+            }
+        }
+    },
+    1: {
+        id: 'spotlight-2',
+        portrait: false,
+        img: 'img/LifeonLettsom.jpg',
+        vAlign: false,
+        title: 'Lettsom Estate',
+        client: 'Client - Life on Lettsom',
+        description:
+            'Editorial Illustration contribution to the Life on Lettsom magazine, a new Southwark Council funded publication for the residents of the Lettsom housing estate in South London.'
+    },
+    2: {
+        id: 'spotlight-3',
+        portrait: false,
         img: 'img/Love_Walk_Cafe.jpg',
         vAlign: false,
         title: 'Love Walk Cafe',
@@ -50,8 +95,8 @@ const spotlightItems = {
         description:
             'Contribution to the Camberwell Arts Group, used on local banners as part of Camberwell’s new identity and branding.\nImage depicts Love Walk Cafe.'
     },
-    1: {
-        id: 'spotlight-2',
+    3: {
+        id: 'spotlight-4',
         portrait: false,
         img: 'img/Kiku.jpg',
         vAlign: true,
@@ -60,8 +105,8 @@ const spotlightItems = {
         description:
             'Sumo bottle label design for Kanpai Saké Brewery’s limited edition range.\nForms part of a ‘triptych’ of labels adapting elements of Peckham with traditional/well known Japanese concepts.'
     },
-    2: {
-        id: 'spotlight-3',
+    4: {
+        id: 'spotlight-5',
         portrait: false,
         img: 'img/Miru.jpg',
         vAlign: true,
@@ -70,8 +115,8 @@ const spotlightItems = {
         description:
             'Samurai bottle label design for Kanpai Saké Brewey’s limited edition range.\nForms part of a ‘triptych’ of labels adapting elements of Peckham with traditional/well known Japanese concepts.'
     },
-    3: {
-        id: 'spotlight-4',
+    5: {
+        id: 'spotlight-6',
         portrait: false,
         img: 'img/Nomu.jpg',
         vAlign: true,
@@ -80,8 +125,8 @@ const spotlightItems = {
         description:
             'Geisha bottle label design for Kanpai Saké Brewery’s limited edition range.\nForms part of a ‘triptych’ of labels adapting elements of Peckham with traditional/well known Japanese concepts.'
     },
-    4: {
-        id: 'spotlight-5',
+    6: {
+        id: 'spotlight-7',
         portrait: true,
         img: 'img/Brixton.jpg',
         vAlign: false,
@@ -90,8 +135,8 @@ const spotlightItems = {
         description:
             'Images for Maison Des Languages’ language book for French students studying English.\nForms part of an exercise in a comic book format.'
     },
-    5: {
-        id: 'spotlight-6',
+    7: {
+        id: 'spotlight-8',
         portrait: true,
         img: 'img/Frontpage6.jpg',
         vAlign: false,
@@ -100,8 +145,8 @@ const spotlightItems = {
         description:
             'Poster design for Citi group to commemorate an agreement with the Government of Cyprus, commissioned by the French embassy.'
     },
-    6: {
-        id: 'spotlight-7',
+    8: {
+        id: 'spotlight-9',
         portrait: true,
         img: 'img/Citi_Telefonica.jpg',
         vAlign: false,
@@ -110,8 +155,8 @@ const spotlightItems = {
         description:
             'Poster design for Citi group to commemorate an agreement with Telefonica, featuring an ‘uncle Sam’ style figure. '
     },
-    7: {
-        id: 'spotlight-8',
+    9: {
+        id: 'spotlight-10',
         portrait: false,
         img: 'img/Gospel_Green.jpg',
         vAlign: false,
@@ -119,8 +164,8 @@ const spotlightItems = {
         client: 'Unused',
         description: 'Unused concept for Gospel Green Cider.'
     },
-    8: {
-        id: 'spotlight-9',
+    10: {
+        id: 'spotlight-11',
         portrait: false,
         img: 'img/Yubari.jpg',
         vAlign: false,
@@ -129,8 +174,8 @@ const spotlightItems = {
         description:
             'Self initiated piece from a visit to Northern Japan’s Yubari, a former mining town that very much echoes the same issues faced by North East England.\nIt went on to be shortlisted and then a winner of Hire an Illustrator’s Showcase 100, and was exhibited at the Framer’s Gallery in London, 2015.'
     },
-    9: {
-        id: 'spotlight-10',
+    11: {
+        id: 'spotlight-12',
         portrait: true,
         img: 'img/WillGraham.jpg',
         vAlign: false,
@@ -138,8 +183,8 @@ const spotlightItems = {
         client: 'Self Initiated - Fan Art',
         description: 'Born from a love of the Hannibal drama.'
     },
-    10: {
-        id: 'spotlight-11',
+    12: {
+        id: 'spotlight-13',
         portrait: false,
         img: 'img/Lumley_Castle.jpg',
         vAlign: false,
@@ -154,6 +199,7 @@ var printItems = {
         id: 'print-1',
         portrait: true,
         img: 'img/Print1.jpg',
+        vAlign: false,
         title: 'Cathryn',
         client: 'Self Initiated',
         description: 'An illustration referencing Emilé Zola’s work ‘Germinal’ Woodcut.'
@@ -162,6 +208,7 @@ var printItems = {
         id: 'print-2',
         portrait: true,
         img: 'img/Print2.jpg',
+        vAlign: false,
         title: '‘Tama’',
         client: 'Bar Fujita, Sapporo',
         description: 'Super Soft Lino'
@@ -170,6 +217,7 @@ var printItems = {
         id: 'print-3',
         portrait: true,
         img: 'img/Print3.jpg',
+        vAlign: false,
         title: '‘Coran’',
         client: 'Bar Fujita, Sapporo',
         description: 'Super Soft Lino'
@@ -178,6 +226,7 @@ var printItems = {
         id: 'print-4',
         portrait: true,
         img: 'img/Print4.jpg',
+        vAlign: false,
         title: '‘Buran’',
         client: 'Bar Fujita, Sapporo',
         description: 'Super Soft Lino'
@@ -186,6 +235,7 @@ var printItems = {
         id: 'print-5',
         portrait: true,
         img: 'img/Print5.jpg',
+        vAlign: false,
         title: '‘Nalow’',
         client: 'Bar Fujita, Sapporo',
         description: 'Super Soft Lino'
@@ -194,8 +244,9 @@ var printItems = {
         id: 'print-6',
         portrait: true,
         img: 'img/Print6.jpg',
+        vAlign: false,
         title: 'Full Moon in SE8',
-        client: '',
+        client: 'Bar Fujita, Sapporo',
         description: 'Prints made to be given out for donators to my Blood Cancer UK 2021 Dry January Fundraiser'
     }
 };
@@ -333,6 +384,14 @@ const toggleNav = () => {
     }
 };
 
+const toggleMobileNav = () => {
+    if (elements.navMenuContentMobile.classList.contains('active')) {
+        [elements.navMenuContentMobile, elements.navMenuOpenArrowMobile].forEach((el) => el.classList.remove('active'));
+    } else {
+        [elements.navMenuContentMobile, elements.navMenuOpenArrowMobile].forEach((el) => el.classList.add('active'));
+    }
+};
+
 const openNav = () => {
     // Open nav arrow animation
     if (elements.navMenuOpenArrow.classList.contains('animate-nav-arrow')) {
@@ -374,11 +433,44 @@ const animateNavList = () => {
 };
 
 // Nav-menu event listeners
+// Desktop nave menu elements
 const navEventListeners = ['#menu-open', '.header__logo', '.nav-menu__initial'];
+
+// Add initial event listeners on load
 navEventListeners.forEach((el) => {
     document.querySelector(`${el}`).addEventListener('click', toggleNav);
 });
 document.getElementById('menu-close').addEventListener('click', closeNav);
+
+// Add resizing event listener to the window object
+window.addEventListener('resize', toggleNavEventListeners);
+
+// Function to determine window width and enable/disable event listeners
+function toggleNavEventListeners() {
+    // Get width of the window excluding scrollbars
+    let w = document.documentElement.clientWidth;
+    
+    // If window size drops below 600px then remove eventlistener on desktop nav menu
+    if (w <= 600) {
+        // Remove nav desktop event listeners
+        navEventListeners.forEach((el) => {
+            document.querySelector(`${el}`).removeEventListener('click', toggleNav);
+        });
+        document.getElementById('menu-close').removeEventListener('click', closeNav);
+    } else {
+        // Add nav desktop event listeners
+        navEventListeners.forEach((el) => {
+            document.querySelector(`${el}`).addEventListener('click', toggleNav);
+        });
+        document.getElementById('menu-close').addEventListener('click', closeNav);
+    }  
+}
+
+// Mobile nav-menu event listeners
+const mobileNavEventListeners = ['.nav-menu__mobile'];
+mobileNavEventListeners.forEach((el) => {
+    document.querySelector(`${el}`).addEventListener('click', toggleMobileNav);
+});
 
 // Close nav-menu after anchor clicked
 document.querySelectorAll(`li.${elementStrings.navMenuListItem} a`).forEach((el) => {
@@ -462,6 +554,34 @@ const maxStrLength = (title, limit = 19) => {
     return title;
 };
 
+/**** SHOW ALL BUTTONS ****/
+const showAllText = (section) => {
+    console.log(section.innerText);
+    //Only changing in one direction need to fix
+    section.innerText = "SHOW ALL" ? section.innerText = "SHOW LESS" : section.innerText = "SHOW ALL";
+}
+
+const showAll = (e) => {
+    if (e.target.matches(`.${elementStrings.showAllSpotlight}, .${elementStrings.showAllSpotlight} *`)) {
+        const spotPieceEls = document.querySelectorAll('.spotlight__piece');
+        // Show hidden spotlight pieces
+        spotPieceEls.forEach((el) => {
+            el.classList.toggle('active');
+        });
+        // Add styles to clicked show all button
+        const showAllSpotlight = document.querySelector('.show-all--spotlight');
+        showAllText(showAllSpotlight);
+
+    } else if (e.target.matches(`.${elementStrings.showAllPrint}, .${elementStrings.showAllPrint} *`)) {
+        const printPieceEls = document.querySelectorAll('.print__piece');
+        printPieceEls.forEach((el) => {
+            el.classList.toggle('active');
+        });
+        const showAllPrint = document.querySelector('.show-all--print');
+        showAllText(showAllPrint);
+    }
+}
+
 /**** FOCUS ITEM ****/
 const openFocus = (e) => {
     // SPOTLIGHT ITEMS
@@ -477,29 +597,6 @@ const openFocus = (e) => {
         // Create HTML and insert into the DOM
         createFocusHtml('show-client', img, title, client, description, portrait);
 
-        /*
-            // CHARITY ITEMS -- MERGED INTO CAROUSEL
-        } else if (e.target.matches(`.${elementStrings.galleryZoom}, .${elementStrings.galleryZoom} *`)) {
-            // Get clicked item's ID from DOM
-            const pieceID = e.target.closest('figure').classList[1].split('--')[1];
-
-            // Access the relevant information in the galleryItems object
-            const { portrait, img, title, description } = galleryItems[pieceID - 1];
-
-            // Create HTML and insert into the DOM
-            createFocusHtml('gallery', img, title, description, portrait);
-
-            // PRINT ITEMS -- MERGED INTO CAROUSEL
-        } else if (e.target.matches(`.${elementStrings.printZoom}, .${elementStrings.printZoom} *`)) {
-            // Get clicked item's ID from DOM
-            const pieceID = e.target.closest('div').id.split('-')[1];
-
-            // Access the relevant information in the galleryItems object
-            const { portrait, img, title, client, description } = printItems[pieceID - 1];
-
-            // Create HTML and insert into the DOM
-            createFocusHtml('show-client', img, title, client, description, portrait);
-            */
         // CAROUSEL ITEMS
     } else if (e.target.matches(`.${elementStrings.carouselZoom}, .${elementStrings.carouselZoom} *`)) {
         // Get clicked item's section & ID from DOM
@@ -582,7 +679,7 @@ const renderPrintItems = (section, item) => {
     // Use 'keys' function to calculate length of an object
     const printItemsLength = Object.keys(printItems).length;
     for (let i = 0; i < printItemsLength; i++) {
-        createSpotlightHtml(section, item[i].id, item[i].img, item[i].title, item[i].client);
+        createSpotlightHtml(section, item[i].id, item[i].img, item[i].vAlign, item[i].title, item[i].client);
     }
 };
 
@@ -601,104 +698,11 @@ printElements.forEach((el) => {
     el.addEventListener('click', openFocus);
 });
 
-/**** OLD PRINT SECTION - NOW MERGED INTO CAROUSEL ****/
-/*
-    const renderPrintItems = (item) => {
-        const printItemsLength = Object.keys(printItems).length;
-        for (let i = 0; i < printItemsLength; i++) {
-            const { id, img, title, client, description } = printItems[i];
-            createPrintHtml(id, img, title, client, description);
-        }
-    };
-
-    const createPrintHtml = (id, img, title) => {
-        const markup = `
-        <div class="splide__slide print__item">
-            <img src="${img}" alt="${title}">
-            <div class="print__item-info" id="${id}">
-                <h3 class="print__item-title heading-3">${title}</h3>
-                <svg class="print__zoom">
-                    <use xlink:href="img/sprite.svg#icon-plus"></use>
-                </svg>
-            </div>
-        </div>
-        `;
-        document.querySelector('.print__list').insertAdjacentHTML('beforeend', markup);
-    };
-
-    const createPrintHtml = (id, img, title) => {
-        const markup = `
-        <div class="splide__slide carousel__item">
-            <img src="${img}" alt="${title}">
-            <div class="carousel__item-info" id="${id}">
-                <h3 class="carousel__item-title heading-3">${title}</h3>
-                <svg class="carousel__zoom">
-                    <use xlink:href="img/sprite.svg#icon-plus"></use>
-                </svg>
-            </div>
-        </div>
-        `;
-        document.querySelector('.print__list').insertAdjacentHTML('beforeend', markup);
-    };
-    renderPrintItems(printItems);
-
-    const printElements = document.querySelectorAll(`.${elementStrings.printItem}`);
-    printElements.forEach((el) => {
-        el.addEventListener('click', openFocus);
-    });
-
-    // Splide carousel initiation and options
-    document.addEventListener('DOMContentLoaded', function () {
-        new Splide('#print-splide', {
-            type: 'loop',
-            speed: 3000,
-            rewindSpeed: 1000,
-            //fixedWidth: '40rem',
-            //fixedHeight: '80vh',
-            heightRatio: 0.5,
-            autoWidth: true,
-            //trimSpace: false,
-            focus: 'center',
-            perPage: 2,
-            gap: '15rem',
-            classes: {
-                arrow: 'splide__arrow your-class-arrow print__slide-arrow',
-                page: 'splide__pagination__page print__slide-pages'
-            }
-        }).mount();
-    });
-    */
-
-/**** OLD CHARITY SECTION - GALLERY FORMAT ****/
-/*
-    const renderGalleryItems = (item) => {
-        const galleryItemsLength = Object.keys(charityItems).length;
-        for (let i = 0; i < galleryItemsLength; i++) {
-            createGalleryHtml(item[i].id, item[i].img, item[i].title);
-        }
-    };
-
-    const createGalleryHtml = (id, img, title) => {
-        const markup = `
-        <figure class="charity__item charity__item--${id.split('-')[1]}">
-            <img src="${img}" alt="${title}" class="charity__img">
-            <svg class="charity__zoom">
-                <use xlink:href="img/sprite.svg#icon-plus"></use>
-            </svg>
-        </figure>
-        `;
-        document.querySelector('.charity__items').insertAdjacentHTML('beforeend', markup);
-    };
-
-    // Create Gallery items on load
-    renderGalleryItems(charityItems);
-
-    // Add event listeners to all charity items
-    const charityZooms = document.querySelectorAll('.charity__zoom');
-    charityZooms.forEach((el) => {
-        el.addEventListener('click', openFocus);
-    });
-    */
+// Assign event listeners to Show All buttons
+const showAllElements = document.querySelectorAll(`.${elementStrings.showAll}`);
+showAllElements.forEach((el) => {
+    el.addEventListener('click', showAll);
+});
 
 /**** CAROUSEL ****/
 const renderCarouselItems = (section, obj) => {
@@ -742,11 +746,25 @@ const splideOptions = {
     fixedHeight: '35rem',
     focus: 'center',
     perPage: 2,
-    //gap: '15rem',
     gap: '5rem',
     classes: {
         arrow: 'splide__arrow splide-carousel__slide-arrow',
         page: 'splide__pagination__page splide-carousel__slide-pages'
+    },
+    breakpoints: {
+		900: {
+			perPage: 1,
+            gap: '3rem'
+		},
+        600: {
+            gap: '1.5rem',
+            height: '45vh',
+            autoWidth: true
+        },
+        400: {
+            gap: '1rem',
+            height: '35vh',
+        }
     }
 };
 

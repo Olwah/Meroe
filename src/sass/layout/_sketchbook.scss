@@ -1,4 +1,5 @@
 .sketchbook {
+    /*
     grid-column: full-start / full-end;
 
     display: grid;
@@ -7,6 +8,7 @@
 
     //padding-bottom: 10rem;
     margin-bottom: 30rem;
+    
 
     &__sidebar {
         grid-row: 1 / -1;
@@ -14,6 +16,7 @@
 
         position: relative;
     }
+    */
 
     &__sticky {
         letter-spacing: 0.5rem;
@@ -31,6 +34,10 @@
         height: 100vh;
         width: 100%;
         margin-top: 5rem;
+
+        @include respond(tab-port) {
+            display: none;
+        }
     }
 
     &__btn {

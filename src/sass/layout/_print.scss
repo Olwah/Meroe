@@ -7,7 +7,7 @@
     grid-template-columns: [full-start] 8rem [center-start] 1fr [full-end];
 
     margin-bottom: 30rem;
-    */
+    
 
     // To match portfolio section
     grid-column: full-start / full-end;
@@ -19,12 +19,14 @@
     background-color: $color-white;
     margin-bottom: 30rem;
     
+    
     &__sidebar {
         grid-row: 1 / -1;
         grid-column: full-start / center-start;
 
         position: relative;
     }
+    */
 
     &__sticky {
         letter-spacing: 0.5rem;
@@ -43,16 +45,36 @@
 
         display: grid;
         grid-auto-rows: 24rem;
-        grid-template-columns: repeat(auto-fit, minmax(34.5rem, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
         grid-gap: 5.5rem;
 
         padding: 10rem 2rem 0 2rem;
         margin: 0 auto;
+
+        @include respond(phone-land) {
+            grid-auto-rows: 30rem;
+        }
+
+        @include respond(phone-port) {
+            padding-top: 1rem;
+        }
     }
 
     &__piece {
         display: grid;
         grid-template-rows: 75% 25%;
+
+        &:nth-child(n+5) {
+            @include respond(phone-port) {
+                display: none;
+            }
+        }
+
+        &.active {
+            @include respond(phone-port) {
+                display: grid;
+            }
+        }
     }
 
     &__piece:hover .spotlight__piece-info {

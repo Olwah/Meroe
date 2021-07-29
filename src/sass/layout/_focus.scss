@@ -1,20 +1,13 @@
 .focus {
-    //display: flex;
-    //flex-direction: column;
-    //justify-content: space-between;
     display: grid;
-    grid-template-rows: 75% 25%;
+    grid-template-rows: 65% 35%;
     grid-template-columns: 10% 80% 10%;
 
     position: fixed;
-    //top: 50%;
     top: 2rem;
     left: 50%;
-    //transform: translate(-50%, -50%);
     transform: translateX(-50%);
-    //height: 90vh;
     height: 94vh;
-    //width: 65vw;
     width: 75%;
     background-color: $color-white;
     padding: 1rem;
@@ -24,10 +17,31 @@
     transition: opacity 1s;
     z-index: 50;
 
+    @include respond(tab-land) {
+        grid-template-columns: 5% 90% 5%;
+    }
+
+    @include respond(phone-land) {
+        width: 92%;
+        display: flex;
+        flex-direction: column;
+    }
+
     &--portrait {
-        //justify-content: flex-start;
-        //flex-direction: row;
         width: 50vw;
+
+        @include respond(tab-land) {
+            display: flex;
+            width: 60vw;
+        }
+
+        @include respond(tab-port) {
+            width: 85vw;
+        }
+
+        @include respond(phone-land) {
+            width: 90%;
+        }
     }
 
     &__charity {
@@ -50,6 +64,10 @@
         cursor: pointer;
         z-index: 20;
 
+        @include respond(phone-port) {
+            right: -1.5rem;
+        }
+
         &-icon {
             width: 2.5rem;
             height: 2.5rem;
@@ -62,7 +80,7 @@
 
         position: relative;
         width: 100%;
-        //height: 75%;
+        //max-height: 74%;
         height: 100%;
         display: flex;
         justify-content: center;
@@ -71,6 +89,20 @@
         &--portrait {
             width: max-content;
             height: 100%;
+            max-height: 100%;
+
+            @include respond(tab-land) {
+                width: 100%;
+                max-height: 75%;
+            }
+
+            @include respond(phone-land) {
+                max-height: 72%;
+            }
+
+            @include respond(phone-port) {
+                max-height: 70%;
+            }
         }
     }
 
@@ -95,37 +127,75 @@
         margin: 0 -.1rem;
         z-index: 10;
 
+        @include respond(tab-land) {
+            visibility: visible; 
+        }
+
         &--portrait {
             flex-basis: 40rem;
             flex-grow: 2;
             //padding: 0 3rem 1rem 3rem;
             padding: 1rem .5rem;
+
+            @include respond(tab-land) {
+                //justify-content: flex-end;
+                //margin: 6.5rem -.1rem 0 -.1rem;
+                margin: 0;
+                height: min-content;
+                //padding: 0 1rem;
+            }
         }
     }
 
     &:hover .focus__piece-info {
         visibility: visible;
         animation: diffuse-info 0.5s linear 1;
+
+        @include respond(tab-land) {
+            animation: none; 
+        }
     }
 
     &__title {
         font-family: $font-headings;
         font-size: 2rem;
         padding-bottom: 1rem;
+
+        @include respond(tab-land) {
+            padding-bottom: .5rem;
+        }
+
+        @include respond(phone-land) {
+            font-size: 1.5rem;
+        }
     }
 
     &__client {
         font-style: italic;
-        padding-bottom: 1.5rem;
+        background-color: $color-black;
+        color: $color-white;
+        padding: 1rem;
+        margin: 1rem 0;
+        //padding-bottom: 1.5rem;
+
+        /*
+        @include respond(tab-land) {
+            //padding-bottom: .5rem;
+        }
+        */
     }
 
     &__logo {
         position: absolute;
         bottom: .5rem;
-        //right: 0;
         right: .5rem;
         font-family: $font-headings;
         text-transform: uppercase;
+        z-index: 10;
+
+        @include respond(phone-land) {
+            display: none;
+        }
     }
 
     &__hint {
@@ -133,6 +203,10 @@
         right: -4.5rem;
         bottom: 50%;
         transform: rotate(270deg);
+
+        @include respond(tab-land) {
+            display: none;
+        }
     }
 
     &__hide {

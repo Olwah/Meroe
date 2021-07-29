@@ -1,18 +1,5 @@
 .about {
-    grid-column: full-start / full-end;
-
-    display: grid;
-    grid-template-rows: max-content;
-    grid-template-columns: [full-start] 8rem [center-start] 1fr [full-end];
-
-    padding-bottom: 10rem;
-
-    &__sidebar {
-        grid-row: 1 / -1;
-        grid-column: full-start / center-start;
-
-        position: relative;
-    }
+    margin-bottom: 10rem;
 
     &__sticky {
         letter-spacing: 0.5rem;
@@ -33,11 +20,36 @@
         font-size: 3rem;
         font-weight: 600;
         text-transform: none;
+
+        @include respond(tab-port) {
+            font-size: 2rem;
+        }
+
+        @include respond(phone-land) { 
+            font-size: 1.5rem;
+        }
+
+        @include respond(phone-port) {
+            font-size: 1.2rem;
+            text-align: center;
+        }
     }
 
     &__contact {
         font-size: 2.5rem;
         padding-bottom: 1.5rem;
+
+        @include respond(tab-land) {
+            font-size: 1.5rem;
+        }
+
+        @include respond(tab-port) { 
+            font-size: 1.2rem;
+        }
+
+        @include respond(phone-port) {
+            text-align: center;
+        }
 
         & > a,
         & > a:link,
@@ -50,6 +62,10 @@
         font-size: 2rem;
         font-weight: bold;
         text-align: center;
+
+        @include respond(tab-port) { 
+            font-size: 1.6rem;
+        }
     }
 
     &__clients,
@@ -65,6 +81,10 @@
             background-color: $color-black;
             @include absCenter;
             top: 4.5rem;
+
+            @include respond(phone-port) { 
+                width: 20rem;
+            }
         }
     }
 
@@ -75,11 +95,29 @@
         align-items: center;
         list-style: none;
         padding: 1rem;
+
+        @include respond(phone-port) { 
+            flex-direction: column;
+        }
+    }
+
+    &__client-list {
+        @include respond(phone-land) { 
+            flex-wrap: wrap;
+        }
     }
 
     &__client-item,
     &__award-item {
         font-size: 1.5rem;
         padding: 1rem;
+
+        @include respond(tab-land) {
+            text-align: center;
+        }
+
+        @include respond(tab-port) { 
+            font-size: 1.2rem;
+        }
     }
 }

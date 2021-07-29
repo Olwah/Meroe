@@ -1,18 +1,4 @@
 .charity {
-    grid-column: full-start / full-end;
-
-    display: grid;
-    grid-template-rows: min-content max-content;
-    grid-template-columns: [full-start] 8rem [center-start] 1fr [full-end];
-
-    margin-bottom: 30rem;
-
-    &__sidebar {
-        grid-row: 1 / -1;
-        grid-column: full-start / center-start;
-
-        position: relative;
-    }
 
     &__sticky {
         letter-spacing: 0.5rem;
@@ -24,12 +10,6 @@
         grid-column: center-start / full-end;
         padding: 1.5rem;
     }
-
-    /*
-    &__splide-container {
-        max-height: 50rem;
-    }
-    */
 
     &__items {
         grid-row: 2 / -1;

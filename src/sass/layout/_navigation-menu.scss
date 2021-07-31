@@ -13,13 +13,9 @@
 
   &.active {
     grid-row: 1 / 1;
-    width: 19%;
+    width: 28%;
     box-shadow: 4px 4px 3px $color-white;
     padding: 1.5rem;
-
-    @include respond(tab-land) {
-      width: 28%;
-    }
 
     @include respond(tab-port) {
       width: 30%;
@@ -44,7 +40,7 @@
     justify-content: center;
     align-items: center;
     position: absolute;
-    top: 10rem;
+    top: 9rem;
     left: 3rem;
     color: $color-white;
     background-color: $color-black;
@@ -59,12 +55,21 @@
     padding: 0.3rem 1rem 0.5rem 1.2rem;
     transition: top 1s;
 
+    @include respond(tab-port) {
+      left: 1rem;
+    }
+
+    @include respond(phone-land) {
+      display: none;
+    }
+
     &.scroll-down {
       top: 1rem;
     }
 
     &.animate-nav-arrow {
       animation: nav-arrow 1.2s ease-in 1 running forwards;
+      top: 3rem;
     }
 
     &.animate-nav-arrow-reverse {
@@ -79,6 +84,10 @@
       background-color: #000;
       height: 2px;
       width: 2.5rem;
+
+      @include respond(phone-port) {
+        width: 2rem;
+      }
 
       &,
       &::before,
@@ -103,25 +112,13 @@
       }
 
       &.active::before {
-        transform: rotate(134deg);
+        transform: translate(0px, -.5px) rotate(133deg);
       }
 
       &.active::after {
         transform: rotate(-133deg) translate(9px, 9px);
         margin-top: -.8px;
       }
-
-      @include respond(phone-port) {
-        width: 2rem;
-    }
-    }
-
-    @include respond(tab-port) {
-      left: 1rem;
-    }
-
-    @include respond(phone-land) {
-      display: none;
     }
   }
 
@@ -141,7 +138,7 @@
     &--mobile {
       position: absolute;
       top: -2rem;
-      right: -1rem;
+      right: -5rem;
       width: 40vw;
       background-color: $color-white;
       margin-top: 0;
@@ -151,6 +148,14 @@
 
       &.active {
         transform: translate(1rem, 6rem);
+
+        @include respond(phone-land) {
+          transform: translate(-2rem, 6rem);
+        }
+
+        @include respond(phone-port) {
+          transform: translate(-3rem, 6rem);
+        }
       }
 
       @include respond(phone-port) {

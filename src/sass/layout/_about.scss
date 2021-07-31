@@ -96,14 +96,8 @@
         list-style: none;
         padding: 1rem;
 
-        @include respond(phone-port) { 
-            flex-direction: column;
-        }
-    }
-
-    &__client-list {
         @include respond(phone-land) { 
-            flex-wrap: wrap;
+            flex-direction: column;
         }
     }
 

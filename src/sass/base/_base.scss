@@ -52,6 +52,7 @@ body {
 
     @include respond(tab-port) {
         grid-template-columns: [full-start] 6rem [center-start] 1fr [full-end];
+        margin-bottom: 10rem;
     }
 
     @include respond(phone-land) {
@@ -109,7 +110,7 @@ body {
 
 .show-all {
     display: none;
-    width: 20rem;
+    width: 30rem;
     background-color: $color-black;
     color: $color-white;
     font-family: $font-headings;
@@ -117,10 +118,17 @@ body {
     padding: 1rem;
     font-size: 1.3rem;
     text-align: center;
-    margin: 1rem auto;
+    margin: 2rem auto;
 
     @include respond(tab-port) {
-        display: block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        grid-column: center-start / center-end;
+    }
+
+    @include respond(phone-land) {
+        width: 20rem;
     }
 }
 

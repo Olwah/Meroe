@@ -53,6 +53,7 @@
 
         @include respond(phone-land) {
             grid-auto-rows: 30rem;
+            padding: 2rem 2rem 0 2rem;
         }
 
         @include respond(phone-port) {

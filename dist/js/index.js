@@ -8,15 +8,11 @@ const elements = {
     navClose: document.querySelector('.nav-menu__close'),
     navContent: document.querySelector('.nav-menu__content'),
     navMenuMobile: document.querySelector('.nav-menu__mobile'),
-    navMenuCheckbox: document.querySelector('.nav-menu__checkbox'),
     navMenuOpenArrowMobile: document.querySelector('.nav-menu__open-arrow--mobile'),
     navMenuContentMobile: document.querySelector('.nav-menu__content--mobile'),
     header: document.querySelector('.header'),
     headerWrapper: document.querySelector('.header__wrapper'),
     headerTitle: document.querySelector('.header__title'),
-    headerSlidesContainer: document.querySelector('.header__slideshow-container'),
-    headerSlides: document.querySelector('.header__slideshow-slides'),
-    headerSlideshowDots: document.querySelector('.header__slideshow-dots'),
     spotlightPieces: document.querySelector('.spotlight__pieces'),
     spotlightPiece: document.querySelector('.spotlight__piece'),
     printPieces: document.querySelector('.print__pieces'),
@@ -26,9 +22,8 @@ const elements = {
 };
 
 const elementStrings = {
+    focusNavItem: 'focus__nav-item',
     navMenuListItem: 'nav-menu__list-item',
-    headerSlides: 'header__slideshow-slides',
-    headerDot: 'header__slideshow-dot',
     spotlightPiece: 'spotlight__piece',
     spotlightZoom: 'spotlight__zoom',
     spotlightImg: 'spotlight__img',
@@ -39,8 +34,6 @@ const elementStrings = {
     showAllPrint: 'show-all--print',
     printItem: 'print__item',
     printZoom: 'print__zoom',
-    galleryItem: 'gallery__item',
-    galleryZoom: 'gallery__zoom',
     carouselItem: 'splide-carousel__item',
     carouselZoom: 'splide-carousel__zoom'
 };
@@ -56,6 +49,7 @@ const spotlightItems = {
         client: 'Client - Battersea Arts Centre',
         description:
             'Throughout the first half of 2021 I art directed and produced illustrations for the board game "Life Is What U Make It" along with designer Messy Pandas who worked on the branding, colour schemes and layout. The board game will be trialled in schools across London to educate children on the dangers of joining gangs and the potential long term impact.',
+        additionalImgs: true,
         imgLibrary: {
             0: {
                 img: 'img/LIWUMI_Rule_Book_Cover.jpg',
@@ -433,14 +427,11 @@ const animateNavList = () => {
 };
 
 // Nav-menu event listeners
-// Desktop nave menu elements
+// Desktop nav menu elements
 const navEventListeners = ['#menu-open', '.header__logo', '.nav-menu__initial'];
 
-// Add initial event listeners on load
-navEventListeners.forEach((el) => {
-    document.querySelector(`${el}`).addEventListener('click', toggleNav);
-});
-document.getElementById('menu-close').addEventListener('click', closeNav);
+// Add initial event listeners based on client screen size
+toggleNavEventListeners();
 
 // Add resizing event listener to the window object
 window.addEventListener('resize', toggleNavEventListeners);
@@ -449,21 +440,20 @@ window.addEventListener('resize', toggleNavEventListeners);
 function toggleNavEventListeners() {
     // Get width of the window excluding scrollbars
     let w = document.documentElement.clientWidth;
-    
+
     // If window size drops below 600px then remove eventlistener on desktop nav menu
-    if (w <= 600) {
+    if (w <= 670) {
         // Remove nav desktop event listeners
         navEventListeners.forEach((el) => {
             document.querySelector(`${el}`).removeEventListener('click', toggleNav);
         });
-        document.getElementById('menu-close').removeEventListener('click', closeNav);
     } else {
         // Add nav desktop event listeners
         navEventListeners.forEach((el) => {
             document.querySelector(`${el}`).addEventListener('click', toggleNav);
         });
         document.getElementById('menu-close').addEventListener('click', closeNav);
-    }  
+    }
 }
 
 // Mobile nav-menu event listeners
@@ -540,7 +530,15 @@ const createSpotlightHtml = (section, id, img, vAlign, title, client) => {
     if (section === 'print') elements.printPieces.insertAdjacentHTML('beforeend', markup);
 };
 
-const maxStrLength = (title, limit = 19) => {
+const maxStrLength = (title, limit = 16) => {
+    // Change word limit based on screen size
+    let w = document.documentElement.clientWidth;
+    if (w <= 400) limit = 22;
+    if (w <= 670) limit = 17;
+    if (w <= 900) limit = 22;
+    if (w <= 1200) limit = 16;
+    if (w > 1200) limit = 100;
+
     const newStr = [];
     if (title.length > limit) {
         title.split(' ').reduce((acc, cur) => {
@@ -558,8 +556,8 @@ const maxStrLength = (title, limit = 19) => {
 const showAllText = (section) => {
     console.log(section.innerText);
     //Only changing in one direction need to fix
-    section.innerText = "SHOW ALL" ? section.innerText = "SHOW LESS" : section.innerText = "SHOW ALL";
-}
+    section.innerText = 'SHOW ALL' ? (section.innerText = 'SHOW LESS') : (section.innerText = 'SHOW ALL');
+};
 
 const showAll = (e) => {
     if (e.target.matches(`.${elementStrings.showAllSpotlight}, .${elementStrings.showAllSpotlight} *`)) {
@@ -571,7 +569,6 @@ const showAll = (e) => {
         // Add styles to clicked show all button
         const showAllSpotlight = document.querySelector('.show-all--spotlight');
         showAllText(showAllSpotlight);
-
     } else if (e.target.matches(`.${elementStrings.showAllPrint}, .${elementStrings.showAllPrint} *`)) {
         const printPieceEls = document.querySelectorAll('.print__piece');
         printPieceEls.forEach((el) => {
@@ -580,7 +577,7 @@ const showAll = (e) => {
         const showAllPrint = document.querySelector('.show-all--print');
         showAllText(showAllPrint);
     }
-}
+};
 
 /**** FOCUS ITEM ****/
 const openFocus = (e) => {
@@ -592,10 +589,28 @@ const openFocus = (e) => {
         // Access the relevant information in the spotlightItems object
         const nearestSection = e.target.closest('div').parentElement.className.split('__')[0];
         const section = nearestSection === 'spotlight' ? spotlightItems : printItems;
-        const { portrait, img, title, client, description } = section[pieceID - 1];
+        const { portrait, img, title, client, description, additionalImgs, imgLibrary } = section[pieceID - 1];
 
         // Create HTML and insert into the DOM
-        createFocusHtml('show-client', img, title, client, description, portrait);
+        createFocusHtml('show-client', img, title, client, description, portrait, additionalImgs);
+
+        // Add in additional HTML for extra images
+        if (additionalImgs) {
+            // Get number of additional items from object
+            const numberImgs = Object.keys(imgLibrary).length;
+            // Loop through creating the necessary HTML
+            for (let i = 0; i < numberImgs; i++) {
+                createFocusNavListHtml(i);
+                createFocusExtraImageHtml(imgLibrary, i, title);
+                createFocusExtraImageInfoHtml(imgLibrary, i);
+            }
+
+            // Add event listeners to newly created nav buttons
+            const focusNavItems = document.querySelectorAll('.focus__nav-item');
+            focusNavItems.forEach((el) => {
+                el.addEventListener('click', toggleFocusAddImgs);
+            });
+        }
 
         // CAROUSEL ITEMS
     } else if (e.target.matches(`.${elementStrings.carouselZoom}, .${elementStrings.carouselZoom} *`)) {
@@ -604,7 +619,7 @@ const openFocus = (e) => {
         const pieceID = e.target.closest('div').id.split('-')[1];
 
         // Access the relevant information in the correct object
-        const { img, title, client, description, portrait } = window[section][pieceID - 1];
+        const { img, title, client, description, portrait, additionalImgs, imgLibrary } = window[section][pieceID - 1];
 
         // Create HTML and insert into the DOM
         createFocusHtml(
@@ -613,7 +628,8 @@ const openFocus = (e) => {
             title,
             client,
             description,
-            portrait
+            portrait,
+            additionalImgs
         );
     }
 
@@ -633,10 +649,12 @@ const openFocus = (e) => {
 const closeFocus = () => {
     // Select the 'focus' element
     const focus = document.getElementById('focus');
+    const focusClose = document.querySelector('.focus__close');
 
     // Remove 'focus' from DOM
     focus.classList.remove('appear');
     setTimeout(() => {
+        focusClose.remove();
         focus.remove();
     }, 1000);
 
@@ -645,30 +663,84 @@ const closeFocus = () => {
     container.classList.remove('focus-active');
 };
 
-const createFocusHtml = (section, img, title, client, desc, portrait) => {
+const createFocusHtml = (section, img, title, client, desc, portrait, additionalImgs) => {
     if (desc === undefined) desc = client;
     const markup = `
-        <div class="focus ${portrait === true ? 'focus--portrait' : ''} ${section === 'show-client' ? '' : 'focus__charity'}" id="focus">
-            <div class="focus__hint">
-                <p>Hover for details</p>
+        <div class="focus__close">
+            <img src="img/close.png" class="focus__close-icon" id="focus-close" alt="Close">
+        </div>
+        <div class="focus ${portrait === true ? 'focus--portrait' : ''} ${
+        section === 'show-client' ? '' : 'focus__charity'
+    } ${additionalImgs === true ? 'focus__add-imgs' : ''}" id="focus">
+            <div class="focus__hint ${additionalImgs === true ? 'focus__add-imgs' : ''}">
+                <p>&larr; Scroll for details</p>
             </div>
-            <div class="focus__close">
-                <img src="img/close.png" class="focus__close-icon" id="focus-close" alt="Close">
+            <div class="focus__nav ${additionalImgs === true ? 'active' : ''}">
+                <ul class="focus__nav-list">
+                    <li id="focus__nav-item--original" class="focus__nav-item active">1</li>
+                    <!-- ADDITIONAL IMAGES NAVIGATION -->
+                </ul>
             </div>
             <div class="focus__img-wrapper ${portrait === true ? 'focus__img-wrapper--portrait' : ''}">
-                <img src="${img}" class="focus__img" alt="${title}">
+                <img src="${img}" id="focus__img--original" class="focus__img active" alt="${title}">
+                <!-- ADDITIONAL PROJECT IMAGES -->
             </div>
             <div class="focus__piece-info ${portrait === true ? 'focus__piece-info--portrait' : ''}">
                 <h2 class="focus__title heading-3">${title}</h2>
                 <p class="focus__client ${section === 'show-client' ? '' : 'focus__hide'}">${client}</p>
-                <p class="focus__description">${desc}</p>
+                <p id="focus__description--original" class="focus__description active">${desc}</p>
+                <!-- ADDITIONAL PROJECT DESCRIPTIONS -->
             </div>
-            <div class="focus__logo">
+            <div class="focus__logo ${additionalImgs === true ? 'focus__add-imgs' : ''}">
                 <h3>Meroë</h3>
             </div>
         </div>
         `;
     document.getElementById('container').insertAdjacentHTML('beforebegin', markup);
+};
+
+// HTML to be added if there are additional images in the project that need to be displayed in the focus panel
+const createFocusNavListHtml = (id) => {
+    const markup = `
+        <li id="focus__nav-item--${id + 1}" class="focus__nav-item">${id + 2}</li>
+    `;
+    document.querySelector('.focus__nav-list').insertAdjacentHTML('beforeend', markup);
+};
+
+const createFocusExtraImageHtml = (imgLibrary, id, title) => {
+    const markup = `
+        <img src="${imgLibrary[id].img}" id="focus__img--${id + 1}" class="focus__img" alt="${title}">
+    `;
+    document.querySelector('.focus__img-wrapper').insertAdjacentHTML('beforeend', markup);
+};
+
+const createFocusExtraImageInfoHtml = (imgLibrary, id) => {
+    const markup = `
+        <p id="focus__description--${id + 1}" class="focus__description">${imgLibrary[id].desc}</p>
+    `;
+    document.querySelector('.focus__piece-info').insertAdjacentHTML('beforeend', markup);
+};
+
+// Function to control event listeners to focus nav buttons
+const toggleFocusAddImgs = (e) => {
+    // Find id of clicked focus nav button
+    const id = e.target.closest('li').id.split('--')[1];
+
+    // Remove 'active' class from all other elements
+    const focusNavs = document.querySelectorAll('.focus__nav-item');
+    const focusImgs = document.querySelectorAll('.focus__img');
+    const focusDescs = document.querySelectorAll('.focus__description');
+    const allEls = [focusNavs, focusImgs, focusDescs];
+    allEls.forEach((group) => {
+        group.forEach((el) => {
+            el.classList.remove('active');
+        });
+    });
+
+    // Add 'active' class to all other elements with matching id
+    document.getElementById(`focus__nav-item--${id}`).classList.add('active');
+    document.getElementById(`focus__img--${id}`).classList.add('active');
+    document.getElementById(`focus__description--${id}`).classList.add('active');
 };
 
 // Create Spotlight items on load
@@ -686,7 +758,7 @@ const renderPrintItems = (section, item) => {
 // Create Print items on load
 renderPrintItems('print', printItems);
 
-// Assign event listeners to all spotlight elements
+// Assign event listeners to all spotlight & print elements
 const spotlightElements = document.querySelectorAll(`.${elementStrings.spotlightPiece}`);
 const printElements = document.querySelectorAll('.print__piece');
 
@@ -740,8 +812,6 @@ const splideOptions = {
     type: 'loop',
     speed: 1500,
     rewindSpeed: 1000,
-    //heightRatio: 0.5,
-    //autoWidth: true,
     fixedWidth: 'fit-content',
     fixedHeight: '35rem',
     focus: 'center',
@@ -752,10 +822,10 @@ const splideOptions = {
         page: 'splide__pagination__page splide-carousel__slide-pages'
     },
     breakpoints: {
-		900: {
-			perPage: 1,
+        900: {
+            perPage: 1,
             gap: '3rem'
-		},
+        },
         600: {
             gap: '1.5rem',
             height: '45vh',
@@ -763,21 +833,24 @@ const splideOptions = {
         },
         400: {
             gap: '1rem',
-            height: '35vh',
+            height: '35vh'
         }
     }
 };
 
 // Splide carousel initiation
-/*
-document.addEventListener('DOMContentLoaded', function () {
-    new Splide('#print-splide', splideOptions).mount();
-});
-*/
-
+// Charity slideshow on DOM Content load
 document.addEventListener('DOMContentLoaded', function () {
     new Splide('#charity-splide', splideOptions).mount();
 });
+
+// NEED TO CONFIGURE AND TEST
+// Sketchbook slideshow triggered on window resize
+/*
+window.addEventListener('resize', function () {
+    new Splide('#sketchbook-splide', splideOptions).mount();
+});
+*/
 
 elements.carouselZooms.forEach((el) => {
     el.addEventListener('click', openFocus);

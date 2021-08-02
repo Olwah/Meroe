@@ -299,66 +299,82 @@ var charityItems = {
 
 const sketchbookItems = {
     0: {
+        id: 'sketchbook-1',
         img: 'img/sketchbook_front.jpg',
         title: 'Sketchbook Front Page'
     },
     1: {
+        id: 'sketchbook-2',
         img: 'img/Sketchbook1.jpg',
         title: 'Sketchbook Page 1'
     },
     2: {
+        id: 'sketchbook-3',
         img: 'img/Sketchbook2.jpg',
         title: 'Sketchbook Page 2'
     },
     3: {
+        id: 'sketchbook-4',
         img: 'img/Sketchbook3.jpg',
         title: 'Sketchbook Page 3'
     },
     4: {
+        id: 'sketchbook-5',
         img: 'img/Sketchbook4.jpg',
         title: 'Sketchbook Page 4'
     },
     5: {
+        id: 'sketchbook-6',
         img: 'img/Sketchbook5.jpg',
         title: 'Sketchbook Page 5'
     },
     6: {
+        id: 'sketchbook-7',
         img: 'img/Sketchbook6.jpg',
         title: 'Sketchbook Page 6'
     },
     7: {
+        id: 'sketchbook-8',
         img: 'img/Sketchbook7.jpg',
         title: 'Sketchbook Page 7'
     },
     8: {
+        id: 'sketchbook-9',
         img: 'img/Sketchbook8.jpg',
         title: 'Sketchbook Page 8'
     },
     9: {
+        id: 'sketchbook-10',
         img: 'img/Sketchbook9.jpg',
         title: 'Sketchbook Page 9'
     },
     10: {
+        id: 'sketchbook-11',
         img: 'img/Sketchbook10.jpg',
         title: 'Sketchbook Page 10'
     },
     11: {
+        id: 'sketchbook-12',
         img: 'img/Sketchbook11.jpg',
         title: 'Sketchbook Page 11'
     },
     12: {
+        id: 'sketchbook-13',
         img: 'img/Sketchbook12.jpg',
         title: 'Sketchbook Page 12'
     },
     13: {
+        id: 'sketchbook-14',
         img: 'img/Sketchbook13.jpg',
         title: 'Sketchbook Page 13'
     },
     14: {
+        id: 'sketchbook-15',
         img: 'img/Sketchbook14.jpg',
         title: 'Sketchbook Page 14'
     },
     15: {
+        id: 'sketchbook-16',
         img: 'img/sketchbook_back.jpg',
         title: 'Sketchbook Back Page'
     }
@@ -789,7 +805,7 @@ const createCarouselHtml = (section, id, img, title) => {
     const markup = `
         <div class="splide__slide splide-carousel__item ${section}__item">
             <img class="splide-carousel__img" src="${img}" alt="${title}">
-            <div class="splide-carousel__item-info" id="${id}">
+            <div class="splide-carousel__item-info ${section === 'sketchbook' ? 'active' : ''}" id="${id}">
                 <h3 class="splide-carousel__item-title heading-3">${title}</h3>
                 <svg class="splide-carousel__zoom">
                     <use xlink:href="img/sprite.svg#icon-plus"></use>
@@ -799,7 +815,6 @@ const createCarouselHtml = (section, id, img, title) => {
         `;
     document.querySelector(`.${section}__list`).insertAdjacentHTML('beforeend', markup);
 };
-//renderCarouselItems('print', printItems);
 renderCarouselItems('charity', charityItems);
 
 const carouselElements = document.querySelectorAll(`.${elementStrings.carouselItem}`);
@@ -826,9 +841,9 @@ const splideOptions = {
             perPage: 1,
             gap: '3rem'
         },
-        600: {
+        670: {
             gap: '1.5rem',
-            height: '45vh',
+            height: '60vh',
             autoWidth: true
         },
         400: {
@@ -844,13 +859,24 @@ document.addEventListener('DOMContentLoaded', function () {
     new Splide('#charity-splide', splideOptions).mount();
 });
 
-// NEED TO CONFIGURE AND TEST
-// Sketchbook slideshow triggered on window resize
-/*
+// Sketchbook slideshow triggered on window resize - this will hide flipbook and display carousel to prevent page dimensions breaking and provide better mobile viewing
 window.addEventListener('resize', function () {
+    // Hide flipbook and replace Splides HTML to prevent duplication
+    document.getElementById('sketchbook__book').classList.add('active');
+    const sketchItem = document.getElementById('sketchbook-splide');
+    const sketchSplideHtml = `
+        <div class="splide__track">
+            <div class="splide__list sketchbook__list">
+                <!-- DYNAMICALLY CREATED -->
+            </div>
+        </div>
+    `;
+    sketchItem.innerHTML = sketchSplideHtml;
+
+    // Render the new splide and carousel items
+    renderCarouselItems('sketchbook', sketchbookItems);
     new Splide('#sketchbook-splide', splideOptions).mount();
 });
-*/
 
 elements.carouselZooms.forEach((el) => {
     el.addEventListener('click', openFocus);

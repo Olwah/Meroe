@@ -29,13 +29,14 @@
     @include respond(phone-land) {
         width: 84%;
         height: auto;
-        max-height: 94vh;
+        max-height: 93vh;
         transform: translateX(-54%);
         padding: 1rem;
     }
 
     @include respond(phone-port) {
         width: 95%;
+        max-height: 88vh;
         transform: translateX(-50%);
         top: 5rem;
     }
@@ -52,11 +53,12 @@
         }
 
         @include respond(tab-port) {
-            width: 85vw;
+            width: auto;
         }
 
         @include respond(phone-land) {
             width: 86%;
+            max-height: 94vh;
             transform: translateX(-55%);
         }
 
@@ -139,11 +141,10 @@
 
             @include respond(tab-land) {
                 width: 100%;
-                max-height: 75%;
             }
 
             @include respond(phone-land) {
-                max-height: 72%;
+                max-width: 52vw;
             }
 
             @include respond(phone-port) {
@@ -276,10 +277,6 @@
         transform: rotate(270deg);
 
         @include respond(phone-land) {
-            display: none;
-        }
-
-        @include respond(phone-port) {
             display: none;
         }
 

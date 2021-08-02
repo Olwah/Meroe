@@ -55,6 +55,10 @@
             @include respond(phone-port) {
                 height: 4rem;
             }
+
+            &.active {
+                display: none;
+            }
         }
 
         &-title {

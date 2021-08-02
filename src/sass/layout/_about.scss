@@ -27,11 +27,11 @@
 
         @include respond(phone-land) { 
             font-size: 1.5rem;
+            text-align: center;
         }
 
         @include respond(phone-port) {
             font-size: 1.2rem;
-            text-align: center;
         }
     }
 
@@ -47,7 +47,7 @@
             font-size: 1.2rem;
         }
 
-        @include respond(phone-port) {
+        @include respond(phone-land) {
             text-align: center;
         }
 

@@ -570,9 +570,8 @@ const maxStrLength = (title, limit = 16) => {
 
 /**** SHOW ALL BUTTONS ****/
 const showAllText = (section) => {
-    console.log(section.innerText);
     //Only changing in one direction need to fix
-    section.innerText = 'SHOW ALL' ? (section.innerText = 'SHOW LESS') : (section.innerText = 'SHOW ALL');
+    section.innerHTML = 'SHOW ALL' ? (section.innerHTML = 'SHOW LESS') : (section.innerHTML = 'SHOW ALL');
 };
 
 const showAll = (e) => {
@@ -842,13 +841,16 @@ const splideOptions = {
             gap: '3rem'
         },
         670: {
+            perPage: 2,
+            start: 1,
             gap: '1.5rem',
-            height: '60vh',
             autoWidth: true
         },
         400: {
+            perPage: 1,
+            start: 1,
             gap: '1rem',
-            height: '35vh'
+            autoWidth: true
         }
     }
 };

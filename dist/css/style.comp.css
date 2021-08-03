@@ -173,7 +173,7 @@ p {
       font-size: 1.3rem; } }
   @media only screen and (max-width: 25em) {
     p {
-      font-size: 1.2rem; } }
+      font-size: 1rem; } }
 
 a {
   text-decoration: none;
@@ -277,11 +277,9 @@ a {
         flex-direction: column;
         justify-content: space-around;
         padding: .5rem;
-        height: 5rem;
+        height: auto;
+        width: 100%;
         margin-top: .5rem; } }
-    @media only screen and (max-width: 25em) {
-      .splide-carousel__item-info {
-        height: 4rem; } }
     .splide-carousel__item-info.active {
       display: none; }
   .splide-carousel__item-title {
@@ -289,10 +287,11 @@ a {
     font-size: 1.3rem; }
     @media only screen and (max-width: 41.875em) {
       .splide-carousel__item-title {
-        font-size: 1rem; } }
+        font-size: 1.4rem; } }
     @media only screen and (max-width: 25em) {
       .splide-carousel__item-title {
-        font-size: .8rem; } }
+        font-size: 1.2rem;
+        padding-bottom: .5rem; } }
 
 .splide-carousel__img {
   grid-row: 1 / -1;

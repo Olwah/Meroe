@@ -48,12 +48,9 @@
                 flex-direction: column;
                 justify-content: space-around;
                 padding: .5rem;
-                height: 5rem;
+                height: auto;
+                width: 100%;
                 margin-top: .5rem;
-            }
-
-            @include respond(phone-port) {
-                height: 4rem;
             }
 
             &.active {
@@ -66,11 +63,12 @@
             font-size: 1.3rem;
 
             @include respond(phone-land) {
-                font-size: 1rem;
+                font-size: 1.4rem;
             }
 
             @include respond(phone-port) {
-                font-size: .8rem;
+                font-size: 1.2rem;
+                padding-bottom: .5rem;
             }
         }
     }

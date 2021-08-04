@@ -579,7 +579,7 @@ const showAll = (e) => {
         const spotPieceEls = document.querySelectorAll('.spotlight__piece');
         // Show hidden spotlight pieces
         spotPieceEls.forEach((el) => {
-            el.classList.toggle('active');
+            el.classList.toggle('active'); 
         });
         // Add styles to clicked show all button
         const showAllSpotlight = document.querySelector('.show-all--spotlight');

@@ -524,23 +524,22 @@ a {
       top: 5rem; } }
   .focus::-webkit-scrollbar {
     display: none; }
-  .focus--portrait {
-    width: auto; }
-    @media only screen and (max-width: 75em) {
-      .focus--portrait {
-        display: flex; } }
-    @media only screen and (max-width: 56.25em) {
-      .focus--portrait {
-        width: auto; } }
-    @media only screen and (max-width: 41.875em) {
-      .focus--portrait {
-        width: 86%;
-        max-height: 94vh;
-        transform: translateX(-55%); } }
-    @media only screen and (max-width: 25em) {
-      .focus--portrait {
-        width: 95%;
-        transform: translateX(-50%); } }
+  @media only screen and (max-width: 75em) {
+    .focus--portrait {
+      display: flex; } }
+  @media only screen and (max-width: 56.25em) {
+    .focus--portrait {
+      width: auto; } }
+  @media only screen and (max-width: 41.875em) {
+    .focus--portrait {
+      width: 86%;
+      max-height: 94vh;
+      transform: translateX(-55%); } }
+  @media only screen and (max-width: 25em) {
+    .focus--portrait {
+      width: 95%;
+      height: 90vh;
+      transform: translateX(-50%); } }
   .focus__add-imgs {
     padding-right: 10rem; }
     @media only screen and (max-width: 56.25em) {
@@ -597,9 +596,6 @@ a {
       @media only screen and (max-width: 75em) {
         .focus__img-wrapper--portrait {
           width: 100%; } }
-      @media only screen and (max-width: 41.875em) {
-        .focus__img-wrapper--portrait {
-          max-width: 52vw; } }
       @media only screen and (max-width: 25em) {
         .focus__img-wrapper--portrait {
           max-height: 70%; } }

@@ -72,6 +72,16 @@ const spotlightItems = {
     1: {
         id: 'spotlight-2',
         portrait: false,
+        img: 'img/Camberwell_Police_Station_web.jpg',
+        vAlign: false,
+        title: 'Old Camberwell Police Station Takeover',
+        client: 'Client - Self Initiated July/August 2021',
+        description:
+            'Documenting the takeover by "The Serious Annoyance" of the Old Camberwell Police Station as a protest against the new policing bill. Particularly liked the effort that had gone into the hand made fabric signs that they\'d arranged out of the windows and how it divided up the space on the front of the building. As of writing, the old Camberwell Police Station has actually been vacant since 2019 and I had no idea until the protest started.'
+    },
+    2: {
+        id: 'spotlight-3',
+        portrait: false,
         img: 'img/LifeonLettsom.jpg',
         vAlign: false,
         title: 'Lettsom Estate',
@@ -79,8 +89,8 @@ const spotlightItems = {
         description:
             'Editorial Illustration contribution to the Life on Lettsom magazine, a new Southwark Council funded publication for the residents of the Lettsom housing estate in South London.'
     },
-    2: {
-        id: 'spotlight-3',
+    3: {
+        id: 'spotlight-4',
         portrait: false,
         img: 'img/Love_Walk_Cafe.jpg',
         vAlign: false,
@@ -89,8 +99,8 @@ const spotlightItems = {
         description:
             'Contribution to the Camberwell Arts Group, used on local banners as part of Camberwell’s new identity and branding.\nImage depicts Love Walk Cafe.'
     },
-    3: {
-        id: 'spotlight-4',
+    4: {
+        id: 'spotlight-5',
         portrait: false,
         img: 'img/Kiku.jpg',
         vAlign: true,
@@ -99,8 +109,8 @@ const spotlightItems = {
         description:
             'Sumo bottle label design for Kanpai Saké Brewery’s limited edition range.\nForms part of a ‘triptych’ of labels adapting elements of Peckham with traditional/well known Japanese concepts.'
     },
-    4: {
-        id: 'spotlight-5',
+    5: {
+        id: 'spotlight-6',
         portrait: false,
         img: 'img/Miru.jpg',
         vAlign: true,
@@ -109,8 +119,8 @@ const spotlightItems = {
         description:
             'Samurai bottle label design for Kanpai Saké Brewey’s limited edition range.\nForms part of a ‘triptych’ of labels adapting elements of Peckham with traditional/well known Japanese concepts.'
     },
-    5: {
-        id: 'spotlight-6',
+    6: {
+        id: 'spotlight-7',
         portrait: false,
         img: 'img/Nomu.jpg',
         vAlign: true,
@@ -119,8 +129,8 @@ const spotlightItems = {
         description:
             'Geisha bottle label design for Kanpai Saké Brewery’s limited edition range.\nForms part of a ‘triptych’ of labels adapting elements of Peckham with traditional/well known Japanese concepts.'
     },
-    6: {
-        id: 'spotlight-7',
+    7: {
+        id: 'spotlight-8',
         portrait: true,
         img: 'img/Brixton.jpg',
         vAlign: false,
@@ -129,8 +139,8 @@ const spotlightItems = {
         description:
             'Images for Maison Des Languages’ language book for French students studying English.\nForms part of an exercise in a comic book format.'
     },
-    7: {
-        id: 'spotlight-8',
+    8: {
+        id: 'spotlight-9',
         portrait: true,
         img: 'img/Frontpage6.jpg',
         vAlign: false,
@@ -139,8 +149,8 @@ const spotlightItems = {
         description:
             'Poster design for Citi group to commemorate an agreement with the Government of Cyprus, commissioned by the French embassy.'
     },
-    8: {
-        id: 'spotlight-9',
+    9: {
+        id: 'spotlight-10',
         portrait: true,
         img: 'img/Citi_Telefonica.jpg',
         vAlign: false,
@@ -149,8 +159,8 @@ const spotlightItems = {
         description:
             'Poster design for Citi group to commemorate an agreement with Telefonica, featuring an ‘uncle Sam’ style figure. '
     },
-    9: {
-        id: 'spotlight-10',
+    10: {
+        id: 'spotlight-11',
         portrait: false,
         img: 'img/Gospel_Green.jpg',
         vAlign: false,
@@ -158,8 +168,8 @@ const spotlightItems = {
         client: 'Unused',
         description: 'Unused concept for Gospel Green Cider.'
     },
-    10: {
-        id: 'spotlight-11',
+    11: {
+        id: 'spotlight-12',
         portrait: false,
         img: 'img/Yubari.jpg',
         vAlign: false,
@@ -168,8 +178,8 @@ const spotlightItems = {
         description:
             'Self initiated piece from a visit to Northern Japan’s Yubari, a former mining town that very much echoes the same issues faced by North East England.\nIt went on to be shortlisted and then a winner of Hire an Illustrator’s Showcase 100, and was exhibited at the Framer’s Gallery in London, 2015.'
     },
-    11: {
-        id: 'spotlight-12',
+    12: {
+        id: 'spotlight-13',
         portrait: true,
         img: 'img/WillGraham.jpg',
         vAlign: false,
@@ -177,8 +187,8 @@ const spotlightItems = {
         client: 'Self Initiated - Fan Art',
         description: 'Born from a love of the Hannibal drama.'
     },
-    12: {
-        id: 'spotlight-13',
+    13: {
+        id: 'spotlight-14',
         portrait: false,
         img: 'img/Lumley_Castle.jpg',
         vAlign: false,

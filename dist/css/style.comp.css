@@ -596,9 +596,6 @@ a {
       @media only screen and (max-width: 75em) {
         .focus__img-wrapper--portrait {
           width: 100%; } }
-      @media only screen and (max-width: 25em) {
-        .focus__img-wrapper--portrait {
-          max-height: 70%; } }
   .focus__img {
     max-width: 100%;
     max-height: 100%; }

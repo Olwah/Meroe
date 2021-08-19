@@ -29,12 +29,12 @@
         "npm-run-all": "^4.1.1",
         "postcss-cli": "^4.1.1",
         "webpack-cli": "^3.3.12",
-        "webpack-dev-server": "^3.1.1"
+        "webpack-dev-server": "^3.11.2"
     },
     "dependencies": {
-        "@splidejs/splide": "^2.4.14",
+        "@splidejs/splide": "^2.4.21",
         "babel-polyfill": "^6.26.0",
         "uniqid": "^4.1.1",
-        "webpack": "^4.43.0"
+        "webpack": "^4.46.0"
     }
 }

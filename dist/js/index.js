@@ -563,7 +563,7 @@ const maxStrLength = (title, limit = 16) => {
     if (w <= 670) limit = 17;
     if (w <= 900) limit = 22;
     if (w <= 1200) limit = 16;
-    if (w > 1200) limit = 100;
+    if (w > 1200) limit = 25;
 
     const newStr = [];
     if (title.length > limit) {

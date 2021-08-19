@@ -1,21 +1,45 @@
 .spotlight {
-    background-color: $color-black;
-    //background: linear-gradient(to bottom, $color-black, $color-white);
 
-    grid-column: full-start / full-end;
+    &__sticky {
+        top: 20rem;
+        letter-spacing: 0.5rem;
+    }
 
     &__pieces {
-        display: grid;
-        grid-template-rows: repeat(3, minmax(min-content, 40rem));
-        grid-template-columns: repeat(3, minmax(min-content, 1fr));
-        grid-gap: 5rem 2rem;
+        grid-row: 1 / -1;
+        grid-column: center-start / full-end;
 
-        padding: 10rem 2rem;
+        display: grid;
+        grid-auto-rows: 24rem;
+        grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
+        grid-gap: 5.5rem;
+
+        padding: 10rem 2rem 0 2rem;
+        margin: 0 auto;
+
+        @include respond(phone-land) {
+            grid-auto-rows: 30rem;
+            grid-gap: 1.5rem;
+            gap: 1.5rem;
+            padding: 0 1rem 0 1rem;
+        }
     }
 
     &__piece {
         display: grid;
-        grid-template-rows: 80% 20%;
+        grid-template-rows: 75% 25%;
+
+        &:nth-child(n+5) {
+            @include respond(tab-port) {
+                display: none;
+            }
+
+            &.active {
+                @include respond(tab-port) {
+                    display: grid;
+                }
+            }
+        }
     }
 
     &__img {
@@ -24,6 +48,10 @@
         object-fit: cover;
         grid-row: 1 / 2;
         z-index: 1;
+
+        &--top {
+            object-position: top;
+        }
     }
 
     &__piece-info {
@@ -32,18 +60,28 @@
         display: grid;
         grid-template-rows: 50% 50%;
         grid-template-columns: 85% 15%;
+        align-items: end;
 
         visibility: hidden;
         background-color: $color-white;
         color: $color-black;
-        padding: 1rem .5rem;
-        opacity: .9;
+        padding: 1rem 0.5rem;
+        opacity: 0.9;
         z-index: 10;
+
+        @include respond(tab-land) {
+            visibility: visible;
+            animation: none;
+        }
     }
 
     &__piece:hover .spotlight__piece-info {
         visibility: visible;
-        animation: diffuse-info .8s linear 1;
+        animation: diffuse-info 0.8s linear 1;
+
+        @include respond(tab-land) {
+            animation: none;
+        }
     }
 
     &__title,
@@ -55,17 +93,39 @@
         grid-row: 1 / 2;
     }
 
+    &__client {
+        grid-row: 2 / 2;
+
+        font-size: 1.3rem;
+
+        @include respond(phone-port) {
+            font-size: 1.3rem;
+        }
+    }
+
+    &__title,
+    &__client {
+        @include respond(phone-land) {
+            padding-left: .5rem;
+        }
+
+        @include respond(phone-port) {
+            padding-left: 1rem;
+        }
+    }
+
     &__description {
         grid-row: 2 / 2;
+
+        font-size: 1rem;
     }
 
     &__zoom {
         grid-row: 1 / -1;
         grid-column: 2 / -1;
 
-        width: 6rem;
-        height: 6rem;
-        padding: 1.5rem;
+        width: 3rem;
+        height: 3rem;
         margin: auto;
         cursor: pointer;
     }

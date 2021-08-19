@@ -1,86 +1,408 @@
 .focus {
     display: flex;
-
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    overflow: hidden scroll;
     position: fixed;
-    top: 5rem;
-    left: 5rem;
-    width: 90vw;
-    height: 85vh;
+    top: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 94vh;
+    width: 75%;
     background-color: $color-white;
-    padding: 3rem;
-    border: 5px solid $color-black;
-    transform: scale(0);
+    border: 2px solid $color-black;
+    box-shadow: 7px 9px 20px $color-grey-dark-1;
+    opacity: 0;
+    transition: opacity 1s;
     z-index: 50;
 
+    @include respond(tab-land) {
+        padding-right: 3.5rem; 
+    }
+
+    @include respond(tab-port) {
+        transform: translateX(-55%);
+        width: 87%;
+    }
+
+    @include respond(phone-land) {
+        width: 84%;
+        height: auto;
+        max-height: 93vh;
+        transform: translateX(-54%);
+        padding: 1rem;
+    }
+
+    @include respond(phone-port) {
+        width: 95%;
+        max-height: 88vh;
+        transform: translateX(-50%);
+        top: 5rem;
+    }
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    &--portrait {
+        @include respond(tab-land) {
+            display: flex;
+        }
+
+        @include respond(tab-port) {
+            width: auto;
+        }
+
+        @include respond(phone-land) {
+            width: 86%;
+            max-height: 94vh;
+            transform: translateX(-55%);
+        }
+
+        @include respond(phone-port) {
+            width: 95%;
+            height: 90vh;
+            transform: translateX(-50%);
+        }
+    }
+
+    &__add-imgs {
+        padding-right: 10rem;
+
+        @include respond(tab-port) {
+            padding-right: 8rem;
+        }
+
+        @include respond(phone-land) {
+            padding-right: 6rem;
+        }
+
+        @include respond(phone-port) {
+            padding-right: 1rem;
+        }
+    }
+
+    &__charity {
+        grid-template-rows: 85% 15%;
+    }
+
     &.appear {
-        transform: scale(1);
-        transition: all 1500ms;
+        opacity: 1;
+        transition: opacity 1.5s;
     }
 
     &__close {
-        position: absolute;
-        top: .5rem;
-        right: .5rem;
+        display: flex;
+        position: fixed;
+        top: 1rem;
+        right: 1.5rem;
+        background-color: $color-white;
+        padding: 0.5rem;
+        border-radius: 50%;
         cursor: pointer;
         z-index: 20;
 
+        @include respond(phone-land) {
+            top: .5rem;
+            right: .5rem;
+        }
+
+        @include respond(phone-port) {
+            right: .5rem;
+        }
+
         &-icon {
-            width: 2.5rem;
-            height: 2.5rem;
-        } 
+            width: 4rem;
+            height: 4rem;
+
+            @include respond(phone-land) {
+                width: 3rem;
+                height: 3rem;
+            }
+        }
     }
 
     &__img-wrapper {
+        grid-row: 1 / -1;
+        grid-column: 2 / 3;
         position: relative;
-        width: 80%;
+        width: 100%;
         height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
 
-        &::after {
-            display: block;
-            content: '';
-            /* 16:9 aspect ratio */
-            padding-bottom: 56.25%;
+        &--portrait {
+            width: max-content;
+            height: 100%;
+            max-height: 100%;
+
+            @include respond(tab-land) {
+                width: 100%;
+            }
         }
     }
 
     &__img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        //object-fit: cover;
+        max-width: 100%;
+        max-height: 100%;
     }
 
     &__piece-info {
+        grid-row: 2 / -1;
+        grid-column: 2 / 3;
+
         display: flex;
         flex-direction: column;
 
         position: relative;
-        width: 20%;
+        width: 100%;
         height: 100%;
-        background-color: $color-black;
-        font-family: $font-headings;
-        color: $color-white;
+        background-color: $color-white;
+        color: $color-black;
         padding: 1rem;
+        visibility: visible;
+        margin: 0 -.1rem;
+        z-index: 10;
+
+        @include respond(phone-port) {
+            padding: 0;
+        }
+
+        &--portrait {
+            width: 100%;
+            flex-basis: 40rem;
+            flex-grow: 2;
+            padding: 1rem .5rem;
+
+            @include respond(tab-land) {
+                margin: 0;
+                height: min-content;
+            }
+
+            @include respond(phone-port) {
+                padding: 0;
+            }
+
+            
+        }
+    }
+
+    &:hover .focus__piece-info {
+        visibility: visible;
+        animation: diffuse-info 0.5s linear 1;
     }
 
     &__title {
-        font-size: 3rem;
-        padding-bottom: 3rem;
+        font-family: $font-headings;
+        font-size: 2rem;
+        padding: 1rem 0;
+
+        @include respond(tab-land) {
+            padding-bottom: .5rem;
+        }
+
+        @include respond(phone-land) {
+            font-size: 1.5rem;
+        }
+    }
+
+    &__client {
+        font-style: italic;
+        background-color: $color-black;
+        color: $color-white;
+        padding: 1rem;
+        margin: 1rem 0;
     }
 
     &__description {
-        font-family: $font-primary;
-        font-size: 2rem;
-        padding-bottom: 3rem;
+        display: none;
+
+        &.active {
+            display: block;
+        }
     }
 
     &__logo {
-        position: absolute;
-        bottom: 1rem;
-        right: 1rem;
-
+        position: relative;
+        font-family: $font-headings;
         text-transform: uppercase;
+        text-align: right;
+        bottom: -1.5rem;
+        right: -1.5rem;
+        align-self: flex-end;
+
+        @include respond(tab-port) {
+            right: -3rem;
+        }
+
+        @include respond(phone-land) {
+            right: .5px;
+            top: 1rem;
+        }
+
+        &.focus__add-imgs {
+            padding-right: 0;
+            right: -9rem;
+
+            @include respond(tab-port) {
+                right: -7.5rem;  
+            }
+
+            @include respond(phone-land) {
+                top: 1rem;
+                right: -5.5rem;  
+            }
+
+            @include respond(phone-port) {
+                right: -.5rem;
+            }
+        }
+    }
+
+    &__hint {
+        position: absolute;
+        right: -4.5rem;
+        top: 8rem;
+        transform: rotate(270deg);
+
+        @include respond(phone-land) {
+            display: none;
+        }
+
+        &.focus__add-imgs {
+            top: 3rem;
+            right: -9.5rem;
+
+            @include respond(phone-land) {
+                display: block;
+                right: -7.5rem; 
+            }
+
+            @include respond(phone-port) {
+                display: none;
+            }
+        }
+    }
+
+    &__nav {
+        display: none;
+        position: absolute;
+        top: 2rem;
+        right: 4rem;
+
+        @include respond(tab-land) {
+            right: 4rem;
+        }
+
+        @include respond(phone-land) {
+            top: 1rem;
+            right: 2.5rem;
+        }
+
+        @include respond(phone-port) {
+            width: 100%;
+            position: relative;
+            height: 3.5rem;
+            top: 0;
+            right: 0;
+            padding: .5rem;
+        }
+
+        &.active {
+            display: block;
+        }
+
+        &-list {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 30vh;
+
+            @include respond(phone-port) {
+                flex-direction: row;
+                justify-content: space-around;
+                height: inherit;
+            }
+        }
+
+        &-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: $color-black;
+            color: $color-white;
+            border-radius: 50%;
+            font-size: 1.8rem;
+            padding: 1rem;
+            width: 3rem;
+            height: 3rem;
+            margin-bottom: 2rem;
+            cursor: pointer;
+
+            @include respond(tab-port) {
+                width: 2.5rem;
+                height: 2.5rem;
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+    &__hide {
+        display: none;
+    }
+}
+
+#focus__nav-item--original,
+#focus__nav-item--1,
+#focus__nav-item--2,
+#focus__nav-item--3,
+#focus__nav-item--4,
+#focus__nav-item--5,
+#focus__nav-item--6,
+#focus__nav-item--7,
+#focus__nav-item--8,
+#focus__nav-item--9,
+#focus__nav-item--10 {
+
+    &.active {
+        background-color: palevioletred;
+    }
+}
+
+#focus__img--original,
+#focus__img--1,
+#focus__img--2,
+#focus__img--3,
+#focus__img--4,
+#focus__img--5,
+#focus__img--6,
+#focus__img--7,
+#focus__img--8,
+#focus__img--9,
+#focus__img--10 {
+    display: none;
+
+    &.active {
+        display: block;
+    }
+}
+
+#focus__description--original,
+#focus__description--1,
+#focus__description--2,
+#focus__description--3,
+#focus__description--4,
+#focus__description--5,
+#focus__description--6,
+#focus__description--7,
+#focus__description--8,
+#focus__description--9,
+#focus__description--10 {
+    display: none;
+
+    &.active {
+        display: block;
     }
 }

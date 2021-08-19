@@ -1,0 +1,117 @@
+.about {
+    margin-bottom: 10rem;
+
+    &__sticky {
+        letter-spacing: 0.5rem;
+    }
+
+    &__info {
+        grid-row: 1 / -1;
+        grid-column: center-start / full-end;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+    }
+
+    &__title {
+        font-size: 3rem;
+        font-weight: 600;
+        text-transform: none;
+
+        @include respond(tab-port) {
+            font-size: 2rem;
+        }
+
+        @include respond(phone-land) { 
+            font-size: 1.5rem;
+            text-align: center;
+        }
+
+        @include respond(phone-port) {
+            font-size: 1.2rem;
+        }
+    }
+
+    &__contact {
+        font-size: 2.5rem;
+        padding-bottom: 1.5rem;
+
+        @include respond(tab-land) {
+            font-size: 1.5rem;
+        }
+
+        @include respond(tab-port) { 
+            font-size: 1.2rem;
+        }
+
+        @include respond(phone-land) {
+            text-align: center;
+        }
+
+        & > a,
+        & > a:link,
+        & > a:visited {
+            color: palevioletred;
+        }
+    }
+
+    &__heading {
+        font-size: 2rem;
+        font-weight: bold;
+        text-align: center;
+
+        @include respond(tab-port) { 
+            font-size: 1.6rem;
+        }
+    }
+
+    &__clients,
+    &__awards {
+        position: relative;
+        padding: 1.5rem;
+
+        &::after {
+            content: '';
+            display: block;
+            width: 30rem;
+            height: 1px;
+            background-color: $color-black;
+            @include absCenter;
+            top: 4.5rem;
+
+            @include respond(phone-port) { 
+                width: 20rem;
+            }
+        }
+    }
+
+    &__client-list,
+    &__award-list {
+        display: flex;
+        justify-items: center;
+        align-items: center;
+        list-style: none;
+        padding: 1rem;
+
+        @include respond(phone-land) { 
+            flex-direction: column;
+        }
+    }
+
+    &__client-item,
+    &__award-item {
+        font-size: 1.5rem;
+        padding: 1rem;
+
+        @include respond(tab-land) {
+            text-align: center;
+        }
+
+        @include respond(tab-port) { 
+            font-size: 1.2rem;
+        }
+    }
+}

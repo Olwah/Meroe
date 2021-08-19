@@ -9,25 +9,137 @@
 html {
     box-sizing: border-box;
     font-size: 62.5%; // 10px/16px = 62.5% -> 1rem = 10px
+    background-color: $color-white;
+    // scroll-behavior: smooth;
 }
 
 body {
     font-family: $font-primary;
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
 .container {
     display: grid;
-    grid-template-rows: 90vh repeat(3, min-content);
-    grid-template-columns: [full-start] minmax(8rem, 1fr) [center-start] repeat(9, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(7rem, 1fr) [full-end];
+    grid-template-columns:
+        [full-start] minmax(8rem, 1fr) [center-start] repeat(9, [col-start] minmax(min-content, 14rem) [col-end])
+        [center-end] minmax(7rem, 1fr) [full-end];
+    position: relative;
     transition: opacity 0s;
 
     &.focus-active {
-        opacity: .2;
+        opacity: 0.2;
         transition: opacity 1500ms;
     }
+
+    /*
+    ADDED TO TEST IF THE CONTAINER GRID STRUCTURE WAS CAUSING THE PAGE TO STRETCH
+    @include respond(phone-land) {
+        grid-template-columns:
+        [full-start] minmax(4rem, 1fr) [center-start] repeat(9, [col-start] minmax(min-content, 10rem) [col-end])
+        [center-end] minmax(7rem, 1fr) [full-end];
+    }
+    */
 }
+
+.section-grid {
+    grid-column: full-start / full-end;
+
+    display: grid;
+    grid-template-rows: min-content max-content;
+    grid-template-columns: [full-start] 8rem [center-start] 1fr [full-end];
+
+    background-color: $color-white;
+    margin-bottom: 30rem;
+
+    @include respond(tab-port) {
+        grid-template-columns: [full-start] 6rem [center-start] 1fr [full-end];
+        margin-bottom: 10rem;
+    }
+
+    @include respond(phone-land) {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 5rem;
+    }
+}
+
+.sidebar {
+    grid-row: 1 / -1;
+    grid-column: full-start / center-start;
+
+    position: relative;
+
+    @include respond(phone-land) {
+        display: none;
+    }
+}
+
+.sidebar-mobile {
+    display: none;
+    grid-row: 1 / -1;
+    grid-column: full-start / full-end;
+
+    &__title {
+        padding: 1rem;
+        margin: 1rem;
+        background-color: black;
+        color: white !important;
+
+        &--spotlight {
+            margin-top: 7.5rem;
+        }
+    }
+
+    @include respond(phone-land) {
+        display: block;
+    }
+}
+
+.sticky {
+    position: sticky;
+    left: 3rem;
+    top: 15rem;
+    writing-mode: vertical-lr;
+    letter-spacing: 0.5rem;
+    transform: rotate(180deg);
+    opacity: 0.7;
+
+    @include respond(tab-port) {
+        left: 1rem;
+    }
+}
+
+.show-all {
+    display: none;
+    width: 30rem;
+    background-color: $color-black;
+    color: $color-white;
+    font-family: $font-headings;
+    text-transform: uppercase;
+    padding: 1rem;
+    font-size: 1.3rem;
+    text-align: center;
+    margin: 2rem auto;
+
+    @include respond(tab-port) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        grid-column: center-start / center-end;
+    }
+
+    @include respond(phone-land) {
+        width: 20rem;
+    }
+}
+
+/*
+.fade-out {
+    width: 100%;
+    height: 23rem;
+    background-image: linear-gradient(to bottom, transparent 0%, $color-white 20%);
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 10rem;
+    z-index: 15;
+}
+*/

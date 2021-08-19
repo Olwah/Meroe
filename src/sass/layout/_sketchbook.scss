@@ -1,5 +1,112 @@
 .sketchbook {
-    background-color: mintcream;
+    .section__grid {
+        margin-bottom: 20rem;
+    }
 
-    grid-column: full-start / full-end;
+    &__sticky {
+        letter-spacing: 0.5rem;
+        margin-bottom: 2rem;
+    }
+
+    &__info {
+        grid-row: 1 / 2;
+        grid-column: center-start / full-end;
+        padding: 1.5rem;
+    }
+
+    &__book {
+        position: relative;
+        height: 90vh;
+        width: 100%;
+        margin-top: 5rem;
+
+        @include respond(tab-land) {
+            height: 80vh;
+        }
+
+        @include respond(tab-port) {
+            height: 60vh;
+        }
+
+        @include respond(phone-land) {
+            height: 50vh;
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        @include respond(phone-port) {
+            height: 30vh;
+            width: 100%; 
+        }
+
+        &.active {
+            display: none;
+        }
+    }
+
+    &__btn {
+        position: absolute;
+        top: 50%;
+        width: 2rem;
+        height: 2rem;
+
+        &--left {
+            left: 2rem;
+            transform: translateY(-50%) rotate(180deg) !important;
+
+            @include respond(tab-port) {
+                top: 0 !important;
+                left: -3rem !important;
+                position: relative !important;
+                transform: translate(-50%, 50%) rotate(180deg) !important;
+                margin: 0 auto !important;
+            }
+        }
+
+        &--right {
+            right: 2rem;
+
+            @include respond(tab-port) {
+                position: relative !important;
+                top: 0 !important;
+                right: -3rem !important;
+                margin: 0 auto !important;
+
+            }
+        }
+    }
+
+    &__page {
+        width: 100%;
+        height: 100%;
+        color: rosybrown;
+        font-size: 4rem;
+    }
+
+    &__loader {
+        height: 0;
+        width: 0;
+        overflow: hidden;
+    }
+}
+
+#sketchbook__magazine {
+    width: 80%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+    margin: 0 auto;
+}
+
+#sketchbook__magazine .turn-page {
+    background-color: #ccc;
+}
+
+
+#sketchbook__splide {
+    display: none;
+
+    @include respond(tab-port) {
+        //display: block; 
+    }
 }

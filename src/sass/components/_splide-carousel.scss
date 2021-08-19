@@ -1,0 +1,130 @@
+.splide-carousel {
+    &__items {
+        display: flex;
+        position: relative;
+        width: 100%;
+        padding: 2rem 7rem 5rem 7rem;
+        overflow: hidden;
+    }
+
+    &__item {
+        display: grid;
+        grid-template-rows: 80% 20%;
+        position: relative;
+        text-align: center;
+
+        &:hover .splide-carousel__zoom,
+        &:hover .splide-carousel__item-info {
+            visibility: visible;
+            animation: diffuse-info 0.8s linear 1;
+        }
+
+        & img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        &-info {
+            grid-row: 2 / -1;
+            grid-column: 1 / 1;
+
+            display: grid;
+            grid-template-columns: 85% 15%;
+            align-items: center;
+            visibility: hidden;
+            padding: 0.5rem 1rem;
+            width: 100%;
+            overflow: hidden;
+            background-color: $color-white;
+            opacity: 0.9;
+            z-index: 5;
+
+            @include respond(tab-land) {
+                visibility: visible;
+            }
+
+            @include respond(phone-land) {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                padding: .5rem;
+                height: auto;
+                width: 100%;
+                margin-top: .5rem;
+            }
+
+            &.active {
+                display: none;
+            }
+        }
+
+        &-title {
+            grid-column: 1 / 2;
+            font-size: 1.3rem;
+
+            @include respond(phone-land) {
+                font-size: 1.4rem;
+            }
+
+            @include respond(phone-port) {
+                font-size: 1.2rem;
+                padding-bottom: .5rem;
+            }
+        }
+    }
+
+    &__img {
+        grid-row: 1 / -1;
+        grid-column: 1 / 2;
+    }
+
+    &__zoom {
+        grid-row: 1 / -1;
+        grid-column: 2 / -1;
+        justify-self: center;
+        visibility: hidden;
+        background-color: $color-white;
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 50%;
+        z-index: 10;
+        cursor: pointer;
+
+        @include respond(tab-land) {
+            visibility: visible;
+        }
+
+        @include respond(phone-land) {
+            width: 1.8rem;
+            height: 1.8rem;
+        }
+    }
+
+    &__slide-arrow {
+        background: $color-black !important;
+        width: 3rem !important;
+        height: 3rem !important;
+
+        @include respond(phone-land) {
+            width: 2rem !important;
+            height: 2rem !important;
+        }
+
+        & svg {
+            width: 2rem !important;
+            height: 2rem !important;
+            fill: $color-white !important;
+
+            @include respond(phone-land) {
+                width: 1rem !important;
+                height: 1rem !important;
+            }
+        }
+    }
+
+    &__slide-pages {
+        &.is-active {
+            background: $color-black !important;
+        }
+    }
+}

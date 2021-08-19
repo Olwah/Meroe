@@ -1,104 +1,85 @@
 .header {
     grid-row: 1 / 1;
-    grid-column: col-start 1 / full-end;
+    grid-column: full-start / full-end;
 
-    //display: grid;
-    //grid-template-columns: repeat(8, [header-col-start] 1fr [header-col-end]);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 7rem;
+    display: flex;
+    align-items: center;
+    background-color: $color-white;
+    box-shadow: 3px 3px 4px $color-white;
+    //opacity: 0.8;
+    z-index: 20;
+    transition: transform 0.8s, opacity 1s;
 
-    overflow: hidden;
+    &.scroll-down {
+        opacity: 0;
+        transform: translate3d(0, -100%, 0);
+    }
+
+    &.scroll-up {
+        transform: none;
+    }
+
+    &__wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 
     &__title {
-        position: absolute;
-        top: 1.2rem;
-        left: 1.5rem;
-        z-index: 15;
-        transition: all .5s ease-out;
-        //writing-mode: vertical-lr;
-        //text-orientation: upright;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transform: translateX(-2rem);
+        transition: all 0.5s ease-out;
 
         &.active {
-            transform: translateX(16rem);
+            transform: translateX(13rem);
+        }
+
+        @include respond(tab-port) {
+            transform: translateX(-4rem);
+        }
+
+        @include respond(phone-land) {
+            transform: translateX(-3rem);
+        }
+
+        @include respond(phone-port) {
+            transform: translateX(-4rem);
         }
     }
 
-    /*
-    &__content {
-        grid-column: header-col-start 1 / -1;
-
-        background: url(/img/Frontpage7_BW.jpg) no-repeat center;
-        background-size: cover;
-
-        animation-name: header-animate;
-        animation-duration: 100s;
-        animation-iteration-count: infinite;
-    }
-    */
-
-    &__slideshow-container {
-        display: grid;
-        grid-template-rows: repeat(6, 1fr);
-        grid-template-columns: repeat(8, 1fr);
-
-        width: 100%;
-        height: 100%;
-        position: relative;
-        margin: auto;
-    }
-
-    &__slideshow-slides {
-        display: none;
-        grid-row: 1 / -1;
-        grid-column: 1 / -1;
-    }
-
-    &__slideshow-fade {
-        animation-name: slideshow-fade;
-        animation-duration: 11500ms;
-    }
-
-    &__slideshow-img {
-        width: 100%;
-        height: 100%;
-        //object-fit: cover;
-        display: block;
-        //animation: header-animate 30s infinite;
-    }
-
-    &__slideshow-caption {
-        font-family: $font-headings;
-        font-size: 1.5rem;
-        padding: .8rem 1.2rem;
-        position: absolute;
-        bottom: .8rem;
-        width: 100%;
-        text-align: center;
-    }
-
-    &__slideshow-dots {
-        position: absolute;
-        bottom: 1.5rem;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-
-    &__slideshow-dot {
+    &__logo {
+        width: 5rem;
+        height: 5rem;
+        margin: 0.5rem 2rem 0.5rem 0;
         cursor: pointer;
-        height: 1.5rem;
-        width: 1.5rem;
-        margin: 0 .2rem;
-        background-color: $color-white;
-        border-radius: 50%;
-        display: inline-block;
-        transition: background-color 0.6s ease;
 
-        &:hover, 
-        &.active {
-            background-color: $color-grey-light-2;
+        @include respond(phone-land) {
+            width: 4rem;
+            height: 4rem;
+        }
+
+        @include respond(phone-port) {
+            width: 3.5rem;
+            height: 3.5rem;
+            margin-right: 1rem;
+        }
+
+        & img {
+            max-width: 100%;
+            max-height: 100%;
         }
     }
 }
 
 #menu-open {
-    color: $color-white;
+    color: $color-black;
     cursor: pointer;
 }

@@ -1,17 +1,12 @@
 // COLOR VARIABLES
-$color-primary: #c69963;
-$color-primary-dark: #B28451;
-
-$color-secondary: #101d2c;
-
 $color-black: #000;
 $color-white: #fff;
 
 $color-grey-light-1: #a0a0a0;
 $color-grey-light-2: #878787;
 
-$color-grey-dark-1: #54483A;
-$color-grey-dark-2: #6D5D4B;
+$color-grey-dark-1: #54483a;
+$color-grey-dark-2: #6d5d4b;
 
 // FONT VARIABLES
 $font-headings: 'Alfa Slab One', cursive;
@@ -27,8 +22,24 @@ $gutter-vertical: 8rem;
 $gutter-vertical-small: 6rem;
 $gutter-horizontal: 6rem;
 
+// CAROUSEL
+$page-margin-y: 20px;
+$page-margin-x: 20px;
+
+$width: calc(50vw - ($page-margin-x));
+$half-width: calc(50vw - ($page-margin-x / 2));
+$neg-half-width: calc(-25vw + ($page-margin-x / 2));
+
+$height: calc(100vh - ($page-margin-y * 2));
+$half-height: calc(50vh - ($page-margin-y));
+$neg-half-height: calc(-50vh + ($page-margin-y));
+
+$transition-dur: 1s;
+
 // RESPONSIVE BREAKPOINTS
-$bp-largest: 75em;   // 1200px
-$bp-large: 62.5em;   // 1000px
-$bp-medium: 50em;    // 800px;
-$bp-small: 37.5em;   // 600px;
+$bp-huge: 112.5em; // 1800px
+$bp-large: 75em; // 1200px
+$bp-semi-large: 62.5em; // 1000px
+$bp-medium: 50em; // 800px
+$bp-small: 37.5em; // 600px
+$bp-smaller: 25em; // 400px

@@ -17,6 +17,11 @@
     transition: opacity 1s;
     z-index: 50;
 
+    @media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0)
+        { 
+            display: block;
+    }
+
     @include respond(tab-land) {
         padding-right: 3.5rem; 
     }
@@ -64,6 +69,11 @@
             width: 95%;
             height: 90vh;
             transform: translateX(-50%);
+        }
+
+        @media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0)
+            { 
+                display: block;
         }
     }
 
@@ -133,6 +143,11 @@
         justify-content: center;
         align-items: flex-start;
 
+        @media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0)
+            { 
+                margin: 0 auto;
+        }
+
         &--portrait {
             width: max-content;
             height: 100%;
@@ -165,6 +180,11 @@
         visibility: visible;
         margin: 0 -.1rem;
         z-index: 10;
+
+        @media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0)
+            { 
+                height: min-content;
+        }
 
         @include respond(phone-port) {
             padding: 0;

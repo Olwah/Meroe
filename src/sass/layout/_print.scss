@@ -43,6 +43,7 @@
         grid-row: 1 / -1;
         grid-column: center-start / full-end;
 
+        width: 100%;
         display: grid;
         grid-auto-rows: 24rem;
         grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));

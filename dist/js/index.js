@@ -71,6 +71,16 @@ const spotlightItems = {
     },
     1: {
         id: 'spotlight-2',
+        portrait: true,
+        img: 'img/Kanae_Portrait_web.jpg',
+        vAlign: false,
+        title: 'Epiphany',
+        client: 'Based on personal events summer 2021',
+        description:
+            'In summer 2021 my wife suffered a ‘subdural haematoma’ - essentially blood on the brain, that could have been fatal. Luckily I got her to Kings College hospital and after an initial misdiagnosis and a gruelling wait in A+E, she was operated on. A truly terrifying event. As we’re both massive science fiction fans she helped guide me as I made this piece, as a way of channelling the events.'
+    },
+    2: {
+        id: 'spotlight-3',
         portrait: false,
         img: 'img/Camberwell_Police_Station_web.jpg',
         vAlign: false,
@@ -79,8 +89,8 @@ const spotlightItems = {
         description:
             'Documenting the takeover by "The Serious Annoyance" of the Old Camberwell Police Station as a protest against the new policing bill. Particularly liked the effort that had gone into the hand made fabric signs that they\'d arranged out of the windows and how it divided up the space on the front of the building. As of writing, the old Camberwell Police Station has actually been vacant since 2019 and I had no idea until the protest started.'
     },
-    2: {
-        id: 'spotlight-3',
+    3: {
+        id: 'spotlight-4',
         portrait: false,
         img: 'img/LifeonLettsom.jpg',
         vAlign: false,
@@ -89,8 +99,8 @@ const spotlightItems = {
         description:
             'Editorial Illustration contribution to the Life on Lettsom magazine, a new Southwark Council funded publication for the residents of the Lettsom housing estate in South London.'
     },
-    3: {
-        id: 'spotlight-4',
+    4: {
+        id: 'spotlight-5',
         portrait: false,
         img: 'img/Love_Walk_Cafe.jpg',
         vAlign: false,
@@ -99,8 +109,8 @@ const spotlightItems = {
         description:
             'Contribution to the Camberwell Arts Group, used on local banners as part of Camberwell’s new identity and branding.\nImage depicts Love Walk Cafe.'
     },
-    4: {
-        id: 'spotlight-5',
+    5: {
+        id: 'spotlight-6',
         portrait: false,
         img: 'img/Kiku.jpg',
         vAlign: true,
@@ -109,8 +119,8 @@ const spotlightItems = {
         description:
             'Sumo bottle label design for Kanpai Saké Brewery’s limited edition range.\nForms part of a ‘triptych’ of labels adapting elements of Peckham with traditional/well known Japanese concepts.'
     },
-    5: {
-        id: 'spotlight-6',
+    6: {
+        id: 'spotlight-7',
         portrait: false,
         img: 'img/Miru.jpg',
         vAlign: true,
@@ -119,8 +129,8 @@ const spotlightItems = {
         description:
             'Samurai bottle label design for Kanpai Saké Brewey’s limited edition range.\nForms part of a ‘triptych’ of labels adapting elements of Peckham with traditional/well known Japanese concepts.'
     },
-    6: {
-        id: 'spotlight-7',
+    7: {
+        id: 'spotlight-8',
         portrait: false,
         img: 'img/Nomu.jpg',
         vAlign: true,
@@ -129,8 +139,8 @@ const spotlightItems = {
         description:
             'Geisha bottle label design for Kanpai Saké Brewery’s limited edition range.\nForms part of a ‘triptych’ of labels adapting elements of Peckham with traditional/well known Japanese concepts.'
     },
-    7: {
-        id: 'spotlight-8',
+    8: {
+        id: 'spotlight-9',
         portrait: true,
         img: 'img/Brixton.jpg',
         vAlign: false,
@@ -139,8 +149,8 @@ const spotlightItems = {
         description:
             'Images for Maison Des Languages’ language book for French students studying English.\nForms part of an exercise in a comic book format.'
     },
-    8: {
-        id: 'spotlight-9',
+    9: {
+        id: 'spotlight-10',
         portrait: true,
         img: 'img/Frontpage6.jpg',
         vAlign: false,
@@ -149,8 +159,8 @@ const spotlightItems = {
         description:
             'Poster design for Citi group to commemorate an agreement with the Government of Cyprus, commissioned by the French embassy.'
     },
-    9: {
-        id: 'spotlight-10',
+    10: {
+        id: 'spotlight-11',
         portrait: true,
         img: 'img/Citi_Telefonica.jpg',
         vAlign: false,
@@ -159,8 +169,8 @@ const spotlightItems = {
         description:
             'Poster design for Citi group to commemorate an agreement with Telefonica, featuring an ‘uncle Sam’ style figure. '
     },
-    10: {
-        id: 'spotlight-11',
+    11: {
+        id: 'spotlight-12',
         portrait: false,
         img: 'img/Gospel_Green.jpg',
         vAlign: false,
@@ -168,8 +178,8 @@ const spotlightItems = {
         client: 'Unused',
         description: 'Unused concept for Gospel Green Cider.'
     },
-    11: {
-        id: 'spotlight-12',
+    12: {
+        id: 'spotlight-13',
         portrait: false,
         img: 'img/Yubari.jpg',
         vAlign: false,
@@ -178,8 +188,8 @@ const spotlightItems = {
         description:
             'Self initiated piece from a visit to Northern Japan’s Yubari, a former mining town that very much echoes the same issues faced by North East England.\nIt went on to be shortlisted and then a winner of Hire an Illustrator’s Showcase 100, and was exhibited at the Framer’s Gallery in London, 2015.'
     },
-    12: {
-        id: 'spotlight-13',
+    13: {
+        id: 'spotlight-14',
         portrait: true,
         img: 'img/WillGraham.jpg',
         vAlign: false,
@@ -187,8 +197,8 @@ const spotlightItems = {
         client: 'Self Initiated - Fan Art',
         description: 'Born from a love of the Hannibal drama.'
     },
-    13: {
-        id: 'spotlight-14',
+    14: {
+        id: 'spotlight-15',
         portrait: false,
         img: 'img/Lumley_Castle.jpg',
         vAlign: false,
@@ -812,7 +822,7 @@ const renderCarouselItems = (section, obj) => {
 
 const createCarouselHtml = (section, id, img, title) => {
     const markup = `
-        <div class="splide__slide splide-carousel__item ${section}__item">
+        <div class="splide__slide splide-carousel__item ${section}__item" style="height: 400px; width: auto;">
             <img class="splide-carousel__img" src="${img}" alt="${title}">
             <div class="splide-carousel__item-info ${section === 'sketchbook' ? 'active' : ''}" id="${id}">
                 <h3 class="splide-carousel__item-title heading-3">${title}</h3>
@@ -832,15 +842,58 @@ carouselElements.forEach((el) => {
 });
 
 // Splide carousel options object
+/*
 const splideOptions = {
     type: 'loop',
     speed: 1500,
     rewindSpeed: 1000,
     fixedWidth: 'fit-content',
+    //autoWidth: true,
+    //height: '50vh',
+    //autoHeight: true,
     fixedHeight: '35rem',
     focus: 'center',
     perPage: 2,
     gap: '5rem',
+    classes: {
+        arrow: 'splide__arrow splide-carousel__slide-arrow',
+        page: 'splide__pagination__page splide-carousel__slide-pages'
+    },
+    breakpoints: {
+        900: {
+            perPage: 1,
+            gap: '3rem'
+        },
+        670: {
+            perPage: 2,
+            start: 1,
+            gap: '1.5rem',
+            autoWidth: true
+        },
+        400: {
+            perPage: 1,
+            start: 1,
+            gap: '1rem',
+            autoWidth: true
+        }
+    }
+};
+*/
+
+const splideOptions = {
+    type: 'loop',
+    speed: 1500,
+    rewindSpeed: 1000,
+    //fixedWidth: '33vw',
+    autoWidth: true,
+    //width: 'auto',
+    height: '40rem',
+    //autoHeight: true,
+    //fixedHeight: '40rem', 
+    focus: 'center',
+    perPage: 2,
+    gap: '5rem',
+    //lazyLoad: 'sequential',
     classes: {
         arrow: 'splide__arrow splide-carousel__slide-arrow',
         page: 'splide__pagination__page splide-carousel__slide-pages'

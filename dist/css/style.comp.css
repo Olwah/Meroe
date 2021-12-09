@@ -502,6 +502,9 @@ a {
   opacity: 0;
   transition: opacity 1s;
   z-index: 50; }
+  @media screen and (min-color-index: 0) and (-webkit-min-device-pixel-ratio: 0) {
+    .focus {
+      display: block; } }
   @media only screen and (max-width: 75em) {
     .focus {
       padding-right: 3.5rem; } }
@@ -540,6 +543,9 @@ a {
       width: 95%;
       height: 90vh;
       transform: translateX(-50%); } }
+  @media screen and (min-color-index: 0) and (-webkit-min-device-pixel-ratio: 0) {
+    .focus--portrait {
+      display: block; } }
   .focus__add-imgs {
     padding-right: 10rem; }
     @media only screen and (max-width: 56.25em) {
@@ -589,6 +595,9 @@ a {
     display: flex;
     justify-content: center;
     align-items: flex-start; }
+    @media screen and (min-color-index: 0) and (-webkit-min-device-pixel-ratio: 0) {
+      .focus__img-wrapper {
+        margin: 0 auto; } }
     .focus__img-wrapper--portrait {
       width: max-content;
       height: 100%;
@@ -613,6 +622,9 @@ a {
     visibility: visible;
     margin: 0 -.1rem;
     z-index: 10; }
+    @media screen and (min-color-index: 0) and (-webkit-min-device-pixel-ratio: 0) {
+      .focus__piece-info {
+        height: min-content; } }
     @media only screen and (max-width: 25em) {
       .focus__piece-info {
         padding: 0; } }
@@ -1065,6 +1077,7 @@ a {
 .spotlight__pieces {
   grid-row: 1 / -1;
   grid-column: center-start / full-end;
+  width: 100%;
   display: grid;
   grid-auto-rows: 24rem;
   grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
@@ -1080,7 +1093,8 @@ a {
 
 .spotlight__piece {
   display: grid;
-  grid-template-rows: 75% 25%; }
+  grid-template-rows: 75% 25%;
+  grid-template-columns: 50% 50%; }
   @media only screen and (max-width: 56.25em) {
     .spotlight__piece:nth-child(n+5) {
       display: none; } }
@@ -1092,13 +1106,15 @@ a {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  grid-row: 1 / 2;
+  grid-row: 1 / 3;
+  grid-column: 1 / -1;
   z-index: 1; }
   .spotlight__img--top {
     object-position: top; }
 
 .spotlight__piece-info {
   grid-row: 2 / -1;
+  grid-column: 1 / -1;
   display: grid;
   grid-template-rows: 50% 50%;
   grid-template-columns: 85% 15%;
@@ -1130,6 +1146,9 @@ a {
 .spotlight__client {
   grid-row: 2 / 2;
   font-size: 1.3rem; }
+  @media only screen and (max-width: 75em) {
+    .spotlight__client {
+      font-size: 1.1rem; } }
   @media only screen and (max-width: 25em) {
     .spotlight__client {
       font-size: 1.3rem; } }
@@ -1316,6 +1335,7 @@ a {
   .print__pieces {
     grid-row: 1 / -1;
     grid-column: center-start / full-end;
+    width: 100%;
     display: grid;
     grid-auto-rows: 24rem;
     grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));

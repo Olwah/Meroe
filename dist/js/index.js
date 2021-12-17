@@ -842,60 +842,15 @@ carouselElements.forEach((el) => {
 });
 
 // Splide carousel options object
-/*
 const splideOptions = {
     type: 'loop',
     speed: 1500,
     rewindSpeed: 1000,
-    //fixedWidth: '33vw',
-    autoWidth: true,
-    //width: 'auto',
-    height: '40rem',
-    //autoHeight: true,
-    //fixedHeight: '40rem', 
-    focus: 'center',
-    perPage: 2,
-    gap: '5rem',
-    //lazyLoad: 'sequential',
-    classes: {
-        arrow: 'splide__arrow splide-carousel__slide-arrow',
-        page: 'splide__pagination__page splide-carousel__slide-pages'
-    },
-    breakpoints: {
-        900: {
-            perPage: 1,
-            gap: '3rem'
-        },
-        670: {
-            perPage: 2,
-            start: 1,
-            gap: '1.5rem',
-            autoWidth: true
-        },
-        400: {
-            perPage: 1,
-            start: 1,
-            gap: '1rem',
-            autoWidth: true
-        }
-    }
-};
-*/
-const splideOptions = {
-    type: 'loop',
-    speed: 1500,
-    rewindSpeed: 1000,
-    //fixedWidth: '40vw',
-    //autoWidth: true,
-    //width: '100%',
     height: '40rem',
     cover: true,
-    //autoHeight: true,
-    //fixedHeight: '40rem', 
     focus: 'center',
     perPage: 2,
     gap: '5rem',
-    //lazyLoad: 'sequential',
     classes: {
         arrow: 'splide__arrow splide-carousel__slide-arrow',
         page: 'splide__pagination__page splide-carousel__slide-pages'
@@ -909,13 +864,11 @@ const splideOptions = {
             perPage: 2,
             start: 1,
             gap: '1.5rem',
-            //autoWidth: true
         },
         400: {
             perPage: 1,
             start: 1,
             gap: '1rem',
-            //autoWidth: true
         }
     }
 };

@@ -105,8 +105,4 @@
 
 #sketchbook__splide {
     display: none;
-
-    @include respond(tab-port) {
-        //display: block; 
-    }
 }

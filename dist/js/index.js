@@ -42,6 +42,31 @@ const elementStrings = {
 const spotlightItems = {
     0: {
         id: 'spotlight-1',
+        portrait: true,
+        img: 'img/MigrationMuseum1.jpg',
+        vAlign: false,
+        title: 'Map of Migrant Owned Businesses - Lewisham',
+        client: 'Client - The Migration Museum',
+        description:
+            'In the first half of 2022 I was commissioned to produce a map featuring migrant owned businesses in Lewisham for the Migration Museum to accompany their exhibition \'Taking Care of Business\'. <br> <br>This was a lot of fun and I was able to explore different parts of Lewisham town centre, documenting the various buildings and businesses featured on the map. I also designed the typography used throughout the piece. <br><br>Additionally I contributed a large illustration of one of the local business owners to one of the walls of the exhibition. ',
+        additionalImgs: true,
+        imgLibrary: {
+            0: {
+                img: 'img/MigrationMuseum2.jpg',
+                desc: 'Cover page of information leaflet.'
+            },
+            1: {
+                img: 'img/MigrationMuseum3.jpg',
+                desc: 'Information on the piece and the Migration Museum.'
+            },
+            2: {
+                img: 'img/MigrationMuseum4.jpg',
+                desc: 'The artist holding the piece.'
+            }
+        }
+    },
+    1: {
+        id: 'spotlight-2',
         portrait: false,
         img: 'img/LIWUMI_MockUp_Box.jpg',
         vAlign: false,
@@ -69,8 +94,8 @@ const spotlightItems = {
             }
         }
     },
-    1: {
-        id: 'spotlight-2',
+    2: {
+        id: 'spotlight-3',
         portrait: true,
         img: 'img/Kanae_Portrait_web.jpg',
         vAlign: false,
@@ -79,8 +104,8 @@ const spotlightItems = {
         description:
             'In summer 2021 my wife suffered a ‘subdural haematoma’ - essentially blood on the brain, that could have been fatal. Luckily I got her to Kings College hospital and after an initial misdiagnosis and a gruelling wait in A+E, she was operated on. A truly terrifying event. As we’re both massive science fiction fans she helped guide me as I made this piece, as a way of channelling the events.'
     },
-    2: {
-        id: 'spotlight-3',
+    3: {
+        id: 'spotlight-4',
         portrait: false,
         img: 'img/Camberwell_Police_Station_web.jpg',
         vAlign: false,
@@ -89,8 +114,8 @@ const spotlightItems = {
         description:
             'Documenting the takeover by "The Serious Annoyance" of the Old Camberwell Police Station as a protest against the new policing bill. Particularly liked the effort that had gone into the hand made fabric signs that they\'d arranged out of the windows and how it divided up the space on the front of the building. As of writing, the old Camberwell Police Station has actually been vacant since 2019 and I had no idea until the protest started.'
     },
-    3: {
-        id: 'spotlight-4',
+    4: {
+        id: 'spotlight-5',
         portrait: false,
         img: 'img/LifeonLettsom.jpg',
         vAlign: false,
@@ -99,8 +124,8 @@ const spotlightItems = {
         description:
             'Editorial Illustration contribution to the Life on Lettsom magazine, a new Southwark Council funded publication for the residents of the Lettsom housing estate in South London.'
     },
-    4: {
-        id: 'spotlight-5',
+    5: {
+        id: 'spotlight-6',
         portrait: false,
         img: 'img/Love_Walk_Cafe.jpg',
         vAlign: false,
@@ -109,8 +134,8 @@ const spotlightItems = {
         description:
             'Contribution to the Camberwell Arts Group, used on local banners as part of Camberwell’s new identity and branding.\nImage depicts Love Walk Cafe.'
     },
-    5: {
-        id: 'spotlight-6',
+    6: {
+        id: 'spotlight-7',
         portrait: false,
         img: 'img/Kiku.jpg',
         vAlign: true,
@@ -119,8 +144,8 @@ const spotlightItems = {
         description:
             'Sumo bottle label design for Kanpai Saké Brewery’s limited edition range.\nForms part of a ‘triptych’ of labels adapting elements of Peckham with traditional/well known Japanese concepts.'
     },
-    6: {
-        id: 'spotlight-7',
+    7: {
+        id: 'spotlight-8',
         portrait: false,
         img: 'img/Miru.jpg',
         vAlign: true,
@@ -129,8 +154,8 @@ const spotlightItems = {
         description:
             'Samurai bottle label design for Kanpai Saké Brewey’s limited edition range.\nForms part of a ‘triptych’ of labels adapting elements of Peckham with traditional/well known Japanese concepts.'
     },
-    7: {
-        id: 'spotlight-8',
+    8: {
+        id: 'spotlight-9',
         portrait: false,
         img: 'img/Nomu.jpg',
         vAlign: true,
@@ -139,8 +164,8 @@ const spotlightItems = {
         description:
             'Geisha bottle label design for Kanpai Saké Brewery’s limited edition range.\nForms part of a ‘triptych’ of labels adapting elements of Peckham with traditional/well known Japanese concepts.'
     },
-    8: {
-        id: 'spotlight-9',
+    9: {
+        id: 'spotlight-10',
         portrait: true,
         img: 'img/Brixton.jpg',
         vAlign: false,
@@ -149,8 +174,8 @@ const spotlightItems = {
         description:
             'Images for Maison Des Languages’ language book for French students studying English.\nForms part of an exercise in a comic book format.'
     },
-    9: {
-        id: 'spotlight-10',
+    10: {
+        id: 'spotlight-11',
         portrait: true,
         img: 'img/Frontpage6.jpg',
         vAlign: false,
@@ -159,8 +184,8 @@ const spotlightItems = {
         description:
             'Poster design for Citi group to commemorate an agreement with the Government of Cyprus, commissioned by the French embassy.'
     },
-    10: {
-        id: 'spotlight-11',
+    11: {
+        id: 'spotlight-12',
         portrait: true,
         img: 'img/Citi_Telefonica.jpg',
         vAlign: false,
@@ -169,8 +194,8 @@ const spotlightItems = {
         description:
             'Poster design for Citi group to commemorate an agreement with Telefonica, featuring an ‘uncle Sam’ style figure. '
     },
-    11: {
-        id: 'spotlight-12',
+    12: {
+        id: 'spotlight-13',
         portrait: false,
         img: 'img/Gospel_Green.jpg',
         vAlign: false,
@@ -178,8 +203,8 @@ const spotlightItems = {
         client: 'Unused',
         description: 'Unused concept for Gospel Green Cider.'
     },
-    12: {
-        id: 'spotlight-13',
+    13: {
+        id: 'spotlight-14',
         portrait: false,
         img: 'img/Yubari.jpg',
         vAlign: false,
@@ -188,8 +213,17 @@ const spotlightItems = {
         description:
             'Self initiated piece from a visit to Northern Japan’s Yubari, a former mining town that very much echoes the same issues faced by North East England.\nIt went on to be shortlisted and then a winner of Hire an Illustrator’s Showcase 100, and was exhibited at the Framer’s Gallery in London, 2015.'
     },
-    13: {
-        id: 'spotlight-14',
+    14: {
+        id: 'spotlight-15',
+        portrait: false,
+        img: 'img/MomentWatch1.jpg',
+        vAlign: false,
+        title: 'King Sejong Watch',
+        client: 'Client - Moment Watches',
+        description: 'Whilst living in Japan in 2013, Moment Watches reached out to me to ask if I\'d be willing to contribute artwork to one of their watch designs. I agreed and they asked if they could feature an image I did of Korean King Sejong - considered a very important historical figure in South Korea. '
+    },
+    15: {
+        id: 'spotlight-16',
         portrait: true,
         img: 'img/WillGraham.jpg',
         vAlign: false,
@@ -197,8 +231,8 @@ const spotlightItems = {
         client: 'Self Initiated - Fan Art',
         description: 'Born from a love of the Hannibal drama.'
     },
-    14: {
-        id: 'spotlight-15',
+    16: {
+        id: 'spotlight-17',
         portrait: false,
         img: 'img/Lumley_Castle.jpg',
         vAlign: false,

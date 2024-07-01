@@ -48,28 +48,28 @@ const spotlightItems = {
         title: 'Kabinett Cartography',
         client: 'Camberwell Kabinett X Arts Festival',
         description:
-            'In collaboration with the Camberwell Kabinett and as part of the Camberwell Arts Festival 2024, I produced a non-representational map of Camberwell that explores existing structures, streets, landmarks, demographics, as well as significant local figures from both past and present.  The exterior of the Kabinett acted as the main canvas for the map, but then lead inside to reveal additional elements exploring Camberwell.Special take-home zines were produced to help visitors identify the structures and public figures that continue to make the locality a vibrant and integral part of inner-city London.See below for the Camberwell Kabinetts official website and my entry there as part of their archives: <a href="www.camberwellkabinett.com/meroe">www.camberwellkabinett.com/meroe</a> ',
+            'In collaboration with the Camberwell Kabinett and as part of the Camberwell Arts Festival 2024, I produced a non-representational map of Camberwell that explores existing structures, streets, landmarks, demographics, as well as significant local figures from both past and present.  The exterior of the Kabinett acted as the main canvas for the map, but then lead inside to reveal additional elements exploring Camberwell.Special take-home zines were produced to help visitors identify the structures and public figures that continue to make the locality a vibrant and integral part of inner-city London.See below for the Camberwell Kabinetts official website and my entry there as part of their archives: <a href="https://www.camberwellkabinett.com/meroe">www.camberwellkabinett.com/meroe</a> ',
         additionalImgs: true,
         imgLibrary: {
             0: {
                 img: 'img/Kabinett2.jpg',
-                desc: 'Enter text here....'
+                desc: 'Various shots of the Kabinett showcasing the different illustrations and landmarks.'
             },
             1: {
                 img: 'img/Kabinett3.jpg',
-                desc: 'Enter text here....'
+                desc: 'Various shots of the Kabinett showcasing the different illustrations and landmarks.'
             },
             2: {
                 img: 'img/Kabinett4.jpg',
-                desc: 'Enter text here....'
+                desc: 'Various shots of the Kabinett showcasing the different illustrations and landmarks.'
             },
             3: {
                 img: 'img/Kabinett5.jpg',
-                desc: 'Enter text here....'
+                desc: 'Various shots of the Kabinett showcasing the different illustrations and landmarks.'
             },
             4: {
                 img: 'img/Kabinett6.jpg',
-                desc: 'Enter text here....'
+                desc: 'Various shots of the Kabinett showcasing the different illustrations and landmarks.'
             }
         }
     },
@@ -86,11 +86,11 @@ const spotlightItems = {
         imgLibrary: {
             0: {
                 img: 'img/Helen_Wedding2.jpg',
-                desc: 'Enter text here....'
+                desc: 'Helen holding the original hand drawn illustrations.'
             },
             1: {
                 img: 'img/Helen_Wedding3.jpg',
-                desc: 'Enter text here....'
+                desc: 'The original framed artwork and framed digital illustration.'
             }
         }
     },
@@ -107,7 +107,7 @@ const spotlightItems = {
         imgLibrary: {
             0: {
                 img: 'img/Repose_Peckham2.jpg',
-                desc: 'Enter text here....'
+                desc: 'The artist standing next to the piece.'
             }
         }
     },

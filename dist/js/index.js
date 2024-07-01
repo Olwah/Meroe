@@ -46,7 +46,7 @@ const spotlightItems = {
         img: 'img/Kabinett1.jpg',
         vAlign: false,
         title: 'Kabinett Cartography',
-        client: 'Camberwell Kabinett X Camberwell Arts Festival',
+        client: 'Camberwell Kabinett X Arts Festival',
         description:
             'In collaboration with the Camberwell Kabinett and as part of the Camberwell Arts Festival 2024, I produced a non-representational map of Camberwell that explores existing structures, streets, landmarks, demographics, as well as significant local figures from both past and present.  The exterior of the Kabinett acted as the main canvas for the map, but then lead inside to reveal additional elements exploring Camberwell.Special take-home zines were produced to help visitors identify the structures and public figures that continue to make the locality a vibrant and integral part of inner-city London.See below for the Camberwell Kabinetts official website and my entry there as part of their archives: <a href="www.camberwellkabinett.com/meroe">www.camberwellkabinett.com/meroe</a> ',
         additionalImgs: true,
@@ -77,7 +77,7 @@ const spotlightItems = {
         id: 'spotlight-2',
         portrait: true,
         img: 'img/Helen_Wedding1.jpg',
-        vAlign: false,
+        vAlign: true,
         title: 'Wedding Portraits',
         client: 'London College of Contemporary Arts',
         description:
@@ -100,7 +100,7 @@ const spotlightItems = {
         img: 'img/Repose_Peckham1.jpg',
         vAlign: false,
         title: 'Time Map of Peckham',
-        client: 'Repose Gallery – Session 2 @ Peckham Levels July 2023',
+        client: 'Repose Gallery – Peckham Levels',
         description:
             'An A0 map documenting Peckham across different key time periods – evidencing a range of structures still present and long gone. Local celebrities and famous fictional characters can be found dotted across the streets – from the Pearly King of Peckham to Del Boy and beyond.For Repose Gallery’s Session 2 during Summer 2023.',
         additionalImgs: true,

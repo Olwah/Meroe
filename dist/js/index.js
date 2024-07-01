@@ -43,6 +43,77 @@ const spotlightItems = {
     0: {
         id: 'spotlight-1',
         portrait: true,
+        img: 'img/Kabinett1.jpg',
+        vAlign: false,
+        title: 'Kabinett Cartography',
+        client: 'Camberwell Kabinett X Camberwell Arts Festival',
+        description:
+            'In collaboration with the Camberwell Kabinett and as part of the Camberwell Arts Festival 2024, I produced a non-representational map of Camberwell that explores existing structures, streets, landmarks, demographics, as well as significant local figures from both past and present.  The exterior of the Kabinett acted as the main canvas for the map, but then lead inside to reveal additional elements exploring Camberwell.Special take-home zines were produced to help visitors identify the structures and public figures that continue to make the locality a vibrant and integral part of inner-city London.See below for the Camberwell Kabinetts official website and my entry there as part of their archives: <a href="www.camberwellkabinett.com/meroe">www.camberwellkabinett.com/meroe</a> ',
+        additionalImgs: true,
+        imgLibrary: {
+            0: {
+                img: 'img/Kabinett2.jpg',
+                desc: 'Enter text here....'
+            },
+            1: {
+                img: 'img/Kabinett3.jpg',
+                desc: 'Enter text here....'
+            },
+            2: {
+                img: 'img/Kabinett4.jpg',
+                desc: 'Enter text here....'
+            },
+            3: {
+                img: 'img/Kabinett5.jpg',
+                desc: 'Enter text here....'
+            },
+            4: {
+                img: 'img/Kabinett6.jpg',
+                desc: 'Enter text here....'
+            }
+        }
+    },
+    1: {
+        id: 'spotlight-2',
+        portrait: true,
+        img: 'img/Helen_Wedding1.jpg',
+        vAlign: false,
+        title: 'Wedding Portraits',
+        client: 'London College of Contemporary Arts',
+        description:
+            'Wedding portraits for Dean Helen Ismael, commissioned by the Graphic Design BA team at London College of Contemporary Arts.',
+        additionalImgs: true,
+        imgLibrary: {
+            0: {
+                img: 'img/Helen_Wedding2.jpg',
+                desc: 'Enter text here....'
+            },
+            1: {
+                img: 'img/Helen_Wedding3.jpg',
+                desc: 'Enter text here....'
+            }
+        }
+    },
+    2: {
+        id: 'spotlight-3',
+        portrait: true,
+        img: 'img/Repose_Peckham1.jpg',
+        vAlign: false,
+        title: 'Time Map of Peckham',
+        client: 'Repose Gallery – Session 2 @ Peckham Levels July 2023',
+        description:
+            'An A0 map documenting Peckham across different key time periods – evidencing a range of structures still present and long gone. Local celebrities and famous fictional characters can be found dotted across the streets – from the Pearly King of Peckham to Del Boy and beyond.For Repose Gallery’s Session 2 during Summer 2023.',
+        additionalImgs: true,
+        imgLibrary: {
+            0: {
+                img: 'img/Repose_Peckham2.jpg',
+                desc: 'Enter text here....'
+            }
+        }
+    },
+    3: {
+        id: 'spotlight-4',
+        portrait: true,
         img: 'img/MigrationMuseum1.jpg',
         vAlign: false,
         title: 'Map of Migrant Owned Businesses - Lewisham',
@@ -65,8 +136,8 @@ const spotlightItems = {
             }
         }
     },
-    1: {
-        id: 'spotlight-2',
+    4: {
+        id: 'spotlight-5',
         portrait: false,
         img: 'img/LIWUMI_MockUp_Box.jpg',
         vAlign: false,
@@ -94,8 +165,8 @@ const spotlightItems = {
             }
         }
     },
-    2: {
-        id: 'spotlight-3',
+    5: {
+        id: 'spotlight-6',
         portrait: true,
         img: 'img/Kanae_Portrait_web.jpg',
         vAlign: false,
@@ -104,8 +175,8 @@ const spotlightItems = {
         description:
             'In summer 2021 my wife suffered a ‘subdural haematoma’ - essentially blood on the brain, that could have been fatal. Luckily I got her to Kings College hospital and after an initial misdiagnosis and a gruelling wait in A+E, she was operated on. A truly terrifying event. As we’re both massive science fiction fans she helped guide me as I made this piece, as a way of channelling the events.'
     },
-    3: {
-        id: 'spotlight-4',
+    6: {
+        id: 'spotlight-7',
         portrait: false,
         img: 'img/Camberwell_Police_Station_web.jpg',
         vAlign: false,
@@ -114,8 +185,8 @@ const spotlightItems = {
         description:
             'Documenting the takeover by "The Serious Annoyance" of the Old Camberwell Police Station as a protest against the new policing bill. Particularly liked the effort that had gone into the hand made fabric signs that they\'d arranged out of the windows and how it divided up the space on the front of the building. As of writing, the old Camberwell Police Station has actually been vacant since 2019 and I had no idea until the protest started.'
     },
-    4: {
-        id: 'spotlight-5',
+    7: {
+        id: 'spotlight-8',
         portrait: false,
         img: 'img/LifeonLettsom.jpg',
         vAlign: false,
@@ -124,8 +195,8 @@ const spotlightItems = {
         description:
             'Editorial Illustration contribution to the Life on Lettsom magazine, a new Southwark Council funded publication for the residents of the Lettsom housing estate in South London.'
     },
-    5: {
-        id: 'spotlight-6',
+    8: {
+        id: 'spotlight-9',
         portrait: false,
         img: 'img/Love_Walk_Cafe.jpg',
         vAlign: false,
@@ -134,8 +205,8 @@ const spotlightItems = {
         description:
             'Contribution to the Camberwell Arts Group, used on local banners as part of Camberwell’s new identity and branding.\nImage depicts Love Walk Cafe.'
     },
-    6: {
-        id: 'spotlight-7',
+    9: {
+        id: 'spotlight-10',
         portrait: false,
         img: 'img/Kiku.jpg',
         vAlign: true,
@@ -144,8 +215,8 @@ const spotlightItems = {
         description:
             'Sumo bottle label design for Kanpai Saké Brewery’s limited edition range.\nForms part of a ‘triptych’ of labels adapting elements of Peckham with traditional/well known Japanese concepts.'
     },
-    7: {
-        id: 'spotlight-8',
+    10: {
+        id: 'spotlight-11',
         portrait: false,
         img: 'img/Miru.jpg',
         vAlign: true,
@@ -154,8 +225,8 @@ const spotlightItems = {
         description:
             'Samurai bottle label design for Kanpai Saké Brewey’s limited edition range.\nForms part of a ‘triptych’ of labels adapting elements of Peckham with traditional/well known Japanese concepts.'
     },
-    8: {
-        id: 'spotlight-9',
+    11: {
+        id: 'spotlight-12',
         portrait: false,
         img: 'img/Nomu.jpg',
         vAlign: true,
@@ -164,8 +235,8 @@ const spotlightItems = {
         description:
             'Geisha bottle label design for Kanpai Saké Brewery’s limited edition range.\nForms part of a ‘triptych’ of labels adapting elements of Peckham with traditional/well known Japanese concepts.'
     },
-    9: {
-        id: 'spotlight-10',
+    12: {
+        id: 'spotlight-13',
         portrait: true,
         img: 'img/Brixton.jpg',
         vAlign: false,
@@ -174,8 +245,8 @@ const spotlightItems = {
         description:
             'Images for Maison Des Languages’ language book for French students studying English.\nForms part of an exercise in a comic book format.'
     },
-    10: {
-        id: 'spotlight-11',
+    13: {
+        id: 'spotlight-14',
         portrait: true,
         img: 'img/Frontpage6.jpg',
         vAlign: false,
@@ -184,8 +255,8 @@ const spotlightItems = {
         description:
             'Poster design for Citi group to commemorate an agreement with the Government of Cyprus, commissioned by the French embassy.'
     },
-    11: {
-        id: 'spotlight-12',
+    14: {
+        id: 'spotlight-15',
         portrait: true,
         img: 'img/Citi_Telefonica.jpg',
         vAlign: false,
@@ -194,8 +265,8 @@ const spotlightItems = {
         description:
             'Poster design for Citi group to commemorate an agreement with Telefonica, featuring an ‘uncle Sam’ style figure. '
     },
-    12: {
-        id: 'spotlight-13',
+    15: {
+        id: 'spotlight-16',
         portrait: false,
         img: 'img/Gospel_Green.jpg',
         vAlign: false,
@@ -203,8 +274,8 @@ const spotlightItems = {
         client: 'Unused',
         description: 'Unused concept for Gospel Green Cider.'
     },
-    13: {
-        id: 'spotlight-14',
+    16: {
+        id: 'spotlight-17',
         portrait: false,
         img: 'img/Yubari.jpg',
         vAlign: false,
@@ -213,8 +284,8 @@ const spotlightItems = {
         description:
             'Self initiated piece from a visit to Northern Japan’s Yubari, a former mining town that very much echoes the same issues faced by North East England.\nIt went on to be shortlisted and then a winner of Hire an Illustrator’s Showcase 100, and was exhibited at the Framer’s Gallery in London, 2015.'
     },
-    14: {
-        id: 'spotlight-15',
+    17: {
+        id: 'spotlight-18',
         portrait: false,
         img: 'img/MomentWatch1.jpg',
         vAlign: false,
@@ -222,8 +293,8 @@ const spotlightItems = {
         client: 'Client - Moment Watches',
         description: 'Whilst living in Japan in 2013, Moment Watches reached out to me to ask if I\'d be willing to contribute artwork to one of their watch designs. I agreed and they asked if they could feature an image I did of Korean King Sejong - considered a very important historical figure in South Korea. '
     },
-    15: {
-        id: 'spotlight-16',
+    18: {
+        id: 'spotlight-19',
         portrait: true,
         img: 'img/WillGraham.jpg',
         vAlign: false,
@@ -231,8 +302,8 @@ const spotlightItems = {
         client: 'Self Initiated - Fan Art',
         description: 'Born from a love of the Hannibal drama.'
     },
-    16: {
-        id: 'spotlight-17',
+    19: {
+        id: 'spotlight-20',
         portrait: false,
         img: 'img/Lumley_Castle.jpg',
         vAlign: false,
